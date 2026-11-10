@@ -182,7 +182,7 @@
                 <task id="106" uid="a98c4ca4d14f4a87a8bff51714e0d2ef" name="4.3.3 Diseño accesible" color="#8cb6ce" meeting="false" start="2026-08-26" duration="1" complete="100" expand="true"/>
             </task>
         </task>
-        <task id="26" uid="2c73f89c805549c0b0314bbd67b7ca80" name="5. Fase de Desarrollo" color="#000000" meeting="false" start="2026-08-27" duration="54" complete="35" expand="true">
+        <task id="26" uid="2c73f89c805549c0b0314bbd67b7ca80" name="5. Fase de Desarrollo" color="#000000" meeting="false" start="2026-08-27" duration="54" complete="85" expand="true">
             <depend id="30" type="2" difference="0" hardness="Strong"/>
             <depend id="31" type="2" difference="0" hardness="Strong"/>
             <depend id="32" type="2" difference="0" hardness="Strong"/>
@@ -261,7 +261,7 @@
                 </task>
                 <task id="139" uid="57511a40b30a40739eb730414bd6e208" name="5.1.18 RNF-17 Inversión en hardware" color="#8cb6ce" meeting="false" start="2026-09-16" duration="2" complete="100" expand="true"/>
             </task>
-            <task id="70" uid="667b8be74c45447093735cbc9a01ce7a" name="5.2 Iteración 2" color="#009933" meeting="false" start="2026-09-18" duration="27" complete="44" expand="true">
+            <task id="70" uid="667b8be74c45447093735cbc9a01ce7a" name="5.2 Iteración 2" color="#009933" meeting="false" start="2026-09-18" duration="27" complete="100" expand="true">
                 <depend id="67" type="2" difference="0" hardness="Strong"/>
                 <depend id="68" type="2" difference="0" hardness="Strong"/>
                 <depend id="69" type="2" difference="0" hardness="Strong"/>
@@ -311,7 +311,7 @@
                     <depend id="119" type="2" difference="0" hardness="Strong"/>
                     <depend id="120" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="116" uid="539ce118060241a2a7d8810807c17945" name="5.2.7 RF-07 Interoperabilidad Braille" color="#8cb6ce" meeting="false" start="2026-10-06" duration="5" complete="80" expand="true">
+                <task id="116" uid="539ce118060241a2a7d8810807c17945" name="5.2.7 RF-07 Interoperabilidad Braille" color="#8cb6ce" meeting="false" start="2026-10-06" duration="5" complete="100" expand="true">
                     <depend id="121" type="2" difference="0" hardness="Strong"/>
                     <depend id="122" type="2" difference="0" hardness="Strong"/>
                     <depend id="123" type="2" difference="0" hardness="Strong"/>
@@ -319,7 +319,7 @@
                     <depend id="141" type="2" difference="0" hardness="Strong"/>
                     <depend id="142" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="117" uid="663dd25db4014a05a88b243f4c04636c" name="5.2.8 RF-08 Navegación por teclado" color="#8cb6ce" meeting="false" start="2026-10-06" duration="5" complete="80" expand="true">
+                <task id="117" uid="663dd25db4014a05a88b243f4c04636c" name="5.2.8 RF-08 Navegación por teclado" color="#8cb6ce" meeting="false" start="2026-10-06" duration="5" complete="100" expand="true">
                     <depend id="121" type="2" difference="0" hardness="Strong"/>
                     <depend id="122" type="2" difference="0" hardness="Strong"/>
                     <depend id="123" type="2" difference="0" hardness="Strong"/>
@@ -327,7 +327,7 @@
                     <depend id="141" type="2" difference="0" hardness="Strong"/>
                     <depend id="142" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="118" uid="d0944c3f988b487498873400181ed58b" name="5.2.9 RF-09 Geolocalización indoor" color="#8cb6ce" meeting="false" start="2026-10-06" duration="6" complete="40" expand="true">
+                <task id="118" uid="d0944c3f988b487498873400181ed58b" name="5.2.9 RF-09 Geolocalización indoor" color="#8cb6ce" meeting="false" start="2026-10-06" duration="6" complete="100" expand="true">
                     <depend id="121" type="2" difference="0" hardness="Strong"/>
                     <depend id="122" type="2" difference="0" hardness="Strong"/>
                     <depend id="123" type="2" difference="0" hardness="Strong"/>
@@ -343,7 +343,7 @@
                     <depend id="141" type="2" difference="0" hardness="Strong"/>
                     <depend id="142" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="120" uid="40564024d1534899b0e1599d138c21c8" name="5.2.11 RF-12 Gestión de contenidos (CMS)" color="#8cb6ce" meeting="false" start="2026-10-06" duration="6" complete="40" expand="true">
+                <task id="120" uid="40564024d1534899b0e1599d138c21c8" name="5.2.11 RF-12 Gestión de contenidos (CMS)" color="#8cb6ce" meeting="false" start="2026-10-06" duration="6" complete="100" expand="true">
                     <depend id="121" type="2" difference="0" hardness="Strong"/>
                     <depend id="122" type="2" difference="0" hardness="Strong"/>
                     <depend id="123" type="2" difference="0" hardness="Strong"/>
@@ -352,25 +352,25 @@
                     <depend id="142" type="2" difference="0" hardness="Strong"/>
                     <depend id="143" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="121" uid="f75aeeee87ba4128b3e3a0aa01bbea1b" name="5.2.12 RF-14 Interfaz responsive" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true"/>
-                <task id="122" uid="ada32918323b4cb08d419fbf9e275672" name="5.2.13 RF-26 CRUD de tours 360°" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true">
+                <task id="121" uid="f75aeeee87ba4128b3e3a0aa01bbea1b" name="5.2.12 RF-14 Interfaz responsive" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="100" expand="true"/>
+                <task id="122" uid="ada32918323b4cb08d419fbf9e275672" name="5.2.13 RF-26 CRUD de tours 360°" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="100" expand="true">
                     <depend id="143" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="123" uid="6f0e12d3d58c4515a480385d375ec246" name="5.2.14 RF-27 CRUD contenidos multimedia" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true">
+                <task id="123" uid="6f0e12d3d58c4515a480385d375ec246" name="5.2.14 RF-27 CRUD contenidos multimedia" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="100" expand="true">
                     <depend id="143" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="140" uid="746ac23b235541f390aed5c7cb0da5f8" name="5.2.15 RF-28 CRUD áreas/espacios" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true">
+                <task id="140" uid="746ac23b235541f390aed5c7cb0da5f8" name="5.2.15 RF-28 CRUD áreas/espacios" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="100" expand="true">
                     <depend id="143" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="141" uid="dc2f708ecdb5463a9b1b848ce1746510" name="5.2.16 RF-29 CRUD metadatos de escena" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true">
+                <task id="141" uid="dc2f708ecdb5463a9b1b848ce1746510" name="5.2.16 RF-29 CRUD metadatos de escena" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="100" expand="true">
                     <depend id="143" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="142" uid="b3a34c8d1650453aab47023557edd2ed" name="5.2.17 RF-30 CRUD de beacons / zonas" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true">
+                <task id="142" uid="b3a34c8d1650453aab47023557edd2ed" name="5.2.17 RF-30 CRUD de beacons / zonas" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="100" expand="true">
                     <depend id="143" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="143" uid="64cef1fcd6d240e796a45de6c3d51025" name="5.2.18 RF-35 Búsqueda y filtros" color="#8cb6ce" meeting="false" start="2026-10-26" duration="1" complete="0" expand="true"/>
+                <task id="143" uid="64cef1fcd6d240e796a45de6c3d51025" name="5.2.18 RF-35 Búsqueda y filtros" color="#8cb6ce" meeting="false" start="2026-10-26" duration="1" complete="100" expand="true"/>
             </task>
-            <task id="67" uid="b6bb45c484844b49b0c3d746beae10b8" name="5.3 Iteración 3" color="#009933" meeting="false" start="2026-10-27" duration="11" complete="0" expand="true">
+            <task id="67" uid="b6bb45c484844b49b0c3d746beae10b8" name="5.3 Iteración 3" color="#009933" meeting="false" start="2026-10-27" duration="11" complete="61" expand="true">
                 <task id="68" uid="89c51fa2047b486cbe51d1124405a9e7" name="5.3.1 RF-10 Exportación de rutas en DAISY" color="#8cb6ce" meeting="false" start="2026-10-27" duration="4" complete="0" expand="true">
                     <depend id="124" type="2" difference="0" hardness="Strong"/>
                     <depend id="125" type="2" difference="0" hardness="Strong"/>
@@ -385,7 +385,7 @@
                     <depend id="146" type="2" difference="0" hardness="Strong"/>
                     <depend id="147" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="69" uid="f7e0c3e0f2fa4008b116823349f4d0c4" name="5.3.2 RF-13 Gestión de usuarios" color="#8cb6ce" meeting="false" start="2026-10-27" duration="5" complete="0" expand="true">
+                <task id="69" uid="f7e0c3e0f2fa4008b116823349f4d0c4" name="5.3.2 RF-13 Gestión de usuarios" color="#8cb6ce" meeting="false" start="2026-10-27" duration="5" complete="100" expand="true">
                     <depend id="124" type="2" difference="0" hardness="Strong"/>
                     <depend id="125" type="2" difference="0" hardness="Strong"/>
                     <depend id="126" type="2" difference="0" hardness="Strong"/>
@@ -399,7 +399,7 @@
                     <depend id="146" type="2" difference="0" hardness="Strong"/>
                     <depend id="147" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="81" uid="46448ceaccf84e178e4d39e78e12da26" name="5.3.3 RF-15 Registro de uso" color="#8cb6ce" meeting="false" start="2026-10-27" duration="7" complete="0" expand="true">
+                <task id="81" uid="46448ceaccf84e178e4d39e78e12da26" name="5.3.3 RF-15 Registro de uso" color="#8cb6ce" meeting="false" start="2026-10-27" duration="7" complete="100" expand="true">
                     <depend id="124" type="2" difference="0" hardness="Strong"/>
                     <depend id="125" type="2" difference="0" hardness="Strong"/>
                     <depend id="127" type="2" difference="0" hardness="Strong"/>
@@ -412,7 +412,7 @@
                     <depend id="146" type="2" difference="0" hardness="Strong"/>
                     <depend id="147" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="80" uid="ff1c8e69629846b89b93f5a5ecd8c21b" name="5.3.4 RF-16 Registro de incidencias" color="#8cb6ce" meeting="false" start="2026-10-27" duration="5" complete="0" expand="true">
+                <task id="80" uid="ff1c8e69629846b89b93f5a5ecd8c21b" name="5.3.4 RF-16 Registro de incidencias" color="#8cb6ce" meeting="false" start="2026-10-27" duration="5" complete="50" expand="true">
                     <depend id="124" type="2" difference="0" hardness="Strong"/>
                     <depend id="125" type="2" difference="0" hardness="Strong"/>
                     <depend id="126" type="2" difference="0" hardness="Strong"/>
@@ -438,7 +438,7 @@
                     <depend id="145" type="2" difference="0" hardness="Strong"/>
                     <depend id="146" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="129" uid="042bc09cd01c4738a48f2cd18700d7ef" name="5.3.6 RF-31 CRUD de incidencias" color="#8cb6ce" meeting="false" start="2026-10-27" duration="8" complete="0" expand="true">
+                <task id="129" uid="042bc09cd01c4738a48f2cd18700d7ef" name="5.3.6 RF-31 CRUD de incidencias" color="#8cb6ce" meeting="false" start="2026-10-27" duration="8" complete="50" expand="true">
                     <depend id="124" type="2" difference="0" hardness="Strong"/>
                     <depend id="125" type="2" difference="0" hardness="Strong"/>
                     <depend id="126" type="2" difference="0" hardness="Strong"/>
@@ -454,29 +454,29 @@
                 </task>
                 <task id="130" uid="b51e9e8135544027b3562bcef67fccdf" name="5.3.7 RF-32 CRUD materiales de capacitación" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
                 <task id="131" uid="cab5aec76fab444db13a01db81439901" name="5.3.8 RF-33 CRUD de anuncios" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
-                <task id="132" uid="7a9ab72eb3c7497b8996d9114ed09da7" name="5.3.9 RF-36 Panel de administración" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
-                <task id="133" uid="4c8f1bbc199944348abf6c10bf3344ea" name="5.3.10 RF-38 Auditoría y registro de actividades" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
-                <task id="124" uid="ee018ec955b64d4c8c7c2ecf62430604" name="5.3.11 RF-39 Respaldo y restauración" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
-                <task id="125" uid="2b236df4cbdf49ec85c7c254a7dfb82d" name="5.3.12 RF-40 API de gestión de contenidos" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
-                <task id="126" uid="b80f0e95e3174c4d8a3ae313a0c88ec0" name="5.3.13 RNF-04 Alta disponibilidad" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
+                <task id="132" uid="7a9ab72eb3c7497b8996d9114ed09da7" name="5.3.9 RF-36 Panel de administración" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="100" expand="true"/>
+                <task id="133" uid="4c8f1bbc199944348abf6c10bf3344ea" name="5.3.10 RF-38 Auditoría y registro de actividades" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="50" expand="true"/>
+                <task id="124" uid="ee018ec955b64d4c8c7c2ecf62430604" name="5.3.11 RF-39 Respaldo y restauración" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="100" expand="true"/>
+                <task id="125" uid="2b236df4cbdf49ec85c7c254a7dfb82d" name="5.3.12 RF-40 API de gestión de contenidos" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="100" expand="true"/>
+                <task id="126" uid="b80f0e95e3174c4d8a3ae313a0c88ec0" name="5.3.13 RNF-04 Alta disponibilidad" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="50" expand="true"/>
                 <task id="127" uid="97f87d5afa0a455aa612a84f7b1e5455" name="5.3.14 RNF-05 SLA de soporte" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
-                <task id="144" uid="5d0d2f5c198145e79b387d780413894b" name="5.3.15 RNF-06 Mantenimiento evolutivo" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
-                <task id="145" uid="2557d383c2674e3ba725a75d6ffd9ecf" name="5.3.16 RNF-07 Cumplimiento WCAG 2.1 AA" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
-                <task id="146" uid="d837b300ddc74fd9b8300d9922c89459" name="5.3.17 RNF-08 Validación automatizada" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
-                <task id="147" uid="0c40524c6d7d42f9a143f8b27ae4b7ac" name="5.3.18 RNF-09 Satisfacción del usuario" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true"/>
+                <task id="144" uid="5d0d2f5c198145e79b387d780413894b" name="5.3.15 RNF-06 Mantenimiento evolutivo" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="100" expand="true"/>
+                <task id="145" uid="2557d383c2674e3ba725a75d6ffd9ecf" name="5.3.16 RNF-07 Cumplimiento WCAG 2.1 AA" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="100" expand="true"/>
+                <task id="146" uid="d837b300ddc74fd9b8300d9922c89459" name="5.3.17 RNF-08 Validación automatizada" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="100" expand="true"/>
+                <task id="147" uid="0c40524c6d7d42f9a143f8b27ae4b7ac" name="5.3.18 RNF-09 Satisfacción del usuario" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="100" expand="true"/>
             </task>
         </task>
-        <task id="30" uid="cd6be44c88194b89835bdd0b6ec6f9f4" name="6. Fase de Pruebas" color="#000000" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true">
+        <task id="30" uid="cd6be44c88194b89835bdd0b6ec6f9f4" name="6. Fase de Pruebas" color="#000000" meeting="false" start="2026-11-11" duration="5" complete="50" expand="true">
             <depend id="34" type="2" difference="0" hardness="Strong"/>
             <depend id="36" type="2" difference="0" hardness="Strong"/>
             <depend id="88" type="2" difference="0" hardness="Strong"/>
-            <task id="31" uid="eaba64974ab3475498ab650a07209b12" name="6.1 Pruebas de Iteración 1" color="#009933" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true">
-                <task id="32" uid="73d1b3a0449c430286e07e1960c10377" name="6.1.1 Pruebas de autenticación" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true"/>
-                <task id="33" uid="8513fdb419654f778d6249869bcb1050" name="6.1.2 Pruebas de seguridad" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true"/>
+            <task id="31" uid="eaba64974ab3475498ab650a07209b12" name="6.1 Pruebas de Iteración 1" color="#009933" meeting="false" start="2026-11-11" duration="5" complete="100" expand="true">
+                <task id="32" uid="73d1b3a0449c430286e07e1960c10377" name="6.1.1 Pruebas de autenticación" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="100" expand="true"/>
+                <task id="33" uid="8513fdb419654f778d6249869bcb1050" name="6.1.2 Pruebas de seguridad" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="100" expand="true"/>
             </task>
-            <task id="82" uid="23f36727c7ea47469fcf19ece87d0d99" name="6.2 Pruebas de Iteración 2" color="#009933" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true">
-                <task id="83" uid="93ecec86cf05472280d4ee3b0e877e41" name="6.2.1 Pruebas de recorridos 360°" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true"/>
-                <task id="84" uid="63bc487baaa14e0bb95219bc80c7e6b6" name="6.2.2 Pruebas de accesibilidad" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true"/>
+            <task id="82" uid="23f36727c7ea47469fcf19ece87d0d99" name="6.2 Pruebas de Iteración 2" color="#009933" meeting="false" start="2026-11-11" duration="5" complete="50" expand="true">
+                <task id="83" uid="93ecec86cf05472280d4ee3b0e877e41" name="6.2.1 Pruebas de recorridos 360°" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="50" expand="true"/>
+                <task id="84" uid="63bc487baaa14e0bb95219bc80c7e6b6" name="6.2.2 Pruebas de accesibilidad" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="50" expand="true"/>
             </task>
             <task id="85" uid="26833f289ead45f6a37ffb3c2a8f6be4" name="6.3 Pruebas de Iteración 3" color="#009933" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true">
                 <task id="86" uid="c08fff3b5bbe41a58d2851c0cd959256" name="6.3.1 Pruebas administrativas" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true"/>

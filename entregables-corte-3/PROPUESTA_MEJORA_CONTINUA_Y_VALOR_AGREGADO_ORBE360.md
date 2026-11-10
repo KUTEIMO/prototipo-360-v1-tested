@@ -3,8 +3,8 @@
 ### PROPUESTA TÉCNICA DE MEJORA CONTINUA Y VALOR AGREGADO — PROYECTO ORBE360
 
 **Docente Evaluadora:** Ing. Nataly Duque Páez  
-**Líder de Proyecto:** Eduardo José Soto Herrera  
-**Equipo:** Saraic Noemí León Jaimes, Ángel David Rueda Peña, Jhonatan Smith Celis Villamizar, Juan Diego Guerrero García  
+**Líder de Proyecto:** Eduardo José Soto Herrera (`e_soto2@unisimon.edu.co`)  
+**Equipo:** Saraic Noemí León Hernández, Kevin Eduardo García Moreno, Sebastián David Omaña Villamizar, Jesús Omar Avendaño Avendaño  
 **Fecha:** Noviembre de 2026  
 
 ---
