@@ -8,11 +8,11 @@
 ### 1. Enlace Oficial de Subida al OneDrive de la Docente:
 * **URL:** `https://unisimonedu-my.sharepoint.com/:f:/g/personal/nataly_duquep_unisimon_edu_co/IgAg3c5VF8G2TIOVUb4eRKfzAWbakYrcJk31GGgSgV0L8nE?e=iEbVog`
 * **Archivo:** `ORBE-GP-Software-Avance-15.zip` (Subido antes del cierre oficial del aula extendida).
-* **Tamaño exacto:** `288,581,458 bytes` (`275.21 MB`)
-* **Checksum SHA-256:** `217109127FDB8B209FF6F3497C8CE67399A138BAE70088D0D3C7BAFB6457AF39`
+* **Tamaño exacto:** `288,831,652 bytes` (`275.45 MB`)
+* **Checksum SHA-256:** `316A9D83E56FF9F196986AE2ED5FD81F78E98F5204F9B1EB53E9AD89AB02056B`
 
 ### 2. Repositorios Oficiales en GitHub:
-* **Entrega Curso (ORBE-GP):** `https://github.com/KUTEIMO/ORBE-GP` (rama `main`, commit `a2f29d7`)
+* **Entrega Curso (ORBE-GP):** `https://github.com/KUTEIMO/ORBE-GP` (rama `main`, commit `f9358f7`)
 * **Repositorio Principal Producto:** `https://github.com/KUTEIMO/prototipo-360-v1-tested` (rama `main`)
 
 ### 3. Despliegue en Vivo:
