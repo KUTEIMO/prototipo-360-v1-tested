@@ -1,0 +1,38 @@
+{
+  "$comment": "Catálogo PRESENTACIONAL de sedes (orden, texto, foto). NO duplica datos de tours: el estado 'publicado' y el slug real salen de Convex (graph:listPublishedDemos). Para activar una sede: publicar su tour en Convex y poner aquí su tourSlug (+ image). Nada más.",
+  "orgSlug": "unisimoncucuta",
+  "sedes": [
+    {
+      "id": "sede-1",
+      "label": "Sede 1 · Bloque A",
+      "blurb": "Núcleo Av. 3: Rectoría, admisiones, registro, servicios financieros y atención administrativa.",
+      "image": "/plataforma/assets/sedes/unisimon_sede_1_1791299946541.jpg",
+      "alt": "Sede 1 Universidad Simón Bolívar Cúcuta — Bloque A",
+      "tourSlug": null
+    },
+    {
+      "id": "sede-2",
+      "label": "Sede 2 · Bloques B, C y D",
+      "blurb": "Av. 3 #13-34: Biblioteca Anita Consuegra, aulas generales, cómputo, cafetería y laboratorios científicos.",
+      "image": "/plataforma/assets/sedes/sede-2.jpg",
+      "alt": "Entrada de vidrio en arco rodeada por un mural colorido en la biblioteca de la Sede 2 (Bloques B, C y D)",
+      "tourSlug": "experienciavirtual"
+    },
+    {
+      "id": "sede-3",
+      "label": "Sede 3 · Bloques E y F",
+      "blurb": "Extensiones Av. 4: Consultorio Jurídico, Centro de Conciliación, Cámara Gesell y áreas de Ciencias Jurídicas, Sociales y Psicología.",
+      "image": "/plataforma/assets/sedes/unisimon_laboratorios_1791299966443.jpg",
+      "alt": "Sede 3 Universidad Simón Bolívar Cúcuta — Bloques E y F",
+      "tourSlug": null
+    },
+    {
+      "id": "sede-4",
+      "label": "Sede 4 · Bloque G",
+      "blurb": "Campus Extensiones: laboratorios terapéuticos especializados, educación continua y aulas de posgrado.",
+      "image": "/plataforma/assets/sedes/unisimon_clinica_1791299977674.jpg",
+      "alt": "Sede 4 Bloque G Universidad Simón Bolívar Cúcuta",
+      "tourSlug": "sede-4"
+    }
+  ]
+}

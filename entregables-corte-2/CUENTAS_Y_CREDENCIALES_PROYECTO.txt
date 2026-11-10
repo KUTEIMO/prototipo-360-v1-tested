@@ -1,0 +1,93 @@
+================================================================================
+ORBE360 — CUENTAS, CREDENCIALES Y ENLACES OFICIALES (PARA SUSTENTACIÓN)
+PROYECTO: GESTIÓN DE PROYECTOS (UNISIMÓN 2026-2) — ING. NATALY DUQUE PÁEZ
+================================================================================
+
+1. ENLACES PRINCIPALES DEL PROYECTO:
+--------------------------------------------------------------------------------
+• Repositorio GitHub Oficial:
+  https://github.com/KUTEIMO/ORBE-GP
+
+• Carpeta OneDrive de la Profesora Nataly Duque (SharePoint Oficial):
+  https://unisimonedu-my.sharepoint.com/:f:/g/personal/nataly_duquep_unisimon_edu_co/IgCDRbT32DI0RYKHcylj9cxVAdB08oMjSSi_isoenPXZqL8?e=zU6bk4
+
+• Tablero Oficial en Jira Software (Proyecto KAN):
+  https://orbe-experience360.atlassian.net/jira/software/projects/KAN/boards
+
+• Resumen de Métricas en Jira:
+  https://orbe-experience360.atlassian.net/jira/software/projects/KAN/summary
+
+--------------------------------------------------------------------------------
+2. COMANDOS DE DESPLIEGUE EN WINDOWS POWERSHELL:
+--------------------------------------------------------------------------------
+• Opción A — Primer despliegue (instalación y descarga automática en equipo nuevo):
+cd $HOME; if (-not (Get-Command node -ErrorAction SilentlyContinue)) { Write-Host "Configurando Node.js..."; try { winget install --id OpenJS.NodeJS.LTS -e --accept-package-agreements --accept-source-agreements } catch {} ; if (-not (Get-Command node -ErrorAction SilentlyContinue)) { Invoke-WebRequest -Uri "https://nodejs.org/dist/v20.18.0/node-v20.18.0-x64.msi" -OutFile "$env:TEMP\node.msi"; Start-Process msiexec.exe -ArgumentList "/i `"$env:TEMP\node.msi`" /qn" -Wait }; $env:Path += ";C:\Program Files\nodejs" }; if (Test-Path "ORBE-GP") { cd ORBE-GP; if (Test-Path .git) { git pull } } else { if (Get-Command git -ErrorAction SilentlyContinue) { git clone https://github.com/KUTEIMO/ORBE-GP.git } else { Invoke-WebRequest -Uri "https://github.com/KUTEIMO/ORBE-GP/archive/refs/heads/main.zip" -OutFile "ORBE-GP.zip"; Expand-Archive -Path "ORBE-GP.zip" -DestinationPath "." -Force; Rename-Item -Path "ORBE-GP-main" -NewName "ORBE-GP" -Force }; cd ORBE-GP }; Start-Process "http://localhost:8081/"; node scripts/dev-server.mjs
+
+• Opción B — Si el proyecto ya fue descargado previamente (Inicio instantáneo en 1 segundo):
+cd $HOME\ORBE-GP; Start-Process "http://localhost:8081/"; node scripts/dev-server.mjs
+
+(También disponible mediante doble clic al archivo "INICIAR_PROYECTO.bat" en la carpeta)
+
+--------------------------------------------------------------------------------
+3. RUTAS LOCALES DEL SOFTWARE (UNA VEZ INICIADO EN PUERTO 8081):
+--------------------------------------------------------------------------------
+• Landing Page / Portal Institucional:
+  http://localhost:8081/
+
+• Recorrido Virtual 360° Biblioteca Anita Consuegra:
+  http://localhost:8081/unisimoncucuta/experienciavirtual/
+
+• Panel Administrativo CMS (Control Web):
+  http://localhost:8081/unisimoncucuta/experienciavirtual/control-web/
+
+--------------------------------------------------------------------------------
+4. USUARIOS Y CONTRASEÑAS DEMO (PARA EL PANEL DE CONTROL):
+--------------------------------------------------------------------------------
+• SUPERADMIN DE LA PLATAFORMA:
+  Usuario: superadmin@orbe360.local
+  Contraseña: OrbeSuper2026!
+  Rol: Superadmin global (administra sedes y organizaciones)
+
+• ADMINISTRADOR DE SEDE UNISIMÓN:
+  Usuario: admin@unisimon.local
+  Contraseña: UnisimonAdmin2026!
+  Rol: Administrador de Sede Cúcuta (edita escenas y hotspots de la biblioteca)
+
+• USUARIO DE PRUEBAS QA:
+  Usuario: qa-third@orbe-authz.test
+  Contraseña: QaThirdUser2026!
+
+• USUARIO VISITANTE:
+  Usuario: invitado@unisimon.local (Acceso público sin contraseña)
+
+--------------------------------------------------------------------------------
+5. CORREOS INSTITUCIONALES DEL EQUIPO (@unisimon.edu.co):
+--------------------------------------------------------------------------------
+1. EDUARDO JOSÉ SOTO HERRERA:
+   Correo: e_soto2@unisimon.edu.co
+   Rol: Líder de Proyecto & Frontend 360°
+
+2. SARAIC NOEMI LEÓN HERNÁNDEZ:
+   Correo: s_leon3@unisimon.edu.co
+   Rol: Líder de Calidad & Accesibilidad WCAG
+
+3. KEVIN EDUARDO GARCÍA MORENO:
+   Correo: k_garcia8@unisimon.edu.co
+   Rol: Líder Backend & Requerimientos Jira
+
+4. SEBASTIÁN DAVID OMAÑA VILLAMIZAR:
+   Correo: s_omana1@unisimon.edu.co
+   Rol: Ingeniero DevSecOps & Infraestructura
+
+5. JESÚS OMAR AVENDAÑO AVENDAÑO:
+   Correo: j_avendano4@unisimon.edu.co
+   Rol: Ingeniero de Planificación & Cronograma
+
+--------------------------------------------------------------------------------
+6. ATAJOS RÁPIDOS DE TECLADO PARA LA SUSTENTACIÓN:
+--------------------------------------------------------------------------------
+• Clic / Enter en cualquier Hotspot: Reproduce automáticamente la audiodescripción.
+• Tecla M: Silenciar / Activar audio guía descriptiva espacial de la escena.
+• Tecla Alt + S: Abrir / Cerrar ventana flotante PIP de Lengua de Señas (LSC).
+• Tecla Tab / Enter: Navegar 100% por teclado entre hotspots (WCAG 2.1 AA).
+================================================================================

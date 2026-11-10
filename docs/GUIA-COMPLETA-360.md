@@ -131,7 +131,7 @@ Los tests validan que los hotspots reciban foco mediante tabulaci├│n y que e
 
 ## Sustituir audios y subt├¡tulos
 
-- Reemplaza `assets/audio/placeholder.mp3` por una grabaci├│n real (mismo nombre o actualiza las rutas en `config.json`).
+- Reemplaza narraciones placeholder por grabaciones reales bajo `media/unisimoncucuta/experienciavirtual/assets/audio/…` (o actualiza las rutas en el config del tour).
 - Genera subt├¡tulos `.vtt` con al menos dos l├¡neas de tiempo.
 - Actualiza las transcripciones en `assets/transcripts/`.
 - Para personalizar ubicaciones de hotspots sin tocar `config.json`, edita en el navegador y sobrescribe `hotspot-overrides.json` con el archivo descargado (mant├®n el nombre para que se cargue autom├íticamente).

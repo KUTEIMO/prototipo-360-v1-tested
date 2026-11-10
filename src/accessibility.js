@@ -1,4 +1,6 @@
 import { appState, updateSetting, getSetting } from './state.js';
+import { dismissOpenLayers, openExclusive, trapFocusWithin } from './uiLayers.js';
+import { playSceneNarration, stopSceneNarration } from './sceneAudio.js';
 
 const FONT_STEP = 0.1;
 const FONT_MIN = 0.8;
@@ -17,6 +19,7 @@ export function initAccessibilityControls(config) {
   setupAccessibleMode();
   setupAccessibilityPanel();
   helpDialogOpener = setupHelpDialog(config);
+  setupWcagAuditDialog();
 }
 
 export function applyInitialAccessibilityState() {
@@ -35,12 +38,56 @@ export function applyInitialAccessibilityState() {
   updateSetting('autoNarration', settings.autoNarration);
   updateSetting('autoCaptions', settings.autoCaptions);
 
-  const accessibleToggle = document.getElementById('accessibleModeToggle');
-  if (accessibleToggle) accessibleToggle.checked = settings.accessibleMode;
-  const narrationToggle = document.getElementById('textToSpeechToggle');
-  if (narrationToggle) narrationToggle.checked = settings.autoNarration;
-  const captionToggle = document.getElementById('captionAutoToggle');
-  if (captionToggle) captionToggle.checked = settings.autoCaptions;
+  syncToggle('accessibleModeToggle', settings.accessibleMode);
+  syncToggle('textToSpeechToggle', settings.autoNarration);
+  syncToggle('captionAutoToggle', settings.autoCaptions);
+  syncContrastButtons(settings.highContrast);
+  announceTextScale(settings.textScale, { silent: true });
+}
+
+/**
+ * `checked` y `aria-checked` tienen que ir juntos.
+ * Antes `aria-checked` sólo se escribía en el handler de `change`: al recargar
+ * con la preferencia guardada activa, el control estaba marcado visualmente pero
+ * el lector de pantalla seguía anunciando "no marcado".
+ */
+function syncToggle(id, value) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.checked = Boolean(value);
+  if (el.getAttribute('role') === 'switch') {
+    el.setAttribute('aria-checked', String(Boolean(value)));
+  }
+}
+
+/** Estado del grupo de contraste como par de botones alternantes. */
+function syncContrastButtons(highContrast) {
+  document.querySelectorAll('[data-contrast]').forEach((button) => {
+    const isActive = (button.dataset.contrast === 'high') === Boolean(highContrast);
+    button.setAttribute('aria-pressed', String(isActive));
+  });
+}
+
+/** El tamaño de texto es un cambio no visual para un lector: hay que anunciarlo. */
+function announceTextScale(scale, { silent = false } = {}) {
+  const label = `${Math.round(scale * 100)}%`;
+  document.querySelectorAll('[data-font-size]').forEach((button) => {
+    button.setAttribute('aria-label', buildFontButtonLabel(button.dataset.fontSize, label));
+  });
+  if (silent) return;
+  const region = document.getElementById('sceneAnnouncement');
+  if (region) {
+    region.textContent = '';
+    requestAnimationFrame(() => {
+      region.textContent = `Tamaño de texto: ${label}.`;
+    });
+  }
+}
+
+function buildFontButtonLabel(action, current) {
+  if (action === 'increase') return `Aumentar tamaño de texto (actual ${current})`;
+  if (action === 'decrease') return `Reducir tamaño de texto (actual ${current})`;
+  return `Restablecer tamaño de texto al 100 % (actual ${current})`;
 }
 
 export function openHelpDialog(configOverride) {
@@ -67,6 +114,7 @@ function setupTextSizeButtons() {
 
       updateSetting('textScale', next);
       applyFontScale(next);
+      announceTextScale(next);
       persistSettings();
     });
   });
@@ -84,6 +132,7 @@ function setupContrastButtons() {
       const highContrast = contrast === 'high';
       updateSetting('highContrast', highContrast);
       applyContrast(highContrast);
+      syncContrastButtons(highContrast);
       persistSettings();
     });
   });
@@ -96,9 +145,10 @@ function applyContrast(highContrast) {
 function setupAccessibleMode() {
   const toggle = document.getElementById('accessibleModeToggle');
   if (toggle) {
-    toggle.checked = getSetting('accessibleMode');
+    syncToggle('accessibleModeToggle', getSetting('accessibleMode'));
     toggle.addEventListener('change', (event) => {
       const enabled = event.target.checked;
+      syncToggle('accessibleModeToggle', enabled);
       applyAccessibleMode(enabled);
       persistSettings();
     });
@@ -106,19 +156,26 @@ function setupAccessibleMode() {
 
   const narrationToggle = document.getElementById('textToSpeechToggle');
   if (narrationToggle) {
-    narrationToggle.checked = getSetting('autoNarration');
+    syncToggle('textToSpeechToggle', getSetting('autoNarration'));
     narrationToggle.addEventListener('change', (event) => {
       const enabled = event.target.checked;
+      syncToggle('textToSpeechToggle', enabled);
       updateSetting('autoNarration', enabled);
+      if (enabled) {
+        playSceneNarration();
+      } else {
+        stopSceneNarration();
+      }
       persistSettings();
     });
   }
 
   const captionToggle = document.getElementById('captionAutoToggle');
   if (captionToggle) {
-    captionToggle.checked = getSetting('autoCaptions');
+    syncToggle('captionAutoToggle', getSetting('autoCaptions'));
     captionToggle.addEventListener('change', (event) => {
       const enabled = event.target.checked;
+      syncToggle('captionAutoToggle', enabled);
       updateSetting('autoCaptions', enabled);
       persistSettings();
     });
@@ -129,6 +186,7 @@ function applyAccessibleMode(enabled, options = {}) {
   const skipSync = options.skipSync;
   document.body.classList.toggle('accessible-mode', enabled);
   updateSetting('accessibleMode', enabled);
+  applyPanoramaSemantics(enabled);
 
   if (!skipSync) {
     if (enabled) {
@@ -138,12 +196,11 @@ function applyAccessibleMode(enabled, options = {}) {
       updateSetting('textScale', Math.min(FONT_MAX, Math.max(1.2, getSetting('textScale'))));
       applyFontScale(getSetting('textScale'));
       applyContrast(true);
-      const narrationToggle = document.getElementById('textToSpeechToggle');
-      if (narrationToggle) narrationToggle.checked = true;
-      const captionToggle = document.getElementById('captionAutoToggle');
-      if (captionToggle) captionToggle.checked = true;
-      const contrastHigh = document.querySelector('[data-contrast="high"]');
-      if (contrastHigh) contrastHigh.focus();
+      syncToggle('textToSpeechToggle', true);
+      syncToggle('captionAutoToggle', true);
+      syncContrastButtons(true);
+      announceTextScale(getSetting('textScale'), { silent: true });
+      playSceneNarration();
     } else {
       updateSetting('autoNarration', false);
       updateSetting('autoCaptions', false);
@@ -151,12 +208,39 @@ function applyAccessibleMode(enabled, options = {}) {
       updateSetting('textScale', 1);
       applyFontScale(1);
       applyContrast(false);
-      const narrationToggle = document.getElementById('textToSpeechToggle');
-      if (narrationToggle) narrationToggle.checked = false;
-      const captionToggle = document.getElementById('captionAutoToggle');
-      if (captionToggle) captionToggle.checked = false;
+      syncToggle('textToSpeechToggle', false);
+      syncToggle('captionAutoToggle', false);
+      syncContrastButtons(false);
+      announceTextScale(1, { silent: true });
+      stopSceneNarration();
     }
     persistSettings();
+  }
+}
+
+/**
+ * T-P0-4: prefer role=region (safer for TalkBack virtual cursor).
+ * Accessible mode keeps region and nudges focus toward semantic lists.
+ * Sighted keyboard rotation still works via tabindex=0 + keyboardControls.
+ */
+function applyPanoramaSemantics(accessibleMode) {
+  const panorama = document.getElementById('panorama');
+  if (!panorama) return;
+  panorama.setAttribute('role', 'region');
+  panorama.setAttribute(
+    'aria-label',
+    accessibleMode
+      ? 'Visor 360 grados. Modo accesible: usa la lista de destinos o el menú de escenas; el panorama no es la ruta principal.'
+      : 'Visor 360 grados. Usa las flechas del teclado para rotar; para recorrer sin arrastrar, usa la lista de destinos debajo o el menú de escenas.'
+  );
+  if (accessibleMode) {
+    const list = document.getElementById('hotspotList');
+    if (list && !list.hidden) {
+      // Soft hint only — do not steal focus on every toggle.
+      panorama.setAttribute('aria-describedby', 'hotspotList');
+    }
+  } else {
+    panorama.removeAttribute('aria-describedby');
   }
 }
 
@@ -172,6 +256,7 @@ function setupAccessibilityPanel() {
     if (expanded) {
       closePanel(openButton, panel);
     } else {
+      openExclusive('accessibility');
       openPanel(openButton, panel, closeButton);
     }
   });
@@ -180,9 +265,10 @@ function setupAccessibilityPanel() {
 
   panel.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
+      event.stopPropagation();
       closePanel(openButton, panel, true);
     } else if (event.key === 'Tab') {
-      trapFocus(panel, event);
+      trapFocusWithin(panel, event);
     }
   });
 }
@@ -203,36 +289,12 @@ function closePanel(trigger, panel, restoreFocus = false) {
   trigger.setAttribute('aria-expanded', 'false');
   panel.setAttribute('hidden', 'hidden');
   panel.classList.remove('accessibility-menu--open');
+  dismissOpenLayers();
 
   if (restoreFocus && lastFocusedElement) {
     lastFocusedElement.focus();
   } else {
     trigger.focus();
-  }
-}
-
-function trapFocus(container, event) {
-  const focusableSelectors = [
-    'a[href]',
-    'button:not([disabled])',
-    'input:not([disabled])',
-    'select:not([disabled])',
-    'textarea:not([disabled])',
-    '[tabindex]:not([tabindex="-1"])'
-  ];
-  const focusableElements = Array.from(container.querySelectorAll(focusableSelectors.join(',')));
-
-  if (focusableElements.length === 0) return;
-
-  const firstElement = focusableElements[0];
-  const lastElement = focusableElements[focusableElements.length - 1];
-
-  if (event.shiftKey && document.activeElement === firstElement) {
-    event.preventDefault();
-    lastElement.focus();
-  } else if (!event.shiftKey && document.activeElement === lastElement) {
-    event.preventDefault();
-    firstElement.focus();
   }
 }
 
@@ -261,6 +323,36 @@ function setupHelpDialog(config) {
   });
 
   return open;
+}
+
+function setupWcagAuditDialog() {
+  const toggleBtn = document.getElementById('wcagAuditToggle');
+  const dialog = document.getElementById('wcagAuditDialog');
+
+  if (!toggleBtn || !dialog) return;
+
+  const closeBtns = dialog.querySelectorAll('[data-close-dialog], #closeWcagAuditDialog');
+
+  toggleBtn.addEventListener('click', () => {
+    dialog.showModal();
+    const primaryBtn = dialog.querySelector('.wcag-primary-button, [data-close-dialog]');
+    requestAnimationFrame(() => {
+      primaryBtn?.focus();
+    });
+  });
+
+  closeBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      dialog.close();
+      toggleBtn.focus();
+    });
+  });
+
+  dialog.addEventListener('cancel', (event) => {
+    event.preventDefault();
+    dialog.close();
+    toggleBtn.focus();
+  });
 }
 
 function populateHelpShortcuts(list, config) {

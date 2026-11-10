@@ -1,0 +1,402 @@
+[
+  {
+    "slide": 1,
+    "title": "Sin titulo",
+    "content": [
+      "Plataforma PEVCI: Experiencias Virtuales 360° con Orientación Inclusiva",
+      "Sección 1 — Información general del proyecto  ·  Acta de Constitución",
+      "DIRECTORA Y PATROCINADORA",
+      "Ing. Nataly Duque Páez",
+      "Universidad Simón Bolívar",
+      "Sede Cúcuta",
+      "UNIDAD",
+      "Ingeniería de Sistemas",
+      "Equipo PEVCI",
+      "Gerente de proyectos del equipo",
+      "CRONOGRAMA PILOTO",
+      "26/08/2026 – 30/11/2026",
+      "4 meses",
+      "3 iteraciones Scrum",
+      "INVERSIÓN PILOTO",
+      "$61.372.500 COP",
+      "Costos estimados totales",
+      "398,42 PFA · 59,03 p-m"
+    ]
+  },
+  {
+    "slide": 2,
+    "title": "Sin titulo",
+    "content": [
+      "AGENDA DE SUSTENTACIÓN — 15 MINUTOS · EQUIPO DE 5",
+      "Orden alineado al Project Charter PEVCI",
+      "1–2  Información general y problema",
+      "2–3  Propósito, objetivos SMART y producto",
+      "3–4  Requerimientos, alcance y cronograma",
+      "4–5  Equipo, presupuesto y estimación",
+      "5–6  Beneficios, riesgos y cierre / demo",
+      "Reparto sugerido: Eduardo · Sara · Kevin · David · Omar"
+    ]
+  },
+  {
+    "slide": 3,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 2.1 — DESCRIPCIÓN GENERAL · PROBLEMA",
+      "La sede Cúcuta no cuenta con una plataforma actualizada de recorridos 360°",
+      "Dependencia presencial y saturación",
+      "• La inducción y orientación a biblioteca, laboratorios y zonas de atención dependen casi por completo del acompañamiento presencial.",
+      "• El modelo se satura al inicio de cada semestre.",
+      "• Limita a quienes aún no pueden desplazarse a la sede.",
+      "• La universidad carece de un activo digital controlado para comunicar su infraestructura.",
+      "Brecha digital e inclusión",
+      "• Un canal web universitario debe incorporar criterios básicos de accesibilidad.",
+      "• Hay que atender también a estudiantes con discapacidad visual o auditiva.",
+      "• PEVCI cierra esa brecha con un producto de software planificado, estimado y ejecutable por fases.",
+      "• Arranque operativo: Biblioteca Anita Consuegra y primer piso."
+    ]
+  },
+  {
+    "slide": 4,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 2.2 — PROPÓSITO DEL PROYECTO",
+      "Diseñar, construir e implantar PEVCI en la sede Cúcuta",
+      "Qué: plataforma de recorridos virtuales 360° con gestión de contenidos, autenticación por roles y controles de accesibilidad.",
+      "Dónde: Biblioteca Anita Consuegra y áreas del primer piso, con ampliación progresiva del catálogo.",
+      "Quién dirige y autoriza: Ing. Nataly Duque Páez, directora y patrocinadora por la Universidad Simón Bolívar.",
+      "Quién ejecuta: equipo PEVCI de Ingeniería de Sistemas.",
+      "Cómo: tres iteraciones Scrum estimadas con puntos de función y COCOMO II.",
+      "Cuándo: fase piloto del 26/08/2026 al 30/11/2026, con continuidad del alcance funcional estimado."
+    ]
+  },
+  {
+    "slide": 5,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 2.3 — OBJETIVOS MEDIBLES (SMART)",
+      "Cinco objetivos de la fase piloto alineados a alcance, tiempo, costo, calidad e impacto",
+      "1. ALCANCE",
+      "Piloto web 360°",
+      "Panoramas reales, navegación por escenas y hotspots, autenticación con tres roles y CMS mínimo para el catálogo inicial.",
+      "2. TIEMPO",
+      "26/08 – 30/11/2026",
+      "Hitos de planificación, construcción iterativa, pruebas y puesta en marcha.",
+      "3. COSTO",
+      "$61.372.500 COP",
+      "Presupuesto de la fase piloto para el equipo de cinco personas en cuatro meses. COCOMO II: 59,03 persona-mes orienta la continuidad.",
+      "4. CALIDAD",
+      "Error < 2 %",
+      "Teclado en lo esencial, contraste usable y evidencia de revisión automatizada de accesibilidad.",
+      "5. IMPACTO",
+      "Canal medible",
+      "Tours publicados, recorridos completados en pruebas y tiempo de carga de escena en red universitaria."
+    ]
+  },
+  {
+    "slide": 6,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 2.4 — DEFINICIÓN DEL PRODUCTO",
+      "Plataforma web responsive de recorridos virtuales 360° del campus",
+      "Capacidad del producto",
+      "• Explorar espacios reales de la sede Cúcuta.",
+      "• Avanzar entre escenas con hotspots.",
+      "• Ajustar preferencias básicas de accesibilidad.",
+      "• Administrar tours, multimedia y metadatos con roles.",
+      "Arquitectura de implementación",
+      "• Frontend: HTML, CSS, JS + Marzipano.",
+      "• Backend: API de autenticación, roles y CMS.",
+      "• Base de datos: MySQL.",
+      "• Operación: GitHub + ambiente autorizado por Sistemas."
+    ]
+  },
+  {
+    "slide": 7,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 2.5 — ENTREGABLES ESPERADOS",
+      "Gestión + producto de la fase piloto",
+      "Entregables de gestión",
+      "• Acta de constitución y línea base.",
+      "• Estimación: 3 iteraciones Scrum + PF + COCOMO II.",
+      "• Matriz de interesados, riesgos y backlog.",
+      "• Informe de cierre y plan de continuidad.",
+      "Entregables de producto",
+      "• Plataforma piloto 360° en ambiente autorizado.",
+      "• Catálogo biblioteca Anita Consuegra y primer piso.",
+      "• Auth + roles Admin / Gestor / Usuario.",
+      "• CMS mínimo, código en GitHub, MySQL e informe de pruebas.",
+      "• Guía breve de uso del recorrido."
+    ]
+  },
+  {
+    "slide": 8,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 2.6 — REQUERIMIENTOS FUNCIONALES (1/2)",
+      "Recorrido, accesibilidad y autenticación del piloto",
+      "Experiencia 360° y accesibilidad",
+      "RF-01 Recorrido virtual 360°",
+      "RF-02 Audio guía sincronizado",
+      "RF-03 Videos en LSC",
+      "RF-04 Navegación táctil en móvil",
+      "RF-05 Subtítulos descriptivos",
+      "RF-06 Lectores NVDA / JAWS",
+      "RF-08 Navegación por teclado",
+      "RF-11 Perfil de accesibilidad",
+      "RF-12 CMS de contenidos",
+      "RF-14 Interfaz responsive",
+      "Acceso, roles y administración",
+      "RF-18 Registro de usuario",
+      "RF-19 Inicio de sesión",
+      "RF-20 Roles Admin / Gestor / Usuario",
+      "RF-22 Cierre de sesión",
+      "RF-23 Gestión de perfil",
+      "RF-25 a RF-29 CRUDs de usuarios, tours, multimedia, áreas y metadatos",
+      "RF-37 Estados borrador / publicado / archivado",
+      "RF-40 API de contenidos",
+      "RF-42 Accesibilidad global por sesión"
+    ]
+  },
+  {
+    "slide": 9,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 2.7 — REQUERIMIENTOS NO FUNCIONALES Y CONTINUIDAD",
+      "Calidad, seguridad e infraestructura; lo demás entra por control de cambios",
+      "RNF de la línea base",
+      "RNF-01 Concurrencia orientada a 500 usuarios",
+      "RNF-02 Errores < 2 %",
+      "RNF-07 WCAG 2.1 AA",
+      "RNF-08 Validación WAVE / AXE",
+      "RNF-16 Software open-source",
+      "RNF-18 MySQL",
+      "RNF-19 Ambiente piloto institucional",
+      "RNF-20 Cifrado de credenciales",
+      "RNF-24 Ley 1581 de 2012",
+      "RNF-26 Carga de escena orientada a ≤ 5 s",
+      "Alcance de continuidad",
+      "Previstos en continuidad del backlog:",
+      "• RF-07 Braille · RF-09 Beacons · RF-10 DAISY",
+      "• RF-15/16 Analítica e incidencias",
+      "• RF-30 a RF-36, RF-38/39/41",
+      "• Ampliación del catálogo y multi-sede",
+      "Entran solo con control de cambios y reestimación."
+    ]
+  },
+  {
+    "slide": 10,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 3 — ALCANCE DEL PROYECTO",
+      "Línea base del piloto vs. continuidad del producto",
+      "Dentro del alcance",
+      "✔ Planificación, construcción, pruebas y puesta en marcha en Cúcuta.",
+      "✔ Panoramas 360° de biblioteca y primer piso.",
+      "✔ Visor web con hotspots y accesibilidad básica.",
+      "✔ Autenticación por roles, CMS mínimo y API.",
+      "✔ Despliegue en ambiente piloto y documentación inicial.",
+      "✔ Estimación formal PF + COCOMO II para priorizar backlog.",
+      "Fuera / continuidad",
+      "✖ Despliegue multi-sede en esta fase.",
+      "✖ Apps nativas en tiendas.",
+      "✖ Remodelación física del campus.",
+      "✖ Beacons, DAISY, Braille y analítica extendida: continuidad.",
+      "✖ Construir de una vez todo el tamaño de 59,03 persona-mes: se proyecta por fases."
+    ]
+  },
+  {
+    "slide": 11,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 4.1 — CRONOGRAMA PRELIMINAR",
+      "Hitos de inicio, planificación y medición",
+      "Conformación del equipo y definición del alcance",
+      "26/08/2026  →  02/09/2026",
+      "Acta de constitución, estimaciones y lanzamiento",
+      "02/09/2026  →  09/09/2026",
+      "Requisitos prioritarios y backlog del piloto",
+      "09/09/2026  →  23/09/2026",
+      "Consolidación PFA, COCOMO y línea base",
+      "23/09/2026  →  30/09/2026"
+    ]
+  },
+  {
+    "slide": 12,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 4.2 — CRONOGRAMA PRELIMINAR",
+      "Diseño, construcción Scrum, pruebas y puesta en marcha",
+      "Análisis de recorridos, arquitectura y diseño",
+      "30/09/2026  →  14/10/2026",
+      "Construcción del piloto en 3 iteraciones Scrum",
+      "14/10/2026  →  18/11/2026",
+      "Pruebas, estabilización y preparación de puesta en marcha",
+      "18/11/2026  →  27/11/2026",
+      "Puesta en marcha, cierre de fase y plan de continuidad",
+      "27/11/2026  →  30/11/2026"
+    ]
+  },
+  {
+    "slide": 13,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 5.1 — RECURSOS · EQUIPO DEL PROYECTO",
+      "Dirección / patrocinio institucional y roles del equipo PEVCI",
+      "Directora y patrocinadora: Ing. Nataly Duque Páez — Universidad Simón Bolívar",
+      "Autoriza y dirige la línea base de alcance, tiempo y presupuesto · apoyo Bienestar / Sistemas / Inclusión",
+      "Eduardo Soto",
+      "Desarrollo frontend 360°",
+      "Arquitectura del visor, panoramas, hotspots e integración frontend.",
+      "David",
+      "Logística y DevSecOps",
+      "Recursos, infraestructura, base de datos y despliegue.",
+      "Sara",
+      "Recursos y cumplimiento",
+      "Presupuesto, puntos de función y COCOMO II.",
+      "Omar",
+      "Calidad, testing y riesgos",
+      "Pruebas, usabilidad e interesados; matriz de riesgos.",
+      "Kevin",
+      "Calidad y cronograma",
+      "QA paralelo, auditoría de avance y entregables."
+    ]
+  },
+  {
+    "slide": 14,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 5.2 — RECURSOS DE APOYO Y NECESIDADES",
+      "Soporte institucional y condiciones especiales del piloto",
+      "Recursos de apoyo",
+      "• Dirección, patrocinio y aceptación de línea base: Ing. Nataly Duque Páez.",
+      "• Bienestar Universitario y Área de Sistemas: permisos de captura, red y ambiente.",
+      "• Oficina de Inclusión: validación de usabilidad.",
+      "Necesidades especiales",
+      "• Equipos de captura 360°.",
+      "• Estaciones de desarrollo del equipo.",
+      "• Repositorio GitHub y hosting del piloto.",
+      "• Beacons Bluetooth solo en continuidad, si se autorizan."
+    ]
+  },
+  {
+    "slide": 15,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 6.1 — COSTOS ESTIMADOS DE LA FASE PILOTO",
+      "Según información general y objetivo SMART de costo: $61.372.500 COP",
+      "Costo estimado total de la fase piloto",
+      "• $61.372.500 COP",
+      "Corresponde a la capacidad del equipo de cinco personas durante cuatro meses.",
+      "Estimación funcional del producto:",
+      "• 398,42 PFA",
+      "• 59,03 persona-mes por COCOMO II",
+      "Esa estimación orienta la continuidad y la priorización del backlog.",
+      "Gobernanza de costo",
+      "La cifra de $61.372.500 COP es la de costos estimados totales y del objetivo SMART.",
+      "COCOMO II proyecta el esfuerzo del producto completo para fases siguientes."
+    ]
+  },
+  {
+    "slide": 16,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 6.2 — ESTIMACIÓN COCOMO II Y CONTINUIDAD",
+      "398,42 PFA dimensionan el producto completo y orientan las siguientes entregas",
+      "Tres iteraciones Scrum",
+      "Iteración 1: 123,42 PFA — auth, seguridad y base",
+      "Iteración 2: 133,40 PFA — tours 360° y CMS",
+      "Iteración 3: 141,60 PFA — operación y cierre técnico",
+      "Suma: 398,42 PFA",
+      "Resultado consolidado",
+      "Esfuerzo COCOMO II: 59,03 persona-mes",
+      "Duración teórica del modelo: ≈ 11,77 meses",
+      "Equipo teórico: ≈ 5 personas",
+      "Proyección valorizada: $165.284.000 COP",
+      "Uso: planificar continuidad tras el piloto"
+    ]
+  },
+  {
+    "slide": 17,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 7 — BENEFICIOS Y CLIENTES",
+      "Canal digital de orientación con accesibilidad e impacto institucional",
+      "Interesados y clientes",
+      "Propietario del proceso: Bienestar Universitario + Inclusión / Sistemas.",
+      "Cliente final: estudiantes y aspirantes de Cúcuta, con énfasis en discapacidad visual y auditiva.",
+      "Interesados: patrocinadora, equipo PEVCI, Administración, Sistemas, Inclusión y usuarios.",
+      "Beneficios esperados",
+      "• Mayor autonomía en la orientación del campus.",
+      "• Cumplimiento orientado a WCAG 2.1 AA.",
+      "• Activo digital versionable bajo control de roles.",
+      "• Complemento de la inducción presencial.",
+      "• Base cuantitativa 398,42 PFA / 59,03 PM para crecer con rigor."
+    ]
+  },
+  {
+    "slide": 18,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 8.1 — RIESGOS IDENTIFICADOS",
+      "Riesgos técnicos, de red, de alcance y de adopción",
+      "Riesgos de producto y adopción",
+      "• Resistencia al cambio del personal administrativo.",
+      "• Fallas de sincronización audio–escena / LSC.",
+      "• Dependencia de la red universitaria.",
+      "• Sobrecarga del recurso multimedia.",
+      "• Retraso en evidencia WCAG 2.1 AA.",
+      "Riesgos de ejecución",
+      "• Retrasos en permisos de captura o ambiente.",
+      "• Demora en contenidos multimedia de apoyo.",
+      "• Variaciones de alcance en construcción.",
+      "• Inestabilidad del visor si no se valida con panorámicas finales."
+    ]
+  },
+  {
+    "slide": 19,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 8.2 — RESTRICCIONES Y SUPUESTOS",
+      "Límites fijos de la fase piloto y condiciones asumidas",
+      "Restricciones",
+      "• Plazo: 26/08/2026 – 30/11/2026.",
+      "• Equipo de cinco personas.",
+      "• Presupuesto piloto: $61.372.500 COP.",
+      "• Preferencia por software libre.",
+      "• Accesibilidad básica obligatoria en el piloto.",
+      "• Beacons solo con autorización de la patrocinadora.",
+      "Supuestos",
+      "• Permisos de captura y ambiente facilitados por la universidad.",
+      "• Dedicación del equipo sostenida en los 4 meses.",
+      "• Panorámicas de biblioteca y primer piso permiten abrir el piloto.",
+      "• 398,42 PFA / 59,03 PM guían la continuidad del producto."
+    ]
+  },
+  {
+    "slide": 20,
+    "title": "Sin titulo",
+    "content": [
+      "EVIDENCIA FUNCIONAL — DEMO DEL PRODUCTO",
+      "El modelo de negocio se entiende viendo el recorrido 360°",
+      "1. Abrir una escena real de la sede / biblioteca.",
+      "2. Navegar hotspots y cambio de escena.",
+      "3. Mostrar controles de accesibilidad disponibles.",
+      "4. Señalar qué entra al próximo sprint y qué queda en continuidad."
+    ]
+  },
+  {
+    "slide": 21,
+    "title": "Sin titulo",
+    "content": [
+      "SECCIÓN 9 — CIERRE Y PRÓXIMOS PASOS",
+      "Línea base lista para ejecutar la fase piloto",
+      "• Charter, estimación y plan de la fase piloto presentados.",
+      "• Siguiente paso: construcción iterativa del piloto biblioteca / primer piso.",
+      "• Indicadores: tours publicados, avance por iteración y calidad del recorrido.",
+      "• Cierre de fase piloto: 30/11/2026, con plan de continuidad.",
+      "Directora y patrocinadora: Ing. Nataly Duque Páez  ·  Equipo PEVCI",
+      "¿Preguntas?"
+    ]
+  }
+]

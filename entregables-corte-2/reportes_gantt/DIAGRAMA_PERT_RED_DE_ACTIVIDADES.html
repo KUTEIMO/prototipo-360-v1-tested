@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Diagrama PERT y Red de Precedencias — Orbe360</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: 'dark'});</script>
+<style>
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0F172A; color: #E2E8F0; padding: 30px; margin: 0; }
+h1 { color: #38BDF8; font-size: 26px; border-bottom: 2px solid #38BDF8; padding-bottom: 10px; }
+.card { background: #1E293B; border-radius: 8px; padding: 20px; margin-bottom: 25px; border: 1px solid #334155; }
+.mermaid { background: #182234; padding: 20px; border-radius: 8px; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; }
+th { background: #0F172A; color: #94A3B8; text-align: left; padding: 10px; border: 1px solid #334155; }
+td { padding: 9px; border: 1px solid #334155; }
+tr:nth-child(even) { background: #1E293B; }
+tr:nth-child(odd) { background: #182234; }
+.critica { color: #EF4444; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>🕸️ Diagrama PERT y Red de Precedencias — Orbe360 (GanttProject)</h1>
+<p><strong>Ruta Crítica Identificada:</strong> Inicio (3d) → Planificación (5d) → Análisis (5d) → Diseño (5d) → Desarrollo Iteración 1 & 2 (43d) → Pruebas (5d) → Implementación (6d).</p>
+
+<div class="card">
+    <h2>Diagrama de Red por Fases Principales</h2>
+    <div class="mermaid">
+    graph LR
+        F1["1. Fase de Inicio<br/>(3 días | 100%)"] --> F2["2. Fase de Planificación<br/>(5 días | 100%)"]
+        F2 --> F3["3. Fase de Análisis<br/>(5 días | 100%)"]
+        F3 --> F4["4. Fase de Diseño<br/>(5 días | 100%)"]
+        F4 --> F5_1["5.1 Iteración 1: Auth y Seguridad<br/>(16 días | 100%)"]
+        F5_1 --> F5_2["5.2 Iteración 2: Motor 360 y Accesibilidad<br/>(27 días | 75%)"]
+        F5_2 --> F5_3["5.3 Iteración 3: CMS y Backoffice<br/>(11 días | 0%)"]
+        F5_2 --> F6["6. Fase de Pruebas<br/>(5 días | 0%)"]
+        F5_3 --> F6
+        F6 --> F7["7. Fase de Implementación<br/>(6 días | 0%)"]
+
+        classDef done fill:#065F46,stroke:#10B981,color:#ECFDF5;
+        classDef current fill:#1E40AF,stroke:#3B82F6,color:#EFF6FF;
+        classDef pending fill:#374151,stroke:#6B7280,color:#D1D5DB;
+
+        class F1,F2,F3,F4,F5_1 done;
+        class F5_2 current;
+        class F5_3,F6,F7 pending;
+    </div>
+</div>
+
+<div class="card">
+    <h2>Tabla de Dependencias y Antecesores de la Fase de Desarrollo (Software)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 70px;">ID Tarea</th>
+                <th>Nombre de la Actividad</th>
+                <th style="width: 80px;">Duración</th>
+                <th style="width: 150px;">Antecesores (Predecesoras)</th>
+                <th style="width: 150px;">Responsable Asignado</th>
+                <th style="width: 90px;">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><code>#1</code></td>
+                <td>1. Fase de Inicio</td>
+                <td>3 d</td>
+                <td>#11 (2. Fase de Planificación...), #12 (2.1 Gestión del Proyecto...), #15 (2.2 Gestión de Riesgos...), #16 (2.2.1 Identificación de R...), #17 (2.2.2 Análisis de Riesgos...), #43 (2.3 Planificación de Cali...), #44 (2.3.1 Definición de crite...), #45 (2.3.2 Plan de pruebas...), #50 (2.2.3 Plan de Mitigación...), #51 (2.3.3 Plan de accesibilid...)</td>
+                <td>Equipo</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#2</code></td>
+                <td>1.1 Preparación Estratégica</td>
+                <td>1 d</td>
+                <td>#7 (1.2 Definición del Proyec...)</td>
+                <td>Equipo</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#3</code></td>
+                <td>1.1.1 Revisión de políticas institucionales</td>
+                <td>1 d</td>
+                <td>#8 (1.2.1 Identificación de l...), #9 (1.2.2 Definición de objet...), #10 (1.2.3 Definición del alca...), #148 (1.2.4 Aprobación del proy...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#4</code></td>
+                <td>1.1.2 Identificación de stakeholders</td>
+                <td>1 d</td>
+                <td>#8 (1.2.1 Identificación de l...), #9 (1.2.2 Definición de objet...), #10 (1.2.3 Definición del alca...), #148 (1.2.4 Aprobación del proy...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#5</code></td>
+                <td>1.1.3 Entrevistas con Oficina de Inclusión</td>
+                <td>1 d</td>
+                <td>#8 (1.2.1 Identificación de l...), #9 (1.2.2 Definición de objet...), #10 (1.2.3 Definición del alca...), #148 (1.2.4 Aprobación del proy...)</td>
+                <td>SARAIC NOEMI LEON HERNANDEZ</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#6</code></td>
+                <td>1.1.4 Entrevistas con Departamento TI</td>
+                <td>1 d</td>
+                <td>#8 (1.2.1 Identificación de l...), #9 (1.2.2 Definición de objet...), #10 (1.2.3 Definición del alca...), #148 (1.2.4 Aprobación del proy...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#8</code></td>
+                <td>1.2.1 Identificación de la problemática</td>
+                <td>2 d</td>
+                <td>#13 (2.1.1 Elaboración EDT...), #14 (2.1.2 Elaboración cronogr...), #49 (2.1.3 Estimación de recur...), #149 (2.1.4 Estimación de costo...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#9</code></td>
+                <td>1.2.2 Definición de objetivos</td>
+                <td>2 d</td>
+                <td>#13 (2.1.1 Elaboración EDT...), #14 (2.1.2 Elaboración cronogr...), #49 (2.1.3 Estimación de recur...), #149 (2.1.4 Estimación de costo...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#10</code></td>
+                <td>1.2.3 Definición del alcance</td>
+                <td>2 d</td>
+                <td>#13 (2.1.1 Elaboración EDT...), #14 (2.1.2 Elaboración cronogr...), #149 (2.1.4 Estimación de costo...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#148</code></td>
+                <td>1.2.4 Aprobación del proyecto</td>
+                <td>2 d</td>
+                <td>#13 (2.1.1 Elaboración EDT...), #14 (2.1.2 Elaboración cronogr...), #49 (2.1.3 Estimación de recur...), #149 (2.1.4 Estimación de costo...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#11</code></td>
+                <td>2. Fase de Planificación</td>
+                <td>5 d</td>
+                <td>#18 (3. Fase de Análisis...), #19 (3.1 Levantamiento de Requ...), #20 (3.1.1 Requisitos Funciona...), #21 (3.1.2 Requisitos No Funci...), #52 (3.2 Estudio de Accesibili...), #53 (3.2.1 Análisis discapacid...), #54 (3.2.2 Análisis discapacid...), #55 (3.2.3 Estándar WCAG 2.1 A...), #56 (3.3 Estudio del Campus...), #57 (3.3.1 Mapeo de zonas...), #58 (3.3.2 Identificación de p...), #59 (3.3.3 Identificación de p...)</td>
+                <td>Equipo</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#18</code></td>
+                <td>3. Fase de Análisis</td>
+                <td>5 d</td>
+                <td>#22 (4. Fase de Diseño...), #23 (4.1 Diseño Arquitectónico...), #24 (4.1.1 Arquitectura del Si...)</td>
+                <td>Equipo</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#22</code></td>
+                <td>4. Fase de Diseño</td>
+                <td>5 d</td>
+                <td>#26 (5. Fase de Desarrollo...), #27 (5.1 Iteración 1...), #28 (5.1.1 RF-18 Registro de u...)</td>
+                <td>Equipo</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#23</code></td>
+                <td>4.1 Diseño Arquitectónico</td>
+                <td>2 d</td>
+                <td>#60 (4.2 Diseño de Datos...), #61 (4.2.1 Modelo de base de d...)</td>
+                <td>Equipo</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#24</code></td>
+                <td>4.1.1 Arquitectura del Sistema</td>
+                <td>1 d</td>
+                <td>#25 (4.1.2 Arquitectura de acc...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#60</code></td>
+                <td>4.2 Diseño de Datos</td>
+                <td>2 d</td>
+                <td>#63 (4.3 Diseño de Interfaces...), #64 (4.3.1 Diseño de navegació...), #65 (4.3.2 Diseño responsive...), #106 (4.3.3 Diseño accesible...)</td>
+                <td>Equipo</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#61</code></td>
+                <td>4.2.1 Modelo de base de datos</td>
+                <td>1 d</td>
+                <td>#62 (4.2.2 Diseño de contenido...)</td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#26</code></td>
+                <td>5. Fase de Desarrollo</td>
+                <td>54 d</td>
+                <td>#30 (6. Fase de Pruebas...), #31 (6.1 Pruebas de Iteración ...), #32 (6.1.1 Pruebas de autentic...), #33 (6.1.2 Pruebas de segurida...), #82 (6.2 Pruebas de Iteración ...), #83 (6.2.1 Pruebas de recorrid...), #84 (6.2.2 Pruebas de accesibi...), #85 (6.3 Pruebas de Iteración ...), #86 (6.3.1 Pruebas administrat...), #87 (6.3.2 Pruebas de integrac...)</td>
+                <td>Equipo</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#27</code></td>
+                <td>5.1 Iteración 1</td>
+                <td>16 d</td>
+                <td>#70 (5.2 Iteración 2...), #71 (5.2.1 RF-01 Recorrido vir...)</td>
+                <td>Equipo</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#28</code></td>
+                <td>5.1.1 RF-18 Registro de usuario</td>
+                <td>1 d</td>
+                <td>#29 (5.1.2 RF-19 Inicio de ses...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#29</code></td>
+                <td>5.1.2 RF-19 Inicio de sesión (login)</td>
+                <td>1 d</td>
+                <td>#74 (5.1.3 RF-20 Roles y permi...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#74</code></td>
+                <td>5.1.3 RF-20 Roles y permisos</td>
+                <td>1 d</td>
+                <td>#73 (5.1.4 RF-21 Recuperación ...), #107 (5.1.5 RF-22 Cierre de ses...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#73</code></td>
+                <td>5.1.4 RF-21 Recuperación de contraseña</td>
+                <td>1 d</td>
+                <td>#108 (5.1.6 RF-23 Gestión de pe...), #109 (5.1.7 RF-24 Sesión persis...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#107</code></td>
+                <td>5.1.5 RF-22 Cierre de sesión</td>
+                <td>1 d</td>
+                <td>#108 (5.1.6 RF-23 Gestión de pe...), #109 (5.1.7 RF-24 Sesión persis...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#108</code></td>
+                <td>5.1.6 RF-23 Gestión de perfil</td>
+                <td>2 d</td>
+                <td>#110 (5.1.8 RF-25 CRUD de usuar...), #111 (5.1.9 RF-34 CRUD de confi...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#109</code></td>
+                <td>5.1.7 RF-24 Sesión persistente</td>
+                <td>1 d</td>
+                <td>#110 (5.1.8 RF-25 CRUD de usuar...), #111 (5.1.9 RF-34 CRUD de confi...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#110</code></td>
+                <td>5.1.8 RF-25 CRUD de usuarios</td>
+                <td>2 d</td>
+                <td>#112 (5.1.10 RF-37 Estados de p...), #113 (5.1.11 RF-41 Gestión de s...), #114 (5.1.12 RF-42 Accesibilida...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#111</code></td>
+                <td>5.1.9 RF-34 CRUD de configuración</td>
+                <td>2 d</td>
+                <td>#112 (5.1.10 RF-37 Estados de p...), #113 (5.1.11 RF-41 Gestión de s...), #114 (5.1.12 RF-42 Accesibilida...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#112</code></td>
+                <td>5.1.10 RF-37 Estados de publicación</td>
+                <td>2 d</td>
+                <td>#134 (5.1.13 RNF-11 Seguridad d...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#113</code></td>
+                <td>5.1.11 RF-41 Gestión de sesiones activas</td>
+                <td>2 d</td>
+                <td>#134 (5.1.13 RNF-11 Seguridad d...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#114</code></td>
+                <td>5.1.12 RF-42 Accesibilidad global por sesión</td>
+                <td>2 d</td>
+                <td>#134 (5.1.13 RNF-11 Seguridad d...)</td>
+                <td>SARAIC NOEMI LEON HERNANDEZ</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#134</code></td>
+                <td>5.1.13 RNF-11 Seguridad de la plataforma</td>
+                <td>3 d</td>
+                <td>#135 (5.1.14 RNF-12 Protección ...), #136 (5.1.15 RNF-13 Extensibili...), #137 (5.1.16 RNF-15 Control de ...), #138 (5.1.17 RNF-16 Software op...)</td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#135</code></td>
+                <td>5.1.14 RNF-12 Protección de datos</td>
+                <td>1 d</td>
+                <td>#139 (5.1.18 RNF-17 Inversión e...)</td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#136</code></td>
+                <td>5.1.15 RNF-13 Extensibilidad</td>
+                <td>1 d</td>
+                <td>#139 (5.1.18 RNF-17 Inversión e...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#137</code></td>
+                <td>5.1.16 RNF-15 Control de versiones</td>
+                <td>1 d</td>
+                <td>#139 (5.1.18 RNF-17 Inversión e...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#138</code></td>
+                <td>5.1.17 RNF-16 Software open-source</td>
+                <td>1 d</td>
+                <td>#139 (5.1.18 RNF-17 Inversión e...)</td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#139</code></td>
+                <td>5.1.18 RNF-17 Inversión en hardware</td>
+                <td>2 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#70</code></td>
+                <td>5.2 Iteración 2</td>
+                <td>27 d</td>
+                <td>#67 (5.3 Iteración 3...), #68 (5.3.1 RF-10 Exportación d...), #69 (5.3.2 RF-13 Gestión de us...), #79 (5.3.5 RF-17 Materiales de...), #80 (5.3.4 RF-16 Registro de i...), #81 (5.3.3 RF-15 Registro de u...), #129 (5.3.6 RF-31 CRUD de incid...)</td>
+                <td>Equipo</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#71</code></td>
+                <td>5.2.1 RF-01 Recorrido virtual 360°</td>
+                <td>7 d</td>
+                <td>#72 (5.2.2 RF-02 Modo accesibi...), #76 (5.2.5 RF-05 Subtítulos de...), #77 (5.2.4 RF-04 Modo accesibi...), #78 (5.2.3 RF-03 Modo accesibi...), #115 (5.2.6 RF-06 Compatibilida...)</td>
+                <td>EDUARDO JOSE SOTO HERRERA</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#72</code></td>
+                <td>5.2.2 RF-02 Modo accesibilidad por audio</td>
+                <td>4 d</td>
+                <td>#116 (5.2.7 RF-07 Interoperabil...), #117 (5.2.8 RF-08 Navegación po...), #118 (5.2.9 RF-09 Geolocalizaci...), #119 (5.2.10 RF-11 Perfil de ac...), #120 (5.2.11 RF-12 Gestión de c...)</td>
+                <td>SARAIC NOEMI LEON HERNANDEZ</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#78</code></td>
+                <td>5.2.3 RF-03 Modo accesibilidad LSC</td>
+                <td>4 d</td>
+                <td>#116 (5.2.7 RF-07 Interoperabil...), #117 (5.2.8 RF-08 Navegación po...), #118 (5.2.9 RF-09 Geolocalizaci...), #119 (5.2.10 RF-11 Perfil de ac...), #120 (5.2.11 RF-12 Gestión de c...)</td>
+                <td>SARAIC NOEMI LEON HERNANDEZ</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#77</code></td>
+                <td>5.2.4 RF-04 Modo accesibilidad táctil</td>
+                <td>5 d</td>
+                <td>#116 (5.2.7 RF-07 Interoperabil...), #117 (5.2.8 RF-08 Navegación po...), #118 (5.2.9 RF-09 Geolocalizaci...), #119 (5.2.10 RF-11 Perfil de ac...), #120 (5.2.11 RF-12 Gestión de c...)</td>
+                <td>SARAIC NOEMI LEON HERNANDEZ</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#76</code></td>
+                <td>5.2.5 RF-05 Subtítulos descriptivos</td>
+                <td>5 d</td>
+                <td>#116 (5.2.7 RF-07 Interoperabil...), #117 (5.2.8 RF-08 Navegación po...), #118 (5.2.9 RF-09 Geolocalizaci...), #119 (5.2.10 RF-11 Perfil de ac...), #120 (5.2.11 RF-12 Gestión de c...)</td>
+                <td>SARAIC NOEMI LEON HERNANDEZ</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#115</code></td>
+                <td>5.2.6 RF-06 Compatibilidad lectores de pantalla</td>
+                <td>4 d</td>
+                <td>#116 (5.2.7 RF-07 Interoperabil...), #117 (5.2.8 RF-08 Navegación po...), #118 (5.2.9 RF-09 Geolocalizaci...), #119 (5.2.10 RF-11 Perfil de ac...), #120 (5.2.11 RF-12 Gestión de c...)</td>
+                <td>SARAIC NOEMI LEON HERNANDEZ</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#116</code></td>
+                <td>5.2.7 RF-07 Interoperabilidad Braille</td>
+                <td>5 d</td>
+                <td>#121 (5.2.12 RF-14 Interfaz res...), #122 (5.2.13 RF-26 CRUD de tour...), #123 (5.2.14 RF-27 CRUD conteni...), #140 (5.2.15 RF-28 CRUD áreas/e...), #141 (5.2.16 RF-29 CRUD metadat...), #142 (5.2.17 RF-30 CRUD de beac...)</td>
+                <td>SARAIC NOEMI LEON HERNANDEZ</td>
+                <td>🟡 80%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#117</code></td>
+                <td>5.2.8 RF-08 Navegación por teclado</td>
+                <td>5 d</td>
+                <td>#121 (5.2.12 RF-14 Interfaz res...), #122 (5.2.13 RF-26 CRUD de tour...), #123 (5.2.14 RF-27 CRUD conteni...), #140 (5.2.15 RF-28 CRUD áreas/e...), #141 (5.2.16 RF-29 CRUD metadat...), #142 (5.2.17 RF-30 CRUD de beac...)</td>
+                <td>SARAIC NOEMI LEON HERNANDEZ</td>
+                <td>🟡 80%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#118</code></td>
+                <td>5.2.9 RF-09 Geolocalización indoor</td>
+                <td>6 d</td>
+                <td>#121 (5.2.12 RF-14 Interfaz res...), #122 (5.2.13 RF-26 CRUD de tour...), #123 (5.2.14 RF-27 CRUD conteni...), #140 (5.2.15 RF-28 CRUD áreas/e...), #141 (5.2.16 RF-29 CRUD metadat...), #142 (5.2.17 RF-30 CRUD de beac...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>🟡 40%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#119</code></td>
+                <td>5.2.10 RF-11 Perfil de accesibilidad configurable</td>
+                <td>4 d</td>
+                <td>#121 (5.2.12 RF-14 Interfaz res...), #122 (5.2.13 RF-26 CRUD de tour...), #123 (5.2.14 RF-27 CRUD conteni...), #140 (5.2.15 RF-28 CRUD áreas/e...), #141 (5.2.16 RF-29 CRUD metadat...), #142 (5.2.17 RF-30 CRUD de beac...)</td>
+                <td>SARAIC NOEMI LEON HERNANDEZ</td>
+                <td>✅ 100%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#120</code></td>
+                <td>5.2.11 RF-12 Gestión de contenidos (CMS)</td>
+                <td>6 d</td>
+                <td>#121 (5.2.12 RF-14 Interfaz res...), #122 (5.2.13 RF-26 CRUD de tour...), #123 (5.2.14 RF-27 CRUD conteni...), #140 (5.2.15 RF-28 CRUD áreas/e...), #141 (5.2.16 RF-29 CRUD metadat...), #142 (5.2.17 RF-30 CRUD de beac...), #143 (5.2.18 RF-35 Búsqueda y f...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>🟡 40%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#121</code></td>
+                <td>5.2.12 RF-14 Interfaz responsive</td>
+                <td>8 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>EDUARDO JOSE SOTO HERRERA</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#122</code></td>
+                <td>5.2.13 RF-26 CRUD de tours 360°</td>
+                <td>8 d</td>
+                <td>#143 (5.2.18 RF-35 Búsqueda y f...)</td>
+                <td>EDUARDO JOSE SOTO HERRERA</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#123</code></td>
+                <td>5.2.14 RF-27 CRUD contenidos multimedia</td>
+                <td>8 d</td>
+                <td>#143 (5.2.18 RF-35 Búsqueda y f...)</td>
+                <td>EDUARDO JOSE SOTO HERRERA</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#140</code></td>
+                <td>5.2.15 RF-28 CRUD áreas/espacios</td>
+                <td>8 d</td>
+                <td>#143 (5.2.18 RF-35 Búsqueda y f...)</td>
+                <td>EDUARDO JOSE SOTO HERRERA</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#141</code></td>
+                <td>5.2.16 RF-29 CRUD metadatos de escena</td>
+                <td>8 d</td>
+                <td>#143 (5.2.18 RF-35 Búsqueda y f...)</td>
+                <td>EDUARDO JOSE SOTO HERRERA</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#142</code></td>
+                <td>5.2.17 RF-30 CRUD de beacons / zonas</td>
+                <td>8 d</td>
+                <td>#143 (5.2.18 RF-35 Búsqueda y f...)</td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#143</code></td>
+                <td>5.2.18 RF-35 Búsqueda y filtros</td>
+                <td>1 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>EDUARDO JOSE SOTO HERRERA</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#68</code></td>
+                <td>5.3.1 RF-10 Exportación de rutas en DAISY</td>
+                <td>4 d</td>
+                <td>#124 (5.3.11 RF-39 Respaldo y r...), #125 (5.3.12 RF-40 API de gesti...), #126 (5.3.13 RNF-04 Alta dispon...), #127 (5.3.14 RNF-05 SLA de sopo...), #130 (5.3.7 RF-32 CRUD material...), #131 (5.3.8 RF-33 CRUD de anunc...), #132 (5.3.9 RF-36 Panel de admi...), #133 (5.3.10 RF-38 Auditoría y ...), #144 (5.3.15 RNF-06 Mantenimien...), #145 (5.3.16 RNF-07 Cumplimient...), #146 (5.3.17 RNF-08 Validación ...), #147 (5.3.18 RNF-09 Satisfacció...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#69</code></td>
+                <td>5.3.2 RF-13 Gestión de usuarios</td>
+                <td>5 d</td>
+                <td>#124 (5.3.11 RF-39 Respaldo y r...), #125 (5.3.12 RF-40 API de gesti...), #126 (5.3.13 RNF-04 Alta dispon...), #127 (5.3.14 RNF-05 SLA de sopo...), #130 (5.3.7 RF-32 CRUD material...), #131 (5.3.8 RF-33 CRUD de anunc...), #132 (5.3.9 RF-36 Panel de admi...), #133 (5.3.10 RF-38 Auditoría y ...), #144 (5.3.15 RNF-06 Mantenimien...), #145 (5.3.16 RNF-07 Cumplimient...), #146 (5.3.17 RNF-08 Validación ...), #147 (5.3.18 RNF-09 Satisfacció...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#81</code></td>
+                <td>5.3.3 RF-15 Registro de uso</td>
+                <td>7 d</td>
+                <td>#124 (5.3.11 RF-39 Respaldo y r...), #125 (5.3.12 RF-40 API de gesti...), #127 (5.3.14 RNF-05 SLA de sopo...), #130 (5.3.7 RF-32 CRUD material...), #131 (5.3.8 RF-33 CRUD de anunc...), #132 (5.3.9 RF-36 Panel de admi...), #133 (5.3.10 RF-38 Auditoría y ...), #144 (5.3.15 RNF-06 Mantenimien...), #145 (5.3.16 RNF-07 Cumplimient...), #146 (5.3.17 RNF-08 Validación ...), #147 (5.3.18 RNF-09 Satisfacció...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#80</code></td>
+                <td>5.3.4 RF-16 Registro de incidencias</td>
+                <td>5 d</td>
+                <td>#124 (5.3.11 RF-39 Respaldo y r...), #125 (5.3.12 RF-40 API de gesti...), #126 (5.3.13 RNF-04 Alta dispon...), #127 (5.3.14 RNF-05 SLA de sopo...), #130 (5.3.7 RF-32 CRUD material...), #131 (5.3.8 RF-33 CRUD de anunc...), #132 (5.3.9 RF-36 Panel de admi...), #133 (5.3.10 RF-38 Auditoría y ...), #144 (5.3.15 RNF-06 Mantenimien...), #145 (5.3.16 RNF-07 Cumplimient...), #146 (5.3.17 RNF-08 Validación ...), #147 (5.3.18 RNF-09 Satisfacció...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#79</code></td>
+                <td>5.3.5 RF-17 Materiales de capacitación</td>
+                <td>7 d</td>
+                <td>#124 (5.3.11 RF-39 Respaldo y r...), #125 (5.3.12 RF-40 API de gesti...), #126 (5.3.13 RNF-04 Alta dispon...), #127 (5.3.14 RNF-05 SLA de sopo...), #130 (5.3.7 RF-32 CRUD material...), #131 (5.3.8 RF-33 CRUD de anunc...), #132 (5.3.9 RF-36 Panel de admi...), #133 (5.3.10 RF-38 Auditoría y ...), #145 (5.3.16 RNF-07 Cumplimient...), #146 (5.3.17 RNF-08 Validación ...)</td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#129</code></td>
+                <td>5.3.6 RF-31 CRUD de incidencias</td>
+                <td>8 d</td>
+                <td>#124 (5.3.11 RF-39 Respaldo y r...), #125 (5.3.12 RF-40 API de gesti...), #126 (5.3.13 RNF-04 Alta dispon...), #127 (5.3.14 RNF-05 SLA de sopo...), #130 (5.3.7 RF-32 CRUD material...), #131 (5.3.8 RF-33 CRUD de anunc...), #132 (5.3.9 RF-36 Panel de admi...), #133 (5.3.10 RF-38 Auditoría y ...), #144 (5.3.15 RNF-06 Mantenimien...), #145 (5.3.16 RNF-07 Cumplimient...), #146 (5.3.17 RNF-08 Validación ...), #147 (5.3.18 RNF-09 Satisfacció...)</td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#130</code></td>
+                <td>5.3.7 RF-32 CRUD materiales de capacitación</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#131</code></td>
+                <td>5.3.8 RF-33 CRUD de anuncios</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#132</code></td>
+                <td>5.3.9 RF-36 Panel de administración</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>JESUS OMAR AVENDAÑO AVENDAÑO</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#133</code></td>
+                <td>5.3.10 RF-38 Auditoría y registro de actividades</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#124</code></td>
+                <td>5.3.11 RF-39 Respaldo y restauración</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#125</code></td>
+                <td>5.3.12 RF-40 API de gestión de contenidos</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#126</code></td>
+                <td>5.3.13 RNF-04 Alta disponibilidad</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#127</code></td>
+                <td>5.3.14 RNF-05 SLA de soporte</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#144</code></td>
+                <td>5.3.15 RNF-06 Mantenimiento evolutivo</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#145</code></td>
+                <td>5.3.16 RNF-07 Cumplimiento WCAG 2.1 AA</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>SARAIC NOEMI LEON HERNANDEZ</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#146</code></td>
+                <td>5.3.17 RNF-08 Validación automatizada</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>SEBASTIAN DAVID OMAÑA VILLAMIZAR</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#147</code></td>
+                <td>5.3.18 RNF-09 Satisfacción del usuario</td>
+                <td>3 d</td>
+                <td><em>Inicio de fase</em></td>
+                <td>KEVIN EDUARDO GARCIA MORENO</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#30</code></td>
+                <td>6. Fase de Pruebas</td>
+                <td>5 d</td>
+                <td>#34 (7. Fase de Implementación...), #36 (7.1.1 Configuración del S...), #88 (7.1.2 Publicación del Sis...)</td>
+                <td>Equipo</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+            <tr>
+                <td><code>#35</code></td>
+                <td>7.1 Despliegue</td>
+                <td>3 d</td>
+                <td>#89 (7.2 Capacitación...), #90 (7.2.1 Capacitación Admini...), #91 (7.2.2 Capacitación Usuari...)</td>
+                <td>Equipo</td>
+                <td>⚪ 0%</td>
+            </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

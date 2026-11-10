@@ -1,0 +1,501 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project name="Orbe360 (PEVCI) - Recorridos Virtuales 360 Inclusivos" company="Universidad Simn Bolvar - Sede Ccuta" webLink="https://orbe-experience360.atlassian.net" view-date="2026-11-04" view-index="0" gantt-divider-location="420" resource-divider-location="300" version="3.3.3322" locale="es_ES">
+    <description>Plataforma web accesible de recorridos virtuales 360 del campus universitario para personas en situacin de discapacidad visual, auditiva y motriz. Gestin de Proyectos 2026-2. Docente: Ing. Nataly Duque Pez. Encargado: Eduardo Jos Soto Herrera.</description>
+    <view zooming-state="default:3" id="gantt-chart">
+        <field id="tpd3" name="Nombre" width="298" order="0" />
+        <field id="tpd4" name="Fecha de inicio" width="149" order="1" />
+        <field id="tpd5" name="Fecha de fin" width="149" order="2" />
+        <field id="tpd15" name="Notas" width="20" order="3" />
+        <option id="filter.completedTasks" value="false" />
+        <option id="filter.dueTodayTasks" value="false" />
+        <option id="filter.overdueTasks" value="false" />
+        <option id="filter.inProgressTodayTasks" value="false" />
+        <option id="color.recent">#009933 #009900</option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nombre" width="209" order="0" />
+        <field id="1" name="Función" width="85" order="1" />
+    </view>
+    
+    <calendars>
+        <day-types>
+            <day-type id="0" />
+            <day-type id="1" />
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" />
+            <only-show-weekends value="false" />
+            <overriden-day-types />
+            <days />
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon" />
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon" />
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon" />
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text" />
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date" />
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date" />
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int" />
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int" />
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text" />
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text" />
+        </taskproperties>
+        <task id="1" uid="bc65448344584b03ad08a5c40f5017f4" name="1. Fase de Inicio" color="#000000" meeting="false" start="2026-08-03" duration="3" complete="100" expand="false">
+            <depend id="11" type="2" difference="0" hardness="Strong" />
+            <depend id="12" type="2" difference="0" hardness="Strong" />
+            <depend id="15" type="2" difference="0" hardness="Strong" />
+            <depend id="16" type="2" difference="0" hardness="Strong" />
+            <depend id="17" type="2" difference="0" hardness="Strong" />
+            <depend id="43" type="2" difference="0" hardness="Strong" />
+            <depend id="44" type="2" difference="0" hardness="Strong" />
+            <depend id="45" type="2" difference="0" hardness="Strong" />
+            <depend id="50" type="2" difference="0" hardness="Strong" />
+            <depend id="51" type="2" difference="0" hardness="Strong" />
+            <task id="2" uid="e6b9e3b895aa409e8a8b81721867c805" name="1.1 Preparación Estratégica" color="#009933" meeting="false" start="2026-08-03" duration="1" complete="100" expand="false">
+                <depend id="7" type="2" difference="0" hardness="Strong" />
+                <task id="3" uid="76610acbf18e47c1968427c0a812ddcd" name="1.1.1 Revisión de políticas institucionales" color="#8cb6ce" meeting="false" start="2026-08-03" duration="1" complete="100" expand="true">
+                    <depend id="8" type="2" difference="0" hardness="Strong" />
+                    <depend id="9" type="2" difference="0" hardness="Strong" />
+                    <depend id="10" type="2" difference="0" hardness="Strong" />
+                    <depend id="148" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="4" uid="65a504f78d4441c8b96d9372865e92b9" name="1.1.2 Identificación de stakeholders" color="#8cb6ce" meeting="false" start="2026-08-03" duration="1" complete="100" expand="true">
+                    <depend id="8" type="2" difference="0" hardness="Strong" />
+                    <depend id="9" type="2" difference="0" hardness="Strong" />
+                    <depend id="10" type="2" difference="0" hardness="Strong" />
+                    <depend id="148" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="5" uid="b62a1c5223ea4b22a101bb0b9ed0a208" name="1.1.3 Entrevistas con Oficina de Inclusión" color="#8cb6ce" meeting="false" start="2026-08-03" duration="1" complete="100" expand="true">
+                    <depend id="8" type="2" difference="0" hardness="Strong" />
+                    <depend id="9" type="2" difference="0" hardness="Strong" />
+                    <depend id="10" type="2" difference="0" hardness="Strong" />
+                    <depend id="148" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="6" uid="b0427b3ea81b468ab736d41067e29690" name="1.1.4 Entrevistas con Departamento TI" color="#8cb6ce" meeting="false" start="2026-08-03" duration="1" complete="100" expand="true">
+                    <depend id="8" type="2" difference="0" hardness="Strong" />
+                    <depend id="9" type="2" difference="0" hardness="Strong" />
+                    <depend id="10" type="2" difference="0" hardness="Strong" />
+                    <depend id="148" type="2" difference="0" hardness="Strong" />
+                </task>
+            </task>
+            <task id="7" uid="ab4fb7c581774dd8969995ba8f62e597" name="1.2 Definición del Proyecto" color="#009933" meeting="false" start="2026-08-04" duration="2" complete="100" expand="false">
+                <task id="8" uid="0686344217354902968c5468920ed11b" name="1.2.1 Identificación de la problemática" color="#8cb6ce" meeting="false" start="2026-08-04" duration="2" complete="100" expand="true">
+                    <depend id="13" type="2" difference="0" hardness="Strong" />
+                    <depend id="14" type="2" difference="0" hardness="Strong" />
+                    <depend id="49" type="2" difference="0" hardness="Strong" />
+                    <depend id="149" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="9" uid="4c3dc8eeb3a84a8a80372210e8fc589a" name="1.2.2 Definición de objetivos" color="#8cb6ce" meeting="false" start="2026-08-04" duration="2" complete="100" expand="true">
+                    <depend id="13" type="2" difference="0" hardness="Strong" />
+                    <depend id="14" type="2" difference="0" hardness="Strong" />
+                    <depend id="49" type="2" difference="0" hardness="Strong" />
+                    <depend id="149" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="10" uid="0a657be2dde5493e889bab8e7723a30b" name="1.2.3 Definición del alcance" color="#8cb6ce" meeting="false" start="2026-08-04" duration="2" complete="100" expand="true">
+                    <depend id="13" type="2" difference="0" hardness="Strong" />
+                    <depend id="14" type="2" difference="0" hardness="Strong" />
+                    <depend id="149" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="148" uid="236156c62c9a458c8f3526a8ed683b29" name="1.2.4 Aprobación del proyecto" color="#8cb6ce" meeting="false" start="2026-08-04" duration="2" complete="100" expand="true">
+                    <depend id="13" type="2" difference="0" hardness="Strong" />
+                    <depend id="14" type="2" difference="0" hardness="Strong" />
+                    <depend id="49" type="2" difference="0" hardness="Strong" />
+                    <depend id="149" type="2" difference="0" hardness="Strong" />
+                </task>
+            </task>
+        </task>
+        <task id="11" uid="030c27dffa7c44ea88fc11c08798eef2" name="2. Fase de Planificación" color="#000000" meeting="false" start="2026-08-06" duration="5" complete="100" expand="false">
+            <depend id="18" type="2" difference="0" hardness="Strong" />
+            <depend id="19" type="2" difference="0" hardness="Strong" />
+            <depend id="20" type="2" difference="0" hardness="Strong" />
+            <depend id="21" type="2" difference="0" hardness="Strong" />
+            <depend id="52" type="2" difference="0" hardness="Strong" />
+            <depend id="53" type="2" difference="0" hardness="Strong" />
+            <depend id="54" type="2" difference="0" hardness="Strong" />
+            <depend id="55" type="2" difference="0" hardness="Strong" />
+            <depend id="56" type="2" difference="0" hardness="Strong" />
+            <depend id="57" type="2" difference="0" hardness="Strong" />
+            <depend id="58" type="2" difference="0" hardness="Strong" />
+            <depend id="59" type="2" difference="0" hardness="Strong" />
+            <task id="12" uid="e4258ad0ce7a480d8d93d9df967dc5f8" name="2.1 Gestión del Proyecto" color="#009933" meeting="false" start="2026-08-06" duration="5" complete="100" expand="false">
+                <task id="13" uid="6ac56e0b5c8041658ee0b792ebc3865d" name="2.1.1 Elaboración EDT" color="#8cb6ce" meeting="false" start="2026-08-06" duration="5" complete="100" expand="true" />
+                <task id="14" uid="7ab16da5ec5442d69871c6499a00752c" name="2.1.2 Elaboración cronograma" color="#8cb6ce" meeting="false" start="2026-08-06" duration="5" complete="100" expand="true" />
+                <task id="49" uid="52cf0139411d4a04be29360a918f9deb" name="2.1.3 Estimación de recursos" color="#8cb6ce" meeting="false" start="2026-08-06" duration="5" complete="100" expand="true" />
+                <task id="149" uid="ce0e1adad4fd4c33ba310f79073094c6" name="2.1.4 Estimación de costos" color="#8cb6ce" meeting="false" start="2026-08-06" duration="5" complete="100" expand="true" />
+            </task>
+            <task id="15" uid="5c4f5716fe04426587e5a0e362931c06" name="2.2 Gestión de Riesgos" color="#009933" meeting="false" start="2026-08-06" duration="5" complete="100" expand="false">
+                <task id="16" uid="b620ee65c9754a4f9ced6bb1beb9ffad" name="2.2.1 Identificación de Riesgos" color="#8cb6ce" meeting="false" start="2026-08-06" duration="5" complete="100" expand="true" />
+                <task id="17" uid="e5979405f2c34273bda8e6c77d7e95e9" name="2.2.2 Análisis de Riesgos" color="#8cb6ce" meeting="false" start="2026-08-06" duration="5" complete="100" expand="true" />
+                <task id="50" uid="c68316562ead4e4f9cea279f15927ef7" name="2.2.3 Plan de Mitigación" color="#8cb6ce" meeting="false" start="2026-08-06" duration="5" complete="100" expand="true" />
+            </task>
+            <task id="43" uid="6a8542ffb16e40aaa079a5ce11c35494" name="2.3 Planificación de Calidad" color="#009933" meeting="false" start="2026-08-06" duration="5" complete="100" expand="false">
+                <task id="44" uid="6ad605de52e44f80b4942ca779c02663" name="2.3.1 Definición de criterios de aceptación" color="#8cb6ce" meeting="false" start="2026-08-06" duration="5" complete="100" expand="true" />
+                <task id="45" uid="0dd006152cc74004b68ba289e8ed4998" name="2.3.2 Plan de pruebas" color="#8cb6ce" meeting="false" start="2026-08-06" duration="5" complete="100" expand="true" />
+                <task id="51" uid="a9c4cbe8d9d84737ba276a5f00215f9b" name="2.3.3 Plan de accesibilidad WCAG" color="#8cb6ce" meeting="false" start="2026-08-06" duration="5" complete="100" expand="true" />
+            </task>
+        </task>
+        <task id="18" uid="c654764e298c4d1a8bce6691598fae9a" name="3. Fase de Análisis" color="#000000" meeting="false" start="2026-08-13" duration="5" complete="100" expand="false">
+            <depend id="22" type="2" difference="0" hardness="Strong" />
+            <depend id="23" type="2" difference="0" hardness="Strong" />
+            <depend id="24" type="2" difference="0" hardness="Strong" />
+            <task id="19" uid="a8f2dfabafdd40d5b3149fdd6869942b" name="3.1 Levantamiento de Requisitos" color="#009933" meeting="false" start="2026-08-13" duration="5" complete="100" expand="false">
+                <task id="20" uid="3a79fafc22454f3980365a39cd623299" name="3.1.1 Requisitos Funcionales" color="#8cb6ce" meeting="false" start="2026-08-13" duration="5" complete="100" expand="true" />
+                <task id="21" uid="1927d89d859c484e9afe87c3a068dbc7" name="3.1.2 Requisitos No Funcionales" color="#8cb6ce" meeting="false" start="2026-08-13" duration="5" complete="100" expand="true" />
+            </task>
+            <task id="52" uid="93b62ab2a6824103be3703b7083ed993" name="3.2 Estudio de Accesibilidad" color="#009933" meeting="false" start="2026-08-13" duration="5" complete="100" expand="false">
+                <task id="53" uid="5f1ce69db96342e08df4286d77fbf644" name="3.2.1 Análisis discapacidad visual" color="#8cb6ce" meeting="false" start="2026-08-13" duration="5" complete="100" expand="true" />
+                <task id="54" uid="60f5be5c9a354df08643cd96773c3834" name="3.2.2 Análisis discapacidad auditiva" color="#8cb6ce" meeting="false" start="2026-08-13" duration="5" complete="100" expand="true" />
+                <task id="55" uid="5adbfb0a54654b9c920ee18e338a4348" name="3.2.3 Estándar WCAG 2.1 AA" color="#8cb6ce" meeting="false" start="2026-08-13" duration="5" complete="100" expand="true" />
+            </task>
+            <task id="56" uid="980cee58c8214eb6bcbd17c9a5a00776" name="3.3 Estudio del Campus" color="#009933" meeting="false" start="2026-08-13" duration="5" complete="100" expand="false">
+                <task id="57" uid="ffd3ce4729ff4f5fa701987b8b051472" name="3.3.1 Mapeo de zonas" color="#8cb6ce" meeting="false" start="2026-08-13" duration="5" complete="100" expand="true" />
+                <task id="58" uid="c5b9e836ace14e91995f369108ab4573" name="3.3.2 Identificación de puntos de interés" color="#8cb6ce" meeting="false" start="2026-08-13" duration="5" complete="100" expand="true" />
+                <task id="59" uid="b032b63640d945dfb2e543c5a13db016" name="3.3.3 Identificación de puntos de interés" color="#8cb6ce" meeting="false" start="2026-08-13" duration="5" complete="100" expand="true" />
+            </task>
+        </task>
+        <task id="22" uid="72731cbd2a1f4ff0b1318d01dc6a3296" name="4. Fase de Diseño" color="#000000" meeting="false" start="2026-08-20" duration="5" complete="100" expand="false">
+            <depend id="26" type="2" difference="0" hardness="Strong" />
+            <depend id="27" type="2" difference="0" hardness="Strong" />
+            <depend id="28" type="2" difference="0" hardness="Strong" />
+            <task id="23" uid="8c6e5d5432d94228846db075c49552e6" name="4.1 Diseño Arquitectónico" color="#009933" meeting="false" start="2026-08-20" duration="2" complete="100" expand="false">
+                <depend id="60" type="2" difference="0" hardness="Strong" />
+                <depend id="61" type="2" difference="0" hardness="Strong" />
+                <task id="24" uid="cf305b03bb4f46e080a0d74fff4fb8fc" name="4.1.1 Arquitectura del Sistema" color="#8cb6ce" meeting="false" start="2026-08-20" duration="1" complete="100" expand="true">
+                    <depend id="25" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="25" uid="fc4f34367d4246ca899d13f64230dd02" name="4.1.2 Arquitectura de accesibilidad" color="#8cb6ce" meeting="false" start="2026-08-21" duration="1" complete="100" expand="true" />
+            </task>
+            <task id="60" uid="4af8bed418244b4fb5447918e3f83783" name="4.2 Diseño de Datos" color="#009933" meeting="false" start="2026-08-24" duration="2" complete="100" expand="false">
+                <depend id="63" type="2" difference="0" hardness="Strong" />
+                <depend id="64" type="2" difference="0" hardness="Strong" />
+                <depend id="65" type="2" difference="0" hardness="Strong" />
+                <depend id="106" type="2" difference="0" hardness="Strong" />
+                <task id="61" uid="240b760cce5a4bf4a69310d0d1431efc" name="4.2.1 Modelo de base de datos" color="#8cb6ce" meeting="false" start="2026-08-24" duration="1" complete="100" expand="true">
+                    <depend id="62" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="62" uid="0cd42c6e01ab4dffacfd1e4471c20610" name="4.2.2 Diseño de contenidos multimedia" color="#8cb6ce" meeting="false" start="2026-08-25" duration="1" complete="100" expand="true" />
+            </task>
+            <task id="63" uid="436f6a838dca42a9b1afcc02a63481ea" name="4.3 Diseño de Interfaces" color="#009933" meeting="false" start="2026-08-26" duration="1" complete="100" expand="false">
+                <task id="64" uid="b46af58532ef4ef58af67e75d2f03201" name="4.3.1 Diseño de navegación" color="#8cb6ce" meeting="false" start="2026-08-26" duration="1" complete="100" expand="true" />
+                <task id="65" uid="025223b1067243aa9457205676584c98" name="4.3.2 Diseño responsive" color="#8cb6ce" meeting="false" start="2026-08-26" duration="1" complete="100" expand="true" />
+                <task id="106" uid="a98c4ca4d14f4a87a8bff51714e0d2ef" name="4.3.3 Diseño accesible" color="#8cb6ce" meeting="false" start="2026-08-26" duration="1" complete="100" expand="true" />
+            </task>
+        </task>
+        <task id="26" uid="2c73f89c805549c0b0314bbd67b7ca80" name="5. Fase de Desarrollo" color="#000000" meeting="false" start="2026-08-27" duration="54" complete="0" expand="false">
+            <depend id="30" type="2" difference="0" hardness="Strong" />
+            <depend id="31" type="2" difference="0" hardness="Strong" />
+            <depend id="32" type="2" difference="0" hardness="Strong" />
+            <depend id="33" type="2" difference="0" hardness="Strong" />
+            <depend id="82" type="2" difference="0" hardness="Strong" />
+            <depend id="83" type="2" difference="0" hardness="Strong" />
+            <depend id="84" type="2" difference="0" hardness="Strong" />
+            <depend id="85" type="2" difference="0" hardness="Strong" />
+            <depend id="86" type="2" difference="0" hardness="Strong" />
+            <depend id="87" type="2" difference="0" hardness="Strong" />
+            <task id="27" uid="f3cdeb52b6fe4523879c07e1c5ea4a53" name="5.1 Iteración 1" color="#009933" meeting="false" start="2026-08-27" duration="16" complete="100" expand="false">
+                <depend id="70" type="2" difference="0" hardness="Strong" />
+                <depend id="71" type="2" difference="0" hardness="Strong" />
+                <task id="28" uid="5cd1862c19744ae097cae9cfac04c31c" name="5.1.1 RF-18 Registro de usuario" color="#8cb6ce" meeting="false" start="2026-08-27" duration="1" complete="100" expand="true">
+                    <depend id="29" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="29" uid="cca3f5981ae04268b3d25b7065a65a66" name="5.1.2 RF-19 Inicio de sesión (login)" color="#8cb6ce" meeting="false" start="2026-08-28" duration="1" complete="100" expand="true">
+                    <depend id="74" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="74" uid="f09f102133594a8e866cf2aae5641068" name="5.1.3 RF-20 Roles y permisos" color="#8cb6ce" meeting="false" start="2026-08-31" duration="1" complete="100" expand="true">
+                    <depend id="73" type="2" difference="0" hardness="Strong" />
+                    <depend id="107" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="73" uid="1cd28187cb504e8a81d1f72b53d5a13d" name="5.1.4 RF-21 Recuperación de contraseña" color="#8cb6ce" meeting="false" start="2026-09-01" duration="1" complete="100" expand="true">
+                    <depend id="108" type="2" difference="0" hardness="Strong" />
+                    <depend id="109" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="107" uid="5f31f64980ce4c088121a83307ab94fa" name="5.1.5 RF-22 Cierre de sesión" color="#8cb6ce" meeting="false" start="2026-09-01" duration="1" complete="100" expand="true">
+                    <depend id="108" type="2" difference="0" hardness="Strong" />
+                    <depend id="109" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="108" uid="63a8769793bb42cabba0541602f6acb2" name="5.1.6 RF-23 Gestión de perfil" color="#8cb6ce" meeting="false" start="2026-09-02" duration="2" complete="100" expand="true">
+                    <depend id="110" type="2" difference="0" hardness="Strong" />
+                    <depend id="111" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="109" uid="7417391f83514790b6064b6e2bccaab3" name="5.1.7 RF-24 Sesión persistente" color="#8cb6ce" meeting="false" start="2026-09-02" duration="1" complete="100" expand="true">
+                    <depend id="110" type="2" difference="0" hardness="Strong" />
+                    <depend id="111" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="110" uid="b35c2b1efe8d42629c617bd307245af1" name="5.1.8 RF-25 CRUD de usuarios" color="#8cb6ce" meeting="false" start="2026-09-04" duration="2" complete="100" expand="true">
+                    <depend id="112" type="2" difference="0" hardness="Strong" />
+                    <depend id="113" type="2" difference="0" hardness="Strong" />
+                    <depend id="114" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="111" uid="8bccaa33b3064184ba7909a9f27af1ba" name="5.1.9 RF-34 CRUD de configuración" color="#8cb6ce" meeting="false" start="2026-09-04" duration="2" complete="100" expand="true">
+                    <depend id="112" type="2" difference="0" hardness="Strong" />
+                    <depend id="113" type="2" difference="0" hardness="Strong" />
+                    <depend id="114" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="112" uid="616437ef1d1e4e2386729173965c09b4" name="5.1.10 RF-37 Estados de publicación" color="#8cb6ce" meeting="false" start="2026-09-08" duration="2" complete="100" expand="true">
+                    <depend id="134" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="113" uid="fe955ffea36745b6a6519b03e84905eb" name="5.1.11 RF-41 Gestión de sesiones activas" color="#8cb6ce" meeting="false" start="2026-09-08" duration="2" complete="100" expand="true">
+                    <depend id="134" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="114" uid="cddbb998db3a41c4a1ef98494a5fd16c" name="5.1.12 RF-42 Accesibilidad global por sesión" color="#8cb6ce" meeting="false" start="2026-09-08" duration="2" complete="100" expand="true">
+                    <depend id="134" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="134" uid="ce91edd872e141b289b1b7f41cb50379" name="5.1.13 RNF-11 Seguridad de la plataforma" color="#8cb6ce" meeting="false" start="2026-09-10" duration="3" complete="100" expand="true">
+                    <depend id="135" type="2" difference="0" hardness="Strong" />
+                    <depend id="136" type="2" difference="0" hardness="Strong" />
+                    <depend id="137" type="2" difference="0" hardness="Strong" />
+                    <depend id="138" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="135" uid="188e085ce77245e09e22aad769303e84" name="5.1.14 RNF-12 Protección de datos" color="#8cb6ce" meeting="false" start="2026-09-15" duration="1" complete="100" expand="true">
+                    <depend id="139" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="136" uid="c7ab5e64b91944978d63fa8084a7cc71" name="5.1.15 RNF-13 Extensibilidad" color="#8cb6ce" meeting="false" start="2026-09-15" duration="1" complete="100" expand="true">
+                    <depend id="139" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="137" uid="3cfc3529e2424e7c91463f3b2ebfcd5a" name="5.1.16 RNF-15 Control de versiones" color="#8cb6ce" meeting="false" start="2026-09-15" duration="1" complete="100" expand="true">
+                    <depend id="139" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="138" uid="4a03a21c08f547489c1671b22bd956c4" name="5.1.17 RNF-16 Software open-source" color="#8cb6ce" meeting="false" start="2026-09-15" duration="1" complete="100" expand="true">
+                    <depend id="139" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="139" uid="57511a40b30a40739eb730414bd6e208" name="5.1.18 RNF-17 Inversión en hardware" color="#8cb6ce" meeting="false" start="2026-09-16" duration="2" complete="100" expand="true" />
+            </task>
+            <task id="70" uid="667b8be74c45447093735cbc9a01ce7a" name="5.2 Iteración 2" color="#009933" meeting="false" start="2026-09-18" duration="27" complete="0" expand="false">
+                <depend id="67" type="2" difference="0" hardness="Strong" />
+                <depend id="68" type="2" difference="0" hardness="Strong" />
+                <depend id="69" type="2" difference="0" hardness="Strong" />
+                <depend id="79" type="2" difference="0" hardness="Strong" />
+                <depend id="80" type="2" difference="0" hardness="Strong" />
+                <depend id="81" type="2" difference="0" hardness="Strong" />
+                <depend id="129" type="2" difference="0" hardness="Strong" />
+                <task id="71" uid="f801c0f325524373ac13d75ee8b84618" name="5.2.1 RF-01 Recorrido virtual 360°" color="#8cb6ce" meeting="false" start="2026-09-18" duration="7" complete="100" expand="true">
+                    <depend id="72" type="2" difference="0" hardness="Strong" />
+                    <depend id="76" type="2" difference="0" hardness="Strong" />
+                    <depend id="77" type="2" difference="0" hardness="Strong" />
+                    <depend id="78" type="2" difference="0" hardness="Strong" />
+                    <depend id="115" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="72" uid="ea630ba919be4af6976238c99cbb8c3f" name="5.2.2 RF-02 Modo accesibilidad por audio" color="#8cb6ce" meeting="false" start="2026-09-29" duration="4" complete="100" expand="true">
+                    <depend id="116" type="2" difference="0" hardness="Strong" />
+                    <depend id="117" type="2" difference="0" hardness="Strong" />
+                    <depend id="118" type="2" difference="0" hardness="Strong" />
+                    <depend id="119" type="2" difference="0" hardness="Strong" />
+                    <depend id="120" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="78" uid="0a828f886bb349f1b769f715428b6ae9" name="5.2.3 RF-03 Modo accesibilidad LSC" color="#8cb6ce" meeting="false" start="2026-09-29" duration="4" complete="100" expand="true">
+                    <depend id="116" type="2" difference="0" hardness="Strong" />
+                    <depend id="117" type="2" difference="0" hardness="Strong" />
+                    <depend id="118" type="2" difference="0" hardness="Strong" />
+                    <depend id="119" type="2" difference="0" hardness="Strong" />
+                    <depend id="120" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="77" uid="f06a2b98b1964cd89aa63cd345560650" name="5.2.4 RF-04 Modo accesibilidad táctil" color="#8cb6ce" meeting="false" start="2026-09-29" duration="5" complete="100" expand="true">
+                    <depend id="116" type="2" difference="0" hardness="Strong" />
+                    <depend id="117" type="2" difference="0" hardness="Strong" />
+                    <depend id="118" type="2" difference="0" hardness="Strong" />
+                    <depend id="119" type="2" difference="0" hardness="Strong" />
+                    <depend id="120" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="76" uid="70378f1b3a0f4a1097d30606bc5a234c" name="5.2.5 RF-05 Subtítulos descriptivos" color="#8cb6ce" meeting="false" start="2026-09-29" duration="5" complete="100" expand="true">
+                    <depend id="116" type="2" difference="0" hardness="Strong" />
+                    <depend id="117" type="2" difference="0" hardness="Strong" />
+                    <depend id="118" type="2" difference="0" hardness="Strong" />
+                    <depend id="119" type="2" difference="0" hardness="Strong" />
+                    <depend id="120" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="115" uid="3592828a8071462894197181221e01ba" name="5.2.6 RF-06 Compatibilidad lectores de pantalla" color="#8cb6ce" meeting="false" start="2026-09-29" duration="4" complete="100" expand="true">
+                    <depend id="116" type="2" difference="0" hardness="Strong" />
+                    <depend id="117" type="2" difference="0" hardness="Strong" />
+                    <depend id="118" type="2" difference="0" hardness="Strong" />
+                    <depend id="119" type="2" difference="0" hardness="Strong" />
+                    <depend id="120" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="116" uid="539ce118060241a2a7d8810807c17945" name="5.2.7 RF-07 Interoperabilidad Braille" color="#8cb6ce" meeting="false" start="2026-10-06" duration="5" complete="80" expand="true">
+                    <depend id="121" type="2" difference="0" hardness="Strong" />
+                    <depend id="122" type="2" difference="0" hardness="Strong" />
+                    <depend id="123" type="2" difference="0" hardness="Strong" />
+                    <depend id="140" type="2" difference="0" hardness="Strong" />
+                    <depend id="141" type="2" difference="0" hardness="Strong" />
+                    <depend id="142" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="117" uid="663dd25db4014a05a88b243f4c04636c" name="5.2.8 RF-08 Navegación por teclado" color="#8cb6ce" meeting="false" start="2026-10-06" duration="5" complete="80" expand="true">
+                    <depend id="121" type="2" difference="0" hardness="Strong" />
+                    <depend id="122" type="2" difference="0" hardness="Strong" />
+                    <depend id="123" type="2" difference="0" hardness="Strong" />
+                    <depend id="140" type="2" difference="0" hardness="Strong" />
+                    <depend id="141" type="2" difference="0" hardness="Strong" />
+                    <depend id="142" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="118" uid="d0944c3f988b487498873400181ed58b" name="5.2.9 RF-09 Geolocalización indoor" color="#8cb6ce" meeting="false" start="2026-10-06" duration="6" complete="40" expand="true">
+                    <depend id="121" type="2" difference="0" hardness="Strong" />
+                    <depend id="122" type="2" difference="0" hardness="Strong" />
+                    <depend id="123" type="2" difference="0" hardness="Strong" />
+                    <depend id="140" type="2" difference="0" hardness="Strong" />
+                    <depend id="141" type="2" difference="0" hardness="Strong" />
+                    <depend id="142" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="119" uid="6416c0f900e04fe09b20b4a4b6df6148" name="5.2.10 RF-11 Perfil de accesibilidad configurable" color="#8cb6ce" meeting="false" start="2026-10-06" duration="4" complete="100" expand="true">
+                    <depend id="121" type="2" difference="0" hardness="Strong" />
+                    <depend id="122" type="2" difference="0" hardness="Strong" />
+                    <depend id="123" type="2" difference="0" hardness="Strong" />
+                    <depend id="140" type="2" difference="0" hardness="Strong" />
+                    <depend id="141" type="2" difference="0" hardness="Strong" />
+                    <depend id="142" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="120" uid="40564024d1534899b0e1599d138c21c8" name="5.2.11 RF-12 Gestión de contenidos (CMS)" color="#8cb6ce" meeting="false" start="2026-10-06" duration="6" complete="40" expand="true">
+                    <depend id="121" type="2" difference="0" hardness="Strong" />
+                    <depend id="122" type="2" difference="0" hardness="Strong" />
+                    <depend id="123" type="2" difference="0" hardness="Strong" />
+                    <depend id="140" type="2" difference="0" hardness="Strong" />
+                    <depend id="141" type="2" difference="0" hardness="Strong" />
+                    <depend id="142" type="2" difference="0" hardness="Strong" />
+                    <depend id="143" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="121" uid="f75aeeee87ba4128b3e3a0aa01bbea1b" name="5.2.12 RF-14 Interfaz responsive" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true" />
+                <task id="122" uid="ada32918323b4cb08d419fbf9e275672" name="5.2.13 RF-26 CRUD de tours 360°" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true">
+                    <depend id="143" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="123" uid="6f0e12d3d58c4515a480385d375ec246" name="5.2.14 RF-27 CRUD contenidos multimedia" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true">
+                    <depend id="143" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="140" uid="746ac23b235541f390aed5c7cb0da5f8" name="5.2.15 RF-28 CRUD áreas/espacios" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true">
+                    <depend id="143" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="141" uid="dc2f708ecdb5463a9b1b848ce1746510" name="5.2.16 RF-29 CRUD metadatos de escena" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true">
+                    <depend id="143" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="142" uid="b3a34c8d1650453aab47023557edd2ed" name="5.2.17 RF-30 CRUD de beacons / zonas" color="#8cb6ce" meeting="false" start="2026-10-14" duration="8" complete="0" expand="true">
+                    <depend id="143" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="143" uid="64cef1fcd6d240e796a45de6c3d51025" name="5.2.18 RF-35 Búsqueda y filtros" color="#8cb6ce" meeting="false" start="2026-10-26" duration="1" complete="0" expand="true" />
+            </task>
+            <task id="67" uid="b6bb45c484844b49b0c3d746beae10b8" name="5.3 Iteración 3" color="#009933" meeting="false" start="2026-10-27" duration="11" complete="0" expand="false">
+                <task id="68" uid="89c51fa2047b486cbe51d1124405a9e7" name="5.3.1 RF-10 Exportación de rutas en DAISY" color="#8cb6ce" meeting="false" start="2026-10-27" duration="4" complete="0" expand="true">
+                    <depend id="124" type="2" difference="0" hardness="Strong" />
+                    <depend id="125" type="2" difference="0" hardness="Strong" />
+                    <depend id="126" type="2" difference="0" hardness="Strong" />
+                    <depend id="127" type="2" difference="0" hardness="Strong" />
+                    <depend id="130" type="2" difference="0" hardness="Strong" />
+                    <depend id="131" type="2" difference="0" hardness="Strong" />
+                    <depend id="132" type="2" difference="0" hardness="Strong" />
+                    <depend id="133" type="2" difference="0" hardness="Strong" />
+                    <depend id="144" type="2" difference="0" hardness="Strong" />
+                    <depend id="145" type="2" difference="0" hardness="Strong" />
+                    <depend id="146" type="2" difference="0" hardness="Strong" />
+                    <depend id="147" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="69" uid="f7e0c3e0f2fa4008b116823349f4d0c4" name="5.3.2 RF-13 Gestión de usuarios" color="#8cb6ce" meeting="false" start="2026-10-27" duration="5" complete="0" expand="true">
+                    <depend id="124" type="2" difference="0" hardness="Strong" />
+                    <depend id="125" type="2" difference="0" hardness="Strong" />
+                    <depend id="126" type="2" difference="0" hardness="Strong" />
+                    <depend id="127" type="2" difference="0" hardness="Strong" />
+                    <depend id="130" type="2" difference="0" hardness="Strong" />
+                    <depend id="131" type="2" difference="0" hardness="Strong" />
+                    <depend id="132" type="2" difference="0" hardness="Strong" />
+                    <depend id="133" type="2" difference="0" hardness="Strong" />
+                    <depend id="144" type="2" difference="0" hardness="Strong" />
+                    <depend id="145" type="2" difference="0" hardness="Strong" />
+                    <depend id="146" type="2" difference="0" hardness="Strong" />
+                    <depend id="147" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="81" uid="46448ceaccf84e178e4d39e78e12da26" name="5.3.3 RF-15 Registro de uso" color="#8cb6ce" meeting="false" start="2026-10-27" duration="7" complete="0" expand="true">
+                    <depend id="124" type="2" difference="0" hardness="Strong" />
+                    <depend id="125" type="2" difference="0" hardness="Strong" />
+                    <depend id="127" type="2" difference="0" hardness="Strong" />
+                    <depend id="130" type="2" difference="0" hardness="Strong" />
+                    <depend id="131" type="2" difference="0" hardness="Strong" />
+                    <depend id="132" type="2" difference="0" hardness="Strong" />
+                    <depend id="133" type="2" difference="0" hardness="Strong" />
+                    <depend id="144" type="2" difference="0" hardness="Strong" />
+                    <depend id="145" type="2" difference="0" hardness="Strong" />
+                    <depend id="146" type="2" difference="0" hardness="Strong" />
+                    <depend id="147" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="80" uid="ff1c8e69629846b89b93f5a5ecd8c21b" name="5.3.4 RF-16 Registro de incidencias" color="#8cb6ce" meeting="false" start="2026-10-27" duration="5" complete="0" expand="true">
+                    <depend id="124" type="2" difference="0" hardness="Strong" />
+                    <depend id="125" type="2" difference="0" hardness="Strong" />
+                    <depend id="126" type="2" difference="0" hardness="Strong" />
+                    <depend id="127" type="2" difference="0" hardness="Strong" />
+                    <depend id="130" type="2" difference="0" hardness="Strong" />
+                    <depend id="131" type="2" difference="0" hardness="Strong" />
+                    <depend id="132" type="2" difference="0" hardness="Strong" />
+                    <depend id="133" type="2" difference="0" hardness="Strong" />
+                    <depend id="144" type="2" difference="0" hardness="Strong" />
+                    <depend id="145" type="2" difference="0" hardness="Strong" />
+                    <depend id="146" type="2" difference="0" hardness="Strong" />
+                    <depend id="147" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="79" uid="b7f58d5497de45fd9167b10198aa88ee" name="5.3.5 RF-17 Materiales de capacitación" color="#8cb6ce" meeting="false" start="2026-10-27" duration="7" complete="0" expand="true">
+                    <depend id="124" type="2" difference="0" hardness="Strong" />
+                    <depend id="125" type="2" difference="0" hardness="Strong" />
+                    <depend id="126" type="2" difference="0" hardness="Strong" />
+                    <depend id="127" type="2" difference="0" hardness="Strong" />
+                    <depend id="130" type="2" difference="0" hardness="Strong" />
+                    <depend id="131" type="2" difference="0" hardness="Strong" />
+                    <depend id="132" type="2" difference="0" hardness="Strong" />
+                    <depend id="133" type="2" difference="0" hardness="Strong" />
+                    <depend id="145" type="2" difference="0" hardness="Strong" />
+                    <depend id="146" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="129" uid="042bc09cd01c4738a48f2cd18700d7ef" name="5.3.6 RF-31 CRUD de incidencias" color="#8cb6ce" meeting="false" start="2026-10-27" duration="8" complete="0" expand="true">
+                    <depend id="124" type="2" difference="0" hardness="Strong" />
+                    <depend id="125" type="2" difference="0" hardness="Strong" />
+                    <depend id="126" type="2" difference="0" hardness="Strong" />
+                    <depend id="127" type="2" difference="0" hardness="Strong" />
+                    <depend id="130" type="2" difference="0" hardness="Strong" />
+                    <depend id="131" type="2" difference="0" hardness="Strong" />
+                    <depend id="132" type="2" difference="0" hardness="Strong" />
+                    <depend id="133" type="2" difference="0" hardness="Strong" />
+                    <depend id="144" type="2" difference="0" hardness="Strong" />
+                    <depend id="145" type="2" difference="0" hardness="Strong" />
+                    <depend id="146" type="2" difference="0" hardness="Strong" />
+                    <depend id="147" type="2" difference="0" hardness="Strong" />
+                </task>
+                <task id="130" uid="b51e9e8135544027b3562bcef67fccdf" name="5.3.7 RF-32 CRUD materiales de capacitación" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+                <task id="131" uid="cab5aec76fab444db13a01db81439901" name="5.3.8 RF-33 CRUD de anuncios" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+                <task id="132" uid="7a9ab72eb3c7497b8996d9114ed09da7" name="5.3.9 RF-36 Panel de administración" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+                <task id="133" uid="4c8f1bbc199944348abf6c10bf3344ea" name="5.3.10 RF-38 Auditoría y registro de actividades" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+                <task id="124" uid="ee018ec955b64d4c8c7c2ecf62430604" name="5.3.11 RF-39 Respaldo y restauración" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+                <task id="125" uid="2b236df4cbdf49ec85c7c254a7dfb82d" name="5.3.12 RF-40 API de gestión de contenidos" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+                <task id="126" uid="b80f0e95e3174c4d8a3ae313a0c88ec0" name="5.3.13 RNF-04 Alta disponibilidad" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+                <task id="127" uid="97f87d5afa0a455aa612a84f7b1e5455" name="5.3.14 RNF-05 SLA de soporte" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+                <task id="144" uid="5d0d2f5c198145e79b387d780413894b" name="5.3.15 RNF-06 Mantenimiento evolutivo" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+                <task id="145" uid="2557d383c2674e3ba725a75d6ffd9ecf" name="5.3.16 RNF-07 Cumplimiento WCAG 2.1 AA" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+                <task id="146" uid="d837b300ddc74fd9b8300d9922c89459" name="5.3.17 RNF-08 Validación automatizada" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+                <task id="147" uid="0c40524c6d7d42f9a143f8b27ae4b7ac" name="5.3.18 RNF-09 Satisfacción del usuario" color="#8cb6ce" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true" />
+            </task>
+        </task>
+        <task id="30" uid="cd6be44c88194b89835bdd0b6ec6f9f4" name="6. Fase de Pruebas" color="#000000" meeting="false" start="2026-11-11" duration="5" complete="0" expand="false">
+            <depend id="34" type="2" difference="0" hardness="Strong" />
+            <depend id="36" type="2" difference="0" hardness="Strong" />
+            <depend id="88" type="2" difference="0" hardness="Strong" />
+            <task id="31" uid="eaba64974ab3475498ab650a07209b12" name="6.1 Pruebas de Iteración 1" color="#009933" meeting="false" start="2026-11-11" duration="5" complete="0" expand="false">
+                <task id="32" uid="73d1b3a0449c430286e07e1960c10377" name="6.1.1 Pruebas de autenticación" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true" />
+                <task id="33" uid="8513fdb419654f778d6249869bcb1050" name="6.1.2 Pruebas de seguridad" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true" />
+            </task>
+            <task id="82" uid="23f36727c7ea47469fcf19ece87d0d99" name="6.2 Pruebas de Iteración 2" color="#009933" meeting="false" start="2026-11-11" duration="5" complete="0" expand="false">
+                <task id="83" uid="93ecec86cf05472280d4ee3b0e877e41" name="6.2.1 Pruebas de recorridos 360°" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true" />
+                <task id="84" uid="63bc487baaa14e0bb95219bc80c7e6b6" name="6.2.2 Pruebas de accesibilidad" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true" />
+            </task>
+            <task id="85" uid="26833f289ead45f6a37ffb3c2a8f6be4" name="6.3 Pruebas de Iteración 3" color="#009933" meeting="false" start="2026-11-11" duration="5" complete="0" expand="false">
+                <task id="86" uid="c08fff3b5bbe41a58d2851c0cd959256" name="6.3.1 Pruebas administrativas" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true" />
+                <task id="87" uid="956d59a313a4440c979c674ea5038ccb" name="6.3.2 Pruebas de integración" color="#8cb6ce" meeting="false" start="2026-11-11" duration="5" complete="0" expand="true" />
+            </task>
+        </task>
+        <task id="34" uid="f5e5004b01d14a73bd6232315069745b" name="7. Fase de Implementación" color="#000000" meeting="false" start="2026-11-18" duration="6" complete="0" expand="true">
+            <task id="35" uid="d3e2a661b1ee4f91b36182d814617e17" name="7.1 Despliegue" color="#009933" meeting="false" start="2026-11-18" duration="3" complete="0" expand="false">
+                <depend id="89" type="2" difference="0" hardness="Strong" />
+                <depend id="90" type="2" difference="0" hardness="Strong" />
+                <depend id="91" type="2" difference="0" hardness="Strong" />
+                <task id="36" uid="dc87d26d63f74f51b4999bd2b7db4e5a" name="7.1.1 Configuración del Servidor" color="#8cb6ce" meeting="false" start="2026-11-18" duration="3" complete="0" expand="true" />
+                <task id="88" uid="bdcb1785d1d8478c928c9f987c0afff3" name="7.1.2 Publicación del Sistema" color="#8cb6ce" meeting="false" start="2026-11-18" duration="3" complete="0" expand="true" />
+            </task>
+            <task id="89" uid="08fb564e0f4f4963a359a85951929e89" name="7.2 Capacitación" color="#009933" meeting="false" start="2026-11-23" duration="3" complete="0" expand="true">
+                <task id="90" uid="000f1fcef27940c699ffd6122c9e8fbc" name="7.2.1 Capacitación Administradores" color="#8cb6ce" meeting="false" start="2026-11-23" duration="3" complete="0" expand="true" />
+                <task id="91" uid="227e2ba553694d6b88146d98c7e0b032" name="7.2.2 Capacitación Usuarios" color="#8cb6ce" meeting="false" start="2026-11-23" duration="3" complete="0" expand="true" />
+            </task>
+        </task>
+    </tasks>
+    <vacations />
+    <previous />
+    <roles roleset-name="Default" /><roles><role id="1" name="Líder de Proyecto / Frontend 360°" /><role id="2" name="Líder de Calidad / Accesibilidad WCAG" /><role id="3" name="Líder Backend / Requerimientos Jira" /><role id="4" name="Ingeniero DevSecOps / Base de Datos" /><role id="5" name="Ingeniero de Planificación &amp; Riesgos" /></roles><resources><resource id="1" name="EDUARDO JOSE SOTO HERRERA" function="1" contacts="e_soto2@unisimon.edu.co" phone="" /><resource id="2" name="SARAIC NOEMI LEON HERNANDEZ" function="2" contacts="s_leon3@unisimon.edu.co" phone="" /><resource id="3" name="KEVIN EDUARDO GARCIA MORENO" function="3" contacts="k_garcia8@unisimon.edu.co" phone="" /><resource id="4" name="SEBASTIAN DAVID OMAÑA VILLAMIZAR" function="4" contacts="s_omana1@unisimon.edu.co" phone="" /><resource id="5" name="JESUS OMAR AVENDAÑO AVENDAÑO" function="5" contacts="j_avendano4@unisimon.edu.co" phone="" /></resources><allocations><allocation task-id="62" resource-id="1" load="100.0" responsible="true" /><allocation task-id="65" resource-id="1" load="100.0" responsible="true" /><allocation task-id="71" resource-id="1" load="100.0" responsible="true" /><allocation task-id="121" resource-id="1" load="20.0" responsible="true" /><allocation task-id="122" resource-id="1" load="20.0" responsible="true" /><allocation task-id="123" resource-id="1" load="20.0" responsible="true" /><allocation task-id="140" resource-id="1" load="20.0" responsible="true" /><allocation task-id="141" resource-id="1" load="20.0" responsible="true" /><allocation task-id="143" resource-id="1" load="100.0" responsible="true" /><allocation task-id="83" resource-id="1" load="100.0" responsible="true" /><allocation task-id="5" resource-id="2" load="100.0" responsible="true" /><allocation task-id="51" resource-id="2" load="100.0" responsible="true" /><allocation task-id="55" resource-id="2" load="100.0" responsible="true" /><allocation task-id="25" resource-id="2" load="100.0" responsible="true" /><allocation task-id="114" resource-id="2" load="100.0" responsible="true" /><allocation task-id="72" resource-id="2" load="20.0" responsible="true" /><allocation task-id="78" resource-id="2" load="20.0" responsible="true" /><allocation task-id="77" resource-id="2" load="20.0" responsible="true" /><allocation task-id="76" resource-id="2" load="20.0" responsible="true" /><allocation task-id="115" resource-id="2" load="20.0" responsible="true" /><allocation task-id="116" resource-id="2" load="33.3" responsible="true" /><allocation task-id="117" resource-id="2" load="33.3" responsible="true" /><allocation task-id="119" resource-id="2" load="33.3" responsible="true" /><allocation task-id="145" resource-id="2" load="100.0" responsible="true" /><allocation task-id="84" resource-id="2" load="100.0" responsible="true" /><allocation task-id="20" resource-id="3" load="50.0" responsible="true" /><allocation task-id="21" resource-id="3" load="50.0" responsible="true" /><allocation task-id="28" resource-id="3" load="100.0" responsible="true" /><allocation task-id="29" resource-id="3" load="100.0" responsible="true" /><allocation task-id="74" resource-id="3" load="100.0" responsible="true" /><allocation task-id="73" resource-id="3" load="50.0" responsible="true" /><allocation task-id="107" resource-id="3" load="50.0" responsible="true" /><allocation task-id="108" resource-id="3" load="50.0" responsible="true" /><allocation task-id="109" resource-id="3" load="50.0" responsible="true" /><allocation task-id="110" resource-id="3" load="100.0" responsible="true" /><allocation task-id="137" resource-id="3" load="100.0" responsible="true" /><allocation task-id="120" resource-id="3" load="100.0" responsible="true" /><allocation task-id="69" resource-id="3" load="33.3" responsible="true" /><allocation task-id="80" resource-id="3" load="33.3" responsible="true" /><allocation task-id="129" resource-id="3" load="33.3" responsible="true" /><allocation task-id="131" resource-id="3" load="33.3" responsible="true" /><allocation task-id="125" resource-id="3" load="33.3" responsible="true" /><allocation task-id="147" resource-id="3" load="33.3" responsible="true" /><allocation task-id="91" resource-id="3" load="100.0" responsible="true" /><allocation task-id="61" resource-id="4" load="98.0" responsible="true" /><allocation task-id="134" resource-id="4" load="98.0" responsible="true" /><allocation task-id="135" resource-id="4" load="49.0" responsible="true" /><allocation task-id="138" resource-id="4" load="49.0" responsible="true" /><allocation task-id="139" resource-id="4" load="98.0" responsible="true" /><allocation task-id="142" resource-id="4" load="98.0" responsible="true" /><allocation task-id="133" resource-id="4" load="16.4" responsible="true" /><allocation task-id="124" resource-id="4" load="16.4" responsible="true" /><allocation task-id="126" resource-id="4" load="16.4" responsible="true" /><allocation task-id="127" resource-id="4" load="16.4" responsible="true" /><allocation task-id="144" resource-id="4" load="16.4" responsible="true" /><allocation task-id="146" resource-id="4" load="16.4" responsible="true" /><allocation task-id="33" resource-id="4" load="98.0" responsible="true" /><allocation task-id="3" resource-id="5" load="33.3" responsible="true" /><allocation task-id="4" resource-id="5" load="33.3" responsible="true" /><allocation task-id="6" resource-id="5" load="33.3" responsible="true" /><allocation task-id="8" resource-id="5" load="25.0" responsible="true" /><allocation task-id="9" resource-id="5" load="25.0" responsible="true" /><allocation task-id="10" resource-id="5" load="25.0" responsible="true" /><allocation task-id="148" resource-id="5" load="25.0" responsible="true" /><allocation task-id="13" resource-id="5" load="11.1" responsible="true" /><allocation task-id="14" resource-id="5" load="11.1" responsible="true" /><allocation task-id="49" resource-id="5" load="11.1" responsible="true" /><allocation task-id="149" resource-id="5" load="11.1" responsible="true" /><allocation task-id="16" resource-id="5" load="11.1" responsible="true" /><allocation task-id="17" resource-id="5" load="11.1" responsible="true" /><allocation task-id="50" resource-id="5" load="11.1" responsible="true" /><allocation task-id="44" resource-id="5" load="11.1" responsible="true" /><allocation task-id="45" resource-id="5" load="11.1" responsible="true" /><allocation task-id="53" resource-id="5" load="20.0" responsible="true" /><allocation task-id="54" resource-id="5" load="20.0" responsible="true" /><allocation task-id="57" resource-id="5" load="20.0" responsible="true" /><allocation task-id="58" resource-id="5" load="20.0" responsible="true" /><allocation task-id="59" resource-id="5" load="20.0" responsible="true" /><allocation task-id="24" resource-id="5" load="100.0" responsible="true" /><allocation task-id="64" resource-id="5" load="50.0" responsible="true" /><allocation task-id="106" resource-id="5" load="50.0" responsible="true" /><allocation task-id="111" resource-id="5" load="100.0" responsible="true" /><allocation task-id="112" resource-id="5" load="50.0" responsible="true" /><allocation task-id="113" resource-id="5" load="50.0" responsible="true" /><allocation task-id="136" resource-id="5" load="100.0" responsible="true" /><allocation task-id="118" resource-id="5" load="100.0" responsible="true" /><allocation task-id="68" resource-id="5" load="33.3" responsible="true" /><allocation task-id="81" resource-id="5" load="33.3" responsible="true" /><allocation task-id="79" resource-id="5" load="33.3" responsible="true" /><allocation task-id="130" resource-id="5" load="50.0" responsible="true" /><allocation task-id="132" resource-id="5" load="50.0" responsible="true" /><allocation task-id="32" resource-id="5" load="33.3" responsible="true" /><allocation task-id="86" resource-id="5" load="33.3" responsible="true" /><allocation task-id="87" resource-id="5" load="33.3" responsible="true" /><allocation task-id="36" resource-id="5" load="50.0" responsible="true" /><allocation task-id="88" resource-id="5" load="50.0" responsible="true" /><allocation task-id="90" resource-id="5" load="100.0" responsible="true" /></allocations></project>

@@ -4,58 +4,193 @@
   top: 0;
   left: 0;
   right: 0;
-  background: var(--black-80);
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
+  background: linear-gradient(180deg, rgba(6, 12, 10, 0.94), rgba(6, 12, 10, 0.84));
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  padding: 0.85rem 1.25rem;
   display: flex;
   align-items: center;
-  z-index: 1000;
-  gap: 1rem;
+  z-index: 1600;
+  gap: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 2px 0 var(--brand-ghost, transparent), var(--shadow-ui);
+  /* El header nunca debe generar scroll ni empujar botones fuera del viewport. */
+  max-width: 100%;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.tour-brand-cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+  min-width: 0;
+  max-width: min(36vw, 260px);
+  /* Cede espacio antes que el título o los botones de acción. */
+  flex: 0 1 auto;
+}
+
+.tour-client-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.tour-client-brand[hidden] {
+  display: none !important;
+}
+
+.tour-client-brand__logo {
+  max-height: 32px;
+  max-width: 128px;
+  object-fit: contain;
+}
+
+.tour-client-brand__name {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* 0.62rem / alfa 0.72: por debajo de esto el texto no alcanza 4.5:1 sobre el
+   degradado del header (medido, no estimado). */
+.powered-by-orbe {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(244, 247, 245, 0.78);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.powered-by-orbe[hidden] {
+  display: none !important;
+}
+
+.action-button--subtle,
+.action-button--powered-subtle {
+  opacity: 0.88;
+}
+
+.action-button--subtle:hover,
+.action-button--powered-subtle:hover {
+  opacity: 1;
+}
+
+.orb-mini-mark {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: inherit;
+}
+
+.powered-by-orbe:hover {
+  color: #fff;
+}
+
+.powered-by-orbe:focus-visible {
+  color: #fff;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .title-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex: 1;
-  gap: 0.25rem;
+  /* 1 1 0: el título absorbe el espacio libre y es el primero en encogerse. */
+  flex: 1 1 0;
+  gap: 0.15rem;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .menu-toggle {
-  background: var(--emerald);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  background: var(--brand);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-md);
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  color: var(--brand-ink, #ffffff);
+}
+
+.menu-toggle:hover {
+  background: var(--brand-strong);
+  color: var(--brand-ink, #ffffff);
+  transform: translateY(-1px);
+}
+
+.menu-toggle svg,
+.action-button svg {
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .scene-title {
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 100% del title-wrapper (flex), no un tope en vw: evita empujar botones fuera. */
+  max-width: 100%;
 }
 
 .scene-zone {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.78rem;
+  color: rgba(244, 247, 245, 0.84);
+  letter-spacing: 0.02em;
 }
 
 .action-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 0.55rem;
+  /* Los controles de acción nunca se encogen ni se salen del viewport. */
+  flex: 0 0 auto;
 }
 
 .action-button {
-  background: var(--emerald-80);
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  flex: 0 0 auto;
+  border-radius: var(--radius-md);
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.action-button[hidden] {
+  display: none !important;
+}
+
+.action-button:hover {
+  background: var(--brand-soft, rgba(255, 255, 255, 0.2));
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--brand-ink, #ffffff);
+  transform: translateY(-1px);
 }
 
 .action-button:focus-visible,
@@ -63,3 +198,11 @@
   outline: 3px solid #fff;
   outline-offset: 2px;
 }
+
+.action-button--active {
+  background: var(--brand) !important;
+  border-color: rgba(255, 255, 255, 0.75) !important;
+  color: var(--brand-ink, #ffffff) !important;
+  box-shadow: 0 4px 14px var(--brand-ghost, rgba(0, 0, 0, 0.35));
+}
+

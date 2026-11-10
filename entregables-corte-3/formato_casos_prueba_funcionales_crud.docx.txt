@@ -1,0 +1,137 @@
+UNIVERSIDAD SIMÓN BOLÍVAR — CAMPUS CÚCUTAPROGRAMA DE INGENIERÍA DE SISTEMAS
+FORMATO ESTÁNDAR: CASOS DE PRUEBA FUNCIONALES (Caja Negra - CRUD)Asignatura: Gestion de Proyectos  (9° Semestre) | Docente: Prof. Nataly Duque Páez
+1. DENOMINACIÓN TÉCNICA Y MARCO METODOLÓGICO
+¿Cómo se llama oficialmente este tipo de prueba?Este instrumento se denomina oficialmente Especificación de Casos de Prueba Funcionales (Functional Test Cases), enmarcado dentro de las Pruebas de Sistema y Aceptación de Caja Negra (Black-Box Testing) según el estándar del Ciclo de Vida de Pruebas de Software (STLC) y la norma ISO/IEC/IEEE 29119.
+Estructuración del CRUD por Caso de Prueba Atómico:Un Requerimiento Funcional (RF) describe la capacidad general del negocio (por ejemplo, RF-01: Gestionar Pacientes). Sin embargo, NO se debe crear una sola prueba para todo el requerimiento. Cada una de las cuatro operaciones del CRUD (Crear, Leer/Consultar, Actualizar/Editar, Eliminar/Inactivar) requiere de un Caso de Prueba independiente y atómico, debido a las siguientes razones técnicas:
+Diferencia de Precondiciones: Para 'Eliminar' se requiere que el registro exista previamente en base de datos; para 'Crear', se requiere que el formulario esté limpio y el registro no exista.
+Diferencia de Endpoints HTTP y Lógica Backend: Crear invoca métodos POST (HTTP 201), Leer usa GET (HTTP 200), Actualizar usa PUT/PATCH (HTTP 200) y Eliminar usa DELETE (HTTP 200/204).
+Aislamiento e Identificación de Fallos (Trazabilidad): Si la función 'Eliminar' falla pero la función 'Crear' funciona perfectamente, el defecto se reporta exclusivamente sobre la operación de eliminación sin bloquear la aprobación de la creación.
+Independencia de Datos de Entrada: Crear requiere la captura y validación de múltiples campos; Eliminar requiere únicamente el identificador clave (ID/Cédula) y confirmación.
+2. PLANTILLA / FORMATO EN BLANCO (PARA USO DEL ESTUDIANTE)
+Diligencie una estructura idéntica a esta plantilla por cada operación del CRUD de los requerimientos funcionales del proyecto de software:
+ID CASO DE PRUEBA:
+[Ej. CP-RF01-C]
+MÓDULO / RF:
+[Ej. RF-01: Gestión Pacientes]
+OPERACIÓN CRUD:
+[Crear / Leer / Actualizar / Eliminar]
+PRIORIDAD:
+[Alta / Media / Baja]
+NOMBRE DEL CASO:
+[Describa brevemente el objetivo del caso de prueba]
+PRECONDICIONES:
+[Estado previo del sistema, sesión activa, datos requeridos en BD]
+PASOS Y DATOS DE ENTRADA:
+1. [Paso 1 + Dato de entrada]2. [Paso 2 + Dato de entrada]3. [Paso 3 - Acción final]
+RESULTADO ESPERADO:
+[Comportamiento esperado en la UI, mensaje, código HTTP y cambio en BD]
+EVIDENCIA OBSERVADA:
+[Lo que ocurrió realmente durante la prueba]
+ESTADO FINAL:
+[ Aprobado (A) / Condicionado (C) / Rechazado (R) ]
+ID BUG / DEFECTO:
+[Ej. BUG-012 o N/A si aprobó]
+EVALUADOR / FECHA:
+[Nombre Estudiante - DD/MM/AAAA]
+3. EJEMPLO DEMOSTRATIVO DILIGENCIADO: DESGLOSE COMPLETO DE UN CRUD
+A continuación se presenta el ejemplo completo de cómo se desglosa el requerimiento RF-01: Gestión de Expedientes de Pacientes (Sistema SITR - Telemedicina Rural) en cuatro (4) casos de prueba individuales, uno para cada operación del CRUD:
+Caso de Prueba 1: Operación CREAR (Create)
+ID CASO DE PRUEBA:
+CP-RF01-C01
+MÓDULO / RF:
+RF-01: Gestión Pacientes
+OPERACIÓN CRUD:
+CREAR (Create)
+PRIORIDAD:
+Alta (Crítica)
+NOMBRE DEL CASO:
+Registrar nuevo expediente de paciente con datos completos y validaciones de formato.
+PRECONDICIONES:
+Usuario con rol 'Médico Rural' o 'Auxiliar' ha iniciado sesión en el sistema SITR. El paciente con cédula '1090123456' NO existe en la base de datos.
+PASOS Y ENTRADAS:
+1. Navegar al módulo 'Pacientes' -> Clic en el botón '+ Nuevo Paciente'.2. Ingresar Cédula: '1090123456', Nombres: 'Carlos Alberto', Apellidos: 'Pérez Gómez', Fecha Nac.: '15/05/1988', Municipio: 'Tibú'.3. Clic en el botón 'Guardar Registro'.
+RESULTADO ESPERADO:
+El sistema retorna un mensaje de confirmación 'Paciente registrado exitosamente' (HTTP 201 Created), genera el token de expediente único y el registro aparece inmediatamente en la lista.
+EVIDENCIA OBSERVADA:
+Registro guardado correctamente en 1.2 segundos. Se verificó en BD Postgres la creación de la fila en la tabla 'pacientes' con estado 'ACTIVO'.
+ESTADO FINAL:
+APROBADO (A)
+ID BUG / DEFECTO:
+N/A (Sin defectos)
+EVALUADOR / FECHA:
+Prof. Nataly Duque - 09/10/2026
+Caso de Prueba 2: Operación LEER / CONSULTAR (Read)
+ID CASO DE PRUEBA:
+CP-RF01-R01
+MÓDULO / RF:
+RF-01: Gestión Pacientes
+OPERACIÓN CRUD:
+LEER (Read / Consultar)
+PRIORIDAD:
+Alta (Crítica)
+NOMBRE DEL CASO:
+Consultar expediente de paciente existente mediante número de documento de identidad.
+PRECONDICIONES:
+Paciente 'Carlos Alberto Pérez Gómez' (Cédula: 1090123456) registrado previamente en el sistema.
+PASOS Y ENTRADAS:
+1. Ir al campo de búsqueda 'Buscar Paciente por Cédula o Nombre'.2. Digitar el número de cédula: '1090123456'.3. Presionar la tecla Enter o clic en el icono 'Buscar'.
+RESULTADO ESPERADO:
+El sistema responde en menos de 2 segundos (HTTP 200 OK) mostrando la ficha clínica completa del paciente con sus datos demográficos y antecedentes.
+EVIDENCIA OBSERVADA:
+Consulta realizada con éxito en 0.8s. Los datos presentados en la pantalla coinciden al 100% con los datos almacenados en la BD.
+ESTADO FINAL:
+APROBADO (A)
+ID BUG / DEFECTO:
+N/A (Sin defectos)
+EVALUADOR / FECHA:
+Prof. Nataly Duque - 09/10/2026
+Caso de Prueba 3: Operación ACTUALIZAR (Update)
+ID CASO DE PRUEBA:
+CP-RF01-U01
+MÓDULO / RF:
+RF-01: Gestión Pacientes
+OPERACIÓN CRUD:
+ACTUALIZAR (Update)
+PRIORIDAD:
+Media
+NOMBRE DEL CASO:
+Modificar datos de contacto (Teléfono y Dirección de Residencia) de un paciente existente.
+PRECONDICIONES:
+Expediente de paciente 'Carlos Alberto Pérez Gómez' cargado en pantalla en modo edición.
+PASOS Y ENTRADAS:
+1. Seleccionar el expediente del paciente -> Clic en 'Editar Datos'.2. Modificar el campo Teléfono de '3101234567' a '3209876543'.3. Modificar Dirección de 'Vereda El Mirador' a 'Barrio Centro, Tibú'.4. Clic en 'Actualizar Expediente'.
+RESULTADO ESPERADO:
+El sistema guarda los cambios (HTTP 200 OK), actualiza la fecha de modificación en la auditoría y muestra el mensaje 'Datos actualizados correctamente'.
+EVIDENCIA OBSERVADA:
+Los datos se guardan en la BD, pero la pantalla no refresca automáticamente la información actualizada hasta que el usuario recarga la página manualmente.
+ESTADO FINAL:
+CONDICIONADO (C)
+ID BUG / DEFECTO:
+BUG-042 (Refresco UI)
+EVALUADOR / FECHA:
+Prof. Nataly Duque - 09/10/2026
+Caso de Prueba 4: Operación ELIMINAR / INACTIVAR (Delete)
+ID CASO DE PRUEBA:
+CP-RF01-D01
+MÓDULO / RF:
+RF-01: Gestión Pacientes
+OPERACIÓN CRUD:
+ELIMINAR (Delete / Inactivar)
+PRIORIDAD:
+Alta (Inmutabilidad)
+NOMBRE DEL CASO:
+Ejecutar borrado lógico (Inactivación) de expediente de paciente sin teleconsultas pendientes.
+PRECONDICIONES:
+Paciente 'Carlos Alberto Pérez Gómez' existe en BD y no tiene citas ni teleconsultas programadas.
+PASOS Y ENTRADAS:
+1. Buscar expediente del paciente '1090123456'.2. Clic en la opción 'Inactivar / Eliminar Expediente'.3. El sistema despliega ventana modal de confirmación: '¿Está seguro de inactivar este expediente?'. Clic en 'Confirmar'.
+RESULTADO ESPERADO:
+El sistema realiza un borrado lógico cambiando el estado del paciente de 'ACTIVO' a 'INACTIVO' (HTTP 200 OK), preservando la historia clínica previa por ley de Habeas Data.
+EVIDENCIA OBSERVADA:
+El sistema intentó realizar un borrado físico (DELETE SQL) arrojando una excepción de clave foránea (Error HTTP 500) por existir registros médicos vinculados.
+ESTADO FINAL:
+RECHAZADO (R)
+ID BUG / DEFECTO:
+BUG-043 (Borrado Físico)
+EVALUADOR / FECHA:
+Prof. Nataly Duque - 09/10/2026

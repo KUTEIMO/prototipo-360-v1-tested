@@ -1,0 +1,50 @@
+GUÍA DE LABORATORIO PASO A PASO: PRUEBAS DE USABILIDAD Y DESEMPEÑO FRONTEND CON GOOGLE LIGHTHOUSE (v2)Auditoría de Calidad UI/UX, Accesibilidad y Velocidad Web | Entorno Local vs. Producción
+Asignatura: Gestion de Proyectos (9° Semestre)
+Docente: Prof. Nataly Duque Páez
+Institución: Universidad Simón Bolívar — Cúcuta
+Herramienta: Google Chrome DevTools (Lighthouse)
+1. Fundamentación Técnica de Google Lighthouse (ISO/IEC 25010)
+Google Lighthouse es una herramienta automatizada de auditoría integrada nativamente en el navegador Google Chrome. Evalúa la usabilidad, accesibilidad y eficiencia de desempeño de aplicaciones web bajo los estándares de la norma ISO/IEC 25010. Lighthouse analiza 5 dimensiones fundamentales:
+Performance (Desempeño): Mide velocidad de carga, interactividad y estabilidad visual (LCP, CLS, FCP).
+Accessibility (Accesibilidad): Evalúa contraste de colores, etiquetas ARIA y navegación por teclado (WCAG 2.1).
+Best Practices (Buenas Prácticas): Revisa seguridad HTTPS, imágenes optimizadas y ausencia de errores en consola JS.
+SEO (Optimización en Buscadores): Valida etiquetas meta, títulos estructurados e indexabilidad.
+PWA (Progressive Web App): Verifica capacidad de funcionamiento offline y adaptabilidad móvil.
+2. Guía de Configuración de Entornos: Servidor Local, Incógnito y Repositorios
+CONSEJOS CLAVE PARA EL LABORATORIO (¿DÓNDE Y CÓMO EJECUTAR LIGHTHOUSE?):
+1. Servidor Local en su PC (localhost): SÍ FUNCIONA PERFECTAMENTE. Los estudiantes no necesitan pagar hosting ni desplegar en internet. Pueden auditar la app ejecutándose localmente en su máquina (ej. React, Flutter Web, FastAPI o Spring Boot). Lighthouse analiza la aplicación en ejecución directa.
+2. Uso Obligatorio del MODO INCÓGNITO: Antes de presionar F12 y lanzar la prueba, el estudiante DEBE abrir la URL en una ventana de Modo Incógnito (Ctrl + Shift + N). Esto evita que las extensiones instaladas en Chrome consuman memoria y reduzcan falsamente la puntuación de rendimiento del proyecto.
+3. ¿Sirve con proyectos en repositorios en línea?: Depende. Si el proyecto está solo como código fuente guardado en el repositorio, NO SIRVE porque Lighthouse requiere una aplicación web en ejecución que devuelva HTML/CSS/JS. Sin embargo, si el proyecto está publicado y desplegado mediante un servicio web activo (como GitHub Pages, Vercel o Netlify), SÍ SIRVE TOTALMENTE.
+3. Procedimiento Paso a Paso para Realizar la Auditoría
+Paso 1: Levantar el Servidor Web Local. Iniciar la aplicación web en su PC. Verificar que la app abra en el navegador.
+Paso 2: Abrir Ventana en Modo Incógnito. En Google Chrome, presionar Ctrl + Shift + N y navegar a la URL local de la aplicación.
+Paso 3: Abrir Developer Tools (F12). Presionar F12 o clic derecho > Inspeccionar. Ir a la pestaña superior Lighthouse.
+Paso 4: Configurar la Auditoría. Seleccionar el modo de dispositivo (Mobile para celulares o Desktop para escritorio) y marcar las 5 categorías (Performance, Accessibility, Best Practices, SEO, PWA).
+Paso 5: Generar Informe. Hacer clic en el botón azul Generar informe. Esperar 30 a 45 segundos sin interactuar con la pantalla.
+Paso 6: Exportar Evidencias. Hacer clic en el menú de tres puntos verticales dentro del reporte de Lighthouse y seleccionar Guardar como HTML o guardar captura de pantalla completa para la entrega.
+4. Matriz de Registro de Evidencias de Usabilidad (Formato Estudiante)
+Pantalla / Modulo
+Performance (0-100)
+Accessibility (0-100)
+Best Practices
+Estado Final (A/C/R)
+Modulo Autenticacion
+92 (Verde)
+95 (Verde)
+100 (Verde)
+Aprobado (A)
+Modulo Panel Principal
+68 (Naranja)
+88 (Naranja)
+90 (Verde)
+Condicionado (C)
+Modulo Reportes
+42 (Rojo)
+60 (Naranja)
+75 (Naranja)
+Rechazado (R)
+[Pantalla Alumno 3]
+[Puntaje]
+[Puntaje]
+[Puntaje]
+[A/C/R]

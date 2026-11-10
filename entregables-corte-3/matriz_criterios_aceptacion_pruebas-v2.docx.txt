@@ -1,0 +1,170 @@
+PROTOCOLO Y MATRIZ DE DEFINICIÓN Y VERIFICACIÓN DE CRITERIOS DE ACEPTACIÓN DE SOFTWARE
+Evaluación de Pruebas de Caja Negra y Caja Blanca
+1. FICHA DE INFORMACIÓN GENERAL DEL PROYECTO
+NOMBRE DEL PROYECTO:
+FECHA PRUEBAS:
+____ / ____ / 2026
+EQUIPO DESARROLLADOR:
+Grupo No. ____
+VERSIÓN SISTEMA:
+v1.0 - Release Candidate
+INTEGRANTES DE GRUPO:
+1. _________________________2. _________________________3. _________________________
+ENTORNO PRUEBAS:
+[  ] Local / Dev[  ] Staging / QA[  ] Producción
+DOCENTE EVALUADOR:
+Prof. Nataly Duque Páez
+ESTADO GLOBAL:
+[  ] APROBADO[  ] CONDICIONADO[  ] RECHAZADO
+2. MARCO DE REFERENCIA Y CONVENCIONES DE VALIDACIÓN
+Para realizar la revisión objetiva del software en vivo, el evaluador o cliente utiliza dos columnas diferenciadas para garantizar la trazabilidad del proceso:
+Resultado Validación (Evidencia Observada): Es la descripción cualitativa del comportamiento real que exhibe el software en pantalla o servidor durante la prueba. Responde a la pregunta: ¿Qué sucedió exactamente durante la ejecución?
+Est. / Estado (Dictamen Sintético A / C / R): Es la casilla corta de clasificación oficial del resultado frente al criterio esperado. Responde a la pregunta: ¿Pasa o no pasa la prueba?
+Abreviatura
+Estado / Criterio
+Descripción y Criterio de Calificación
+A
+Aprobado
+El requerimiento o módulo cumple al 100% con el comportamiento esperado. No se observan errores funcionales, excepciones ni desalineaciones de negocio.
+C
+Condicionado
+La funcionalidad opera correctamente en su lógica principal, pero presenta observaciones menores de interfaz (UI), textos, mensajes o formato secundario que deben ajustarse.
+R
+Rechazado
+La funcionalidad no está implementada, falla críticamente al ejecutarse (excepciones HTTP 500, bloqueos de pantalla) o no satisface la regla de negocio esperada.
+3. MATRIZ DE DEFINICIÓN Y VERIFICACIÓN DE CRITERIOS DE ACEPTACIÓN (CAJA NEGRA)
+A continuación se presentan tres (3) filas de ejemplo ya diligenciadas (Aprobado, Condicionado y Rechazado) para ilustrar cómo el docente o cliente registra la evidencia cualitativa y el estado sintético, seguidas por la matriz completa de evaluación:
+ID
+Módulo / Requerimiento
+Criterio Esperado (Comportamiento)
+Escenario / Entradas
+Resultado Validación (Evidencia Observada)
+Est.
+EJ-01(Ejemplo)
+Autenticación(RF-01)
+El sistema valida credenciales de usuario y redirige al dashboard según su rol en < 2 segundos.
+Email: 'medico@salud.gov.co'Clave: 'Pass1234*'Rol: Médico
+Autenticación exitosa en 1.1s. Se genera token JWT seguro y redirecciona al panel del médico mostrando mensaje de bienvenida institucional.
+A
+EJ-02(Ejemplo)
+Reportes / Salidas(RF-38)
+Generar reporte consolidado de atenciones en PDF con logo institucional y firma digital.
+Filtro: Rango de fechas 01/08/2026 a 31/08/2026.Formato: Exportar PDF.
+El archivo PDF se descarga con datos y totales exactos, pero el logo de la universidad se observa ligeramente desalineado hacia el margen derecho.
+C
+EJ-03(Ejemplo)
+Gestión Pacientes(RF-08)
+Validación de cédula única y formato estrictamente numérico. No permite letras ni caracteres especiales.
+Cédula: '1090123ABC' (con letras) o Cédula duplicada.
+El sistema arrojó error no controlado de servidor (Error HTTP 500) y la pantalla se congeló sin mostrar mensaje de alerta al usuario.
+R
+CA-01
+Acceso & Roles(RF-01 a RF-05)
+Control de autenticación, sesión persistente, recuperación de clave y permisos según el rol de usuario.
+Ingreso con credenciales válidas e inválidas; acceso a URLs protegidas sin login.
+[ Registrar aquí el comportamiento observado en la prueba ]
+[   ]
+CA-02
+Formularios(RF-06 a RF-12)
+Validación de campos obligatorios, tipos de datos, máscaras de entrada y longitud de caracteres.
+Envío de formularios vacíos, datos fuera de rango, caracteres especiales y scripts.
+[ Registrar aquí el comportamiento observado en la prueba ]
+[   ]
+CA-03
+Lógica Negocio(RF-13 a RF-25)
+Ejecución correcta de reglas operativas, cálculos, estados de flujo y transacciones de datos.
+Simulación de procesos principales del sistema con casos borde y valores límite.
+[ Registrar aquí el comportamiento observado en la prueba ]
+[   ]
+CA-04
+Consultas & Filtros(RF-26 a RF-35)
+Búsqueda rápida, filtros combinados, paginación de resultados y ordenamiento de tablas.
+Búsqueda por texto parcial, múltiples criterios activos y registros inexistentes.
+[ Registrar aquí el comportamiento observado en la prueba ]
+[   ]
+CA-05
+Reportes & Salidas(RF-36 a RF-42)
+Generación de documentos exportables (PDF, Excel, CSV) con datos exactos y formato institucional.
+Exportación de datos con filtros aplicados y verificación de encabezados y totales.
+[ Registrar aquí el comportamiento observado en la prueba ]
+[   ]
+CA-06
+Interfaz UI/UX(RF-43 a RF-48)
+Diseño adaptable (Responsive), navegación fluida, legibilidad, paleta corporativa e iconografía.
+Navegación en pantallas de escritorio, tabletas y móviles; prueba de elementos visuales.
+[ Registrar aquí el comportamiento observado en la prueba ]
+[   ]
+CA-07
+Errores & Excepciones(RF-49 a RF-52)
+Captura elegante de fallos sin congelar pantalla ni exponer trazas internas de código (StackTraces).
+Desconexión intencionada de red, envío de datos corruptos y simulación de fallos.
+[ Registrar aquí el comportamiento observado en la prueba ]
+[   ]
+CA-08
+Integridad & Datos(RF-53 a RF-56)
+Trazabilidad de cambios, inmutabilidad de registros contables y borrado lógico (no físico).
+Anulación de registros, verificación de auditoría y prueba de claves foráneas.
+[ Registrar aquí el comportamiento observado en la prueba ]
+[   ]
+CA-09
+Seguridad & Privacidad(RF-57 a RF-60)
+Protección frente a Inyección SQL, XSS, cifrado de claves (BCrypt/AES) y cumplimiento de Habeas Data.
+Pruebas simples de seguridad en entradas de texto y verificación de encriptación en BD.
+[ Registrar aquí el comportamiento observado en la prueba ]
+[   ]
+CA-10
+Rendimiento(RF-General)
+Tiempos de respuesta de peticiones HTTP en servidor menores a 3 segundos bajo carga normal.
+Monitoreo del tiempo de respuesta en consola de desarrollador durante las demos.
+[ Registrar aquí el comportamiento observado en la prueba ]
+[   ]
+4. PROTOCOLO DE PRUEBAS ESTRUCTURALES Y COBERTURA (CAJA BLANCA)
+Esta sección permite auditar la calidad del código fuente mediante pruebas unitarias e integración (JUnit 5, PyTest, Mockito) verificando la Complejidad Ciclomática de McCabe V(G) y aserciones:
+Componente / Capa
+Método Evaluado
+Complejidad V(G)
+Aserciones / Caso Prueba
+Resultado Observado
+Est.
+PacienteService.java(Ejemplo)
+calcularDosisMedicamento(int edad, double peso)
+V(G) = 3(3 Caminos)
+assertEquals(50.0, dosis);assertThrows(Ex.class,...)
+Prueba unitaria ejecutada exitosamente en 45ms. Cobertura de ramas del 100%.
+PASS
+[   ]
+[   ]
+[   ]
+[   ]
+[   ]
+[   ]
+[   ]
+[   ]
+[   ]
+[   ]
+[   ]
+[   ]
+5. BITÁCORA DE CONTROL DE HALLAZGOS Y ERRORES (DEFECT LOG)
+ID Bug
+Módulo
+Descripción del Defecto / Incidencia
+Severidad
+Responsable
+Estado
+BUG-01
+Pacientes
+Error HTTP 500 al ingresar letras en la cédula en lugar de mensaje de alerta.
+Alta / Crítica
+Dev. Juan Pérez
+En Corrección
+[   ]
+[   ]
+[   ]
+[   ]
+[   ]
+[   ]
+6. DICTAMEN FINAL Y ACTA DE ACEPTACIÓN DE SOFTWARE
+MÉTRICA DE CONFORMIDAD FUNCIONAL:• Criterios Evaluados Totales: ____• Criterios Aprobados (A): ____• Porcentaje Cumplimiento: [ ____ % ]
+DICTAMEN GLOBAL DE REVISIÓN:[  ] APROBADO (Cumplimiento ≥ 90%)[  ] CONDICIONADO (Cumplimiento 75% - 89%)[  ] RECHAZADO (Cumplimiento < 75%)
+_____________________________________Firma Docente EvaluadorProf. Nataly Duque Páez
+_____________________________________Firma Representante del EquipoLíder de Proyecto / QA Lead

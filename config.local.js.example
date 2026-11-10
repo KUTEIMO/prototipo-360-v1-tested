@@ -1,0 +1,15 @@
+/**
+ * Optional local / deploy overrides (copy to config.local.js — gitignored).
+ *
+ * Load BEFORE orbe-config.js / plataforma/config.js, e.g. in index.html:
+ *   <script src="config.local.js"></script>
+ *   <script src="orbe-config.js"></script>
+ *
+ * Never commit real production secrets or customer-only URLs in the repo.
+ */
+(function () {
+  // window.__CONVEX_URL__ = "https://YOUR_DEPLOYMENT.convex.cloud";
+  // Prefer canonical path /{org}/{tour}/; inject is fallback when path/query absent:
+  // window.__ORBE_ORG_SLUG__ = "unisimoncucuta";
+  // window.__ORBE_TOUR_SLUG__ = "experienciavirtual";
+})();

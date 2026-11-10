@@ -1,0 +1,113 @@
+FORMATO 2: ACTA DE ACEPTACIÓN DEL CLIENTE (UAT)
+Universidad Simón Bolívar — Sede Cúcuta
+Facultad de Ingenierías | Programa de Ingeniería de Sistemas
+1. INFORMACIÓN GENERAL DEL PROYECTO
+Campo
+Detalle / Información
+Nombre del Proyecto
+[Nombre del Sistema / Software Desarrollado]
+Entidad / Cliente Receptora
+[Nombre de la Empresa o Institución Beneficiaria]
+Representante del Cliente
+Persona
+Cargo del Representante
+[Cargo institucional del cliente]
+Tutor Académico (USB)
+Person
+Estudiante(s) / Desarrollador(es)
+Person
+Fecha de Evaluación UAT
+Date
+Lugar / Modalidad
+Place
+2. INTEGRANTES Y PARTICIPANTES
+Nombre Completo
+Rol en el Proyecto
+Entidad / Dependencia
+Firma / Conformidad
+Person
+Lider de Proyecto / Estudiante
+Universidad Simón Bolívar
+Aprobado
+Person
+Desarrollador / Estudiante
+Universidad Simón Bolívar
+Aprobado
+Person
+Tutor Académico
+Universidad Simón Bolívar
+Aprobado
+Person
+Contraparte / Cliente Principal
+[Nombre de la Entidad]
+Aprobado
+3. EVALUACIÓN DE PRUEBAS DE ACEPTACIÓN DE USUARIO (UAT)
+3.1. Criterios Cuantitativos y Funcionales
+Módulo / Requisito
+Criterio de Aceptación
+Resultado (Pasa / No Pasa)
+Observaciones / Defectos Encontrados
+Módulo 1: Autenticación y Seguridad
+Acceso por roles, gestión de contraseñas y cifrado de sesiones.
+Pasa
+Cumple con los estándares requeridos.
+Módulo 2: Gestión de Datos
+Registro, edición, eliminación lógica y consulta de información.
+Pasa
+Sin observaciones críticas.
+Módulo 3: Reportes e Informes
+Generación de reportes exportables en PDF/Excel.
+Pasa
+Se ajustó el formato de salida según solicitud.
+Módulo 4: Interfaz de Usuario (UI/UX)
+Diseño responsivo, navegabilidad e intutitividad.
+Pasa
+Validado con usuarios finales.
+Módulo 5: Rendimiento y Tiempos
+Tiempos de respuesta óptimos bajo carga normal.
+Pasa
+Despliegue correcto en el servidor.
+3.2. Evaluación Cualitativa General
+Dimensión Evaluada
+Escala (1 al 5)
+Comentarios del Cliente
+Cumplimiento de Alcance
+5
+Se entregaron la totalidad de las funcionalidades pactadas.
+Usabilidad y Calidad Visual
+4
+La interfaz es intuitiva y fácil de usar por el personal.
+Documentación Técnica y Manuales
+5
+Manuales de usuario y documentación de código completos.
+Soporte y Capacitación Impartida
+5
+Capacitación satisfactoria al personal operativo.
+4. DICTAMEN DE ACEPTACIÓN
+Seleccione únicamente una de las siguientes opciones según el resultado final de las pruebas de usuario (UAT):
+[ X ] ACEPTACIÓN DEFINITIVA: El sistema cumple satisfactoriamente con la totalidad de los requisitos funcionales, no funcionales y entregables especificados. Se otorga la conformidad final del producto.
+[   ] ACEPTACIÓN CONDICIONADA: El cliente acepta el sistema con observaciones menores descritas en la sección de compromisos. Las correcciones no impiden la puesta en producción.
+[   ] RECHAZADO: El sistema no cumple con los requisitos mínimos de operación y requiere correcciones estructurales antes de una nueva evaluación.
+5. COMPROMISOS Y ACUERDOS DE MEJORA (Si aplica)
+ID
+Descripción de la Acción / Corrección
+Responsable
+Fecha Límite de Entrega
+01
+Entrega de copias de respaldo en medio magnético.
+Person
+Date
+02
+Ajuste menor en plantilla de impresión de certificados.
+Person
+Date
+6. REGISTRO DE FIRMAS Y VALIDACIÓN FINAL
+En constancia de lo anterior y en señal de conformidad con los entregables del proyecto de software presentados por el Programa de Ingeniería de Sistemas de la Universidad Simón Bolívar, se firma la presente acta el día Date.
+Por el Cliente / Entidad Receptora
+Por la Universidad Simón Bolívar
+____________________________________Firma Representante del ClienteNombre: PersonCargo: [Cargo del Cliente]Entidad: [Nombre Empresa/Institución]
+____________________________________Firma Tutor AcadémicoNombre: PersonCargo: Docente Tutor de ProyectoUniversidad Simón Bolívar
+Desarrollador / Estudiante 1
+Desarrollador / Estudiante 2 (Si aplica)
+____________________________________Firma EstudianteNombre: PersonC.C.: [Número de Documento]Programa de Ingeniería de Sistemas
+____________________________________Firma EstudianteNombre: PersonC.C.: [Número de Documento]Programa de Ingeniería de Sistemas
