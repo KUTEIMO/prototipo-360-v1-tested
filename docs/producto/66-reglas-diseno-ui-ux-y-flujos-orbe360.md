@@ -99,3 +99,4 @@ Antes de aprobar cualquier cambio de interfaz o flujo en el repositorio:
 3. **Suite estructural y regresión de rutas/copy:** `npm run qa` (revisando que cualquier fallo único residual esté justificado antes de mezclar).
 4. **Inspección real en Chrome (Chrome DevTools / Playwright):** probar flujos reales por rol (`anónimo`, `orgAdmin`, `tourEditor`, `superadmin`), verificar **0 errores de consola**, comprobar visibilidad, contraste y capturas en desktop/móvil antes de sincronizar copias.
 5. **Sincronización controlada ("un solo árbol de trabajo"):** aplicar en `ORBE` como fuente de verdad, verificar exclusión de `.env*`/`backups/`/`_restos_exras_bloqueados/`, ejecutar `npm run check:drift` y sincronizar copias espejo únicamente tras la aprobación del resultado local.
+
