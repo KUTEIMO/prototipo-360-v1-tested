@@ -43,6 +43,7 @@ Mapa de la documentación del repo `PROTOTIPO-360-CURSOR-V1`.
 | [producto/64-criterios-redisenio-motion-landing-guia-maestra.md](producto/64-criterios-redisenio-motion-landing-guia-maestra.md) | Criterios de rediseño y motion de la landing Orbe360 |
 | [producto/65-entregables-tercer-corte-avance-15.md](producto/65-entregables-tercer-corte-avance-15.md) | Entregables oficiales Tercer Corte (Avance 15% IEEE 1058 y QA) |
 | [producto/66-reglas-diseno-ui-ux-y-flujos-orbe360.md](producto/66-reglas-diseno-ui-ux-y-flujos-orbe360.md) | Reglas permanentes UI/UX, política de contenido, flujos multi-rol y registro de cambios |
+| [producto/67-plan-despliegue-seguro-produccion.md](producto/67-plan-despliegue-seguro-produccion.md) | Plan y checklist de despliegue seguro en producción (último 15%) |
 | [producto/33-epicas-historias-usuario.md](producto/33-epicas-historias-usuario.md) | Épicas e historias de usuario |
 | [producto/12-design-system-orbe360.md](producto/12-design-system-orbe360.md) | Design system (base; ver también 61) |
 | [producto/20-fase4-white-label-branding.md](producto/20-fase4-white-label-branding.md) | White-label |

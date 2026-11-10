@@ -71,6 +71,61 @@ def build_project_charter():
     t0.rows[2].cells[1].text = "Ing. Nataly Duque Páez – Universidad Simón Bolívar (Sede Cúcuta)"
     t0.rows[4].cells[1].text = "ORBE360 (PEVCI)"
     t0.rows[5].cells[3].text = "24/11/2026 (Cierre Definitivo 100%)"
+
+    # Actualizar Table 2 (Objetivos: General + Específicos + SMART debajo tal como están)
+    t2 = doc.tables[2]
+    h_obj_p = t2.rows[4].cells[0].paragraphs[0]
+    if h_obj_p.runs:
+        h_obj_p.runs[0].text = "OBJETIVOS DEL PROYECTO (GENERAL, ESPECÍFICOS Y MEDIBLES SMART):"
+        for extra_r in h_obj_p.runs[1:]:
+            extra_r.text = ""
+    else:
+        r_hdr = h_obj_p.add_run("OBJETIVOS DEL PROYECTO (GENERAL, ESPECÍFICOS Y MEDIBLES SMART):")
+        r_hdr.bold = True
+        r_hdr.font.color.rgb = RGBColor(255, 255, 255)
+
+    obj_cell = t2.rows[5].cells[0]
+    smart_verbatim = [p.text.strip() for p in obj_cell.paragraphs if p.text.strip()]
+    if len(smart_verbatim) < 5:
+        smart_verbatim = [
+            "1. Alcance. Desarrollar e implantar el piloto web de recorridos 360° con panoramas reales, navegación por escenas y hotspots, autenticación con tres roles y CMS mínimo para administrar el catálogo inicial.",
+            "2. Tiempo. Cumplir la fase piloto entre el 26/08/2026 y el 30/11/2026, con hitos de planificación, construcción iterativa, pruebas y puesta en marcha.",
+            "3. Costo. Ejecutar la fase piloto con un presupuesto de $61.000.000 COP, correspondiente a la capacidad del equipo de cinco personas durante cuatro meses. La estimación COCOMO II del producto completo, de 59,40 persona-mes, orienta la continuidad del proyecto y la priorización del backlog hacia las siguientes entregas.",
+            "4. Calidad. Mantener una tasa de errores inferior al 2 % en el recorrido crítico del piloto, operación por teclado en lo esencial, contraste usable y evidencia de revisión automatizada de accesibilidad sobre las páginas publicadas.",
+            "5. Impacto. Disponer de un canal digital de orientación medible por tours publicados, recorridos completados en pruebas controladas y tiempo de carga de escena en red universitaria.",
+        ]
+
+    for extra_p in list(obj_cell.paragraphs)[1:]:
+        extra_p._element.getparent().remove(extra_p._element)
+
+    def _write_obj_para(p, text, bold=False, color=RGBColor(0x33, 0x33, 0x33), space_before=0, space_after=4):
+        p.text = ""
+        p.paragraph_format.space_before = Pt(space_before)
+        p.paragraph_format.space_after = Pt(space_after)
+        run = p.add_run(text)
+        run.bold = bold
+        run.font.size = Pt(10)
+        run.font.color.rgb = color
+
+    _write_obj_para(obj_cell.paragraphs[0], "OBJETIVO GENERAL DEL PROYECTO:", bold=True, color=COLOR_BLACK, space_after=2)
+    _write_obj_para(
+        obj_cell.add_paragraph(),
+        "Desarrollar e implantar una plataforma web de recorridos virtuales 360° orientada a la accesibilidad universal (ORBE360) para la Universidad Simón Bolívar, sede Cúcuta, mediante ingeniería de software estructurada y gestión formal de proyectos, con el propósito de fortalecer la orientación digital autónoma e inclusiva de aspirantes, estudiantes y comunidad universitaria.",
+        space_after=8,
+    )
+    _write_obj_para(obj_cell.add_paragraph(), "OBJETIVOS ESPECÍFICOS DEL PROYECTO:", bold=True, color=COLOR_BLACK, space_after=2)
+    specific_objectives = [
+        "1. Establecer la línea base de alcance, cronograma, costos, riesgos y trazabilidad de calidad del proyecto bajo el estándar IEEE 1058, articulando la planificación predictiva con el seguimiento ágil de iteraciones.",
+        "2. Definir la arquitectura de software multisitio, el modelo de seguridad por roles y los lineamientos de diseño de interfaz y accesibilidad universal (WCAG 2.1 Nivel AA) que sustenten la escalabilidad del sistema.",
+        "3. Construir e integrar de manera incremental los componentes de visualización interactiva 360°, persistencia en tiempo real, administración multi-rol y soporte de accesibilidad sensorial conforme al alcance priorizado.",
+        "4. Validar el cumplimiento funcional, no funcional, de seguridad y de usabilidad del sistema mediante protocolos formales de prueba (ISO/IEC/IEEE 29119 e ISO/IEC 25010) para asegurar su despliegue confiable y aceptación formal por parte del cliente.",
+    ]
+    for idx_s, s_obj in enumerate(specific_objectives):
+        _write_obj_para(obj_cell.add_paragraph(), s_obj, space_after=8 if idx_s == len(specific_objectives) - 1 else 4)
+
+    _write_obj_para(obj_cell.add_paragraph(), "OBJETIVOS MEDIBLES (SMART):", bold=True, color=COLOR_BLACK, space_after=3)
+    for idx_m, m_obj in enumerate(smart_verbatim):
+        _write_obj_para(obj_cell.add_paragraph(), m_obj, space_after=2 if idx_m == len(smart_verbatim) - 1 else 4)
     
     # Actualizar Table 4 (Recordatorio del acuerdo 70% vs 15% vs 15%)
     t4 = doc.tables[4]
@@ -885,7 +940,27 @@ def build_markdown_equivalents():
 
 ---
 
-## 2. Acuerdo Formal de Evaluación — Tercer Corte (30% del Proyecto)
+## 2. Objetivos del Proyecto
+
+### Objetivo General
+Desarrollar e implantar una plataforma web de recorridos virtuales 360° orientada a la accesibilidad universal (ORBE360) para la Universidad Simón Bolívar, sede Cúcuta, mediante ingeniería de software estructurada y gestión formal de proyectos, con el propósito de fortalecer la orientación digital autónoma e inclusiva de aspirantes, estudiantes y comunidad universitaria.
+
+### Objetivos Específicos
+1. Establecer la línea base de alcance, cronograma, costos, riesgos y trazabilidad de calidad del proyecto bajo el estándar IEEE 1058, articulando la planificación predictiva con el seguimiento ágil de iteraciones.
+2. Definir la arquitectura de software multisitio, el modelo de seguridad por roles y los lineamientos de diseño de interfaz y accesibilidad universal (WCAG 2.1 Nivel AA) que sustenten la escalabilidad del sistema.
+3. Construir e integrar de manera incremental los componentes de visualización interactiva 360°, persistencia en tiempo real, administración multi-rol y soporte de accesibilidad sensorial conforme al alcance priorizado.
+4. Validar el cumplimiento funcional, no funcional, de seguridad y de usabilidad del sistema mediante protocolos formales de prueba (ISO/IEC/IEEE 29119 e ISO/IEC 25010) para asegurar su despliegue confiable y aceptación formal por parte del cliente.
+
+### Objetivos Medibles (SMART)
+1. **Alcance.** Desarrollar e implantar el piloto web de recorridos 360° con panoramas reales, navegación por escenas y hotspots, autenticación con tres roles y CMS mínimo para administrar el catálogo inicial.
+2. **Tiempo.** Cumplir la fase piloto entre el 26/08/2026 y el 30/11/2026, con hitos de planificación, construcción iterativa, pruebas y puesta en marcha.
+3. **Costo.** Ejecutar la fase piloto con un presupuesto de $61.000.000 COP, correspondiente a la capacidad del equipo de cinco personas durante cuatro meses. La estimación COCOMO II del producto completo, de 59,40 persona-mes, orienta la continuidad del proyecto y la priorización del backlog hacia las siguientes entregas.
+4. **Calidad.** Mantener una tasa de errores inferior al 2 % en el recorrido crítico del piloto, operación por teclado en lo esencial, contraste usable y evidencia de revisión automatizada de accesibilidad sobre las páginas publicadas.
+5. **Impacto.** Disponer de un canal digital de orientación medible por tours publicados, recorridos completados en pruebas controladas y tiempo de carga de escena en red universitaria.
+
+---
+
+## 3. Acuerdo Formal de Evaluación — Tercer Corte (30% del Proyecto)
 En atención a las directrices de la docente Ing. Nataly Duque Páez, el 30% del proyecto se divide formalmente en:
 1. **Primer 15% (Avance al 11 de Noviembre de 2026 — Entrega Actual):**
    - Software funcional con locución humana universitaria real (grabada por Saraic Noemí León) integrada canónicamente en `scenes/` y `hotspots/`.
@@ -900,14 +975,14 @@ En atención a las directrices de la docente Ing. Nataly Duque Páez, el 30% del
 
 ---
 
-## 3. Desglose del Alcance (100% Total)
+## 4. Desglose del Alcance (100% Total)
 * **70% Inicial (Segundo Corte — Aprobado):** Motor Marzipano WebGL, autenticación por roles en Convex, recorrido piloto de Sede 2 (Bloques B, C y D), WBS de 123 tareas (257 antecesores) y 54 tickets Jira.
 * **15% Avance (Tercer Corte — 11 de Noviembre -> 85% Acumulado):** Locución humana real de Saraic Noemí, Estudio de Audio Salomé en Control Web, auth multi-rol Convex sin mocks, precarga espacial, Sede 4 (Bloque G) en borrador, rediseño UI/UX Soft Clay y 50%+ de pruebas ISO 29119 / ISO 25010.
 * **15% Final (Compromiso Previo — 24 de Noviembre):** Ejecución total de pruebas, carga fotográfica multi-sede, despliegue 100% y acta UAT.
 
 ---
 
-## 4. Trazabilidad a las Correcciones del Primer Corte
+## 5. Trazabilidad a las Correcciones del Primer Corte
 1. **Duración COCOMO II vs. Semestre:** 11.8 meses nominales secuenciales cubiertos en 5 meses con 5 ingenieros concurrentes (59.40 Persona-Mes).
 2. **Presupuesto unificado:** consolidado en **$63.000.000 COP**.
 3. **Puntos de Función (IFPUG):** matriz de 54 RF/RNF y 14 GSC = **400.84 PFA** (`21.24 KLOC`).
@@ -917,7 +992,7 @@ En atención a las directrices de la docente Ing. Nataly Duque Páez, el 30% del
 
 ---
 
-## 5. Mockups y Arquitectura Visual de la Aplicación
+## 6. Mockups y Arquitectura Visual de la Aplicación
 ```text
 +-----------------------------------------------------------------------------------------+
 |  ORBE360  [Logo USB]            [Recorrido 360]   [Características]   [Sedes]   [ES/EN] [[CLARO]/[OSCURO]] |

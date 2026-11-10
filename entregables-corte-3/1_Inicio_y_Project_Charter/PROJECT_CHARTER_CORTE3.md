@@ -18,7 +18,27 @@
 
 ---
 
-## 2. Acuerdo Formal de Evaluación — Tercer Corte (30% del Proyecto)
+## 2. Objetivos del Proyecto
+
+### Objetivo General
+Desarrollar e implantar una plataforma web de recorridos virtuales 360° orientada a la accesibilidad universal (ORBE360) para la Universidad Simón Bolívar, sede Cúcuta, mediante ingeniería de software estructurada y gestión formal de proyectos, con el propósito de fortalecer la orientación digital autónoma e inclusiva de aspirantes, estudiantes y comunidad universitaria.
+
+### Objetivos Específicos
+1. Establecer la línea base de alcance, cronograma, costos, riesgos y trazabilidad de calidad del proyecto bajo el estándar IEEE 1058, articulando la planificación predictiva con el seguimiento ágil de iteraciones.
+2. Definir la arquitectura de software multisitio, el modelo de seguridad por roles y los lineamientos de diseño de interfaz y accesibilidad universal (WCAG 2.1 Nivel AA) que sustenten la escalabilidad del sistema.
+3. Construir e integrar de manera incremental los componentes de visualización interactiva 360°, persistencia en tiempo real, administración multi-rol y soporte de accesibilidad sensorial conforme al alcance priorizado.
+4. Validar el cumplimiento funcional, no funcional, de seguridad y de usabilidad del sistema mediante protocolos formales de prueba (ISO/IEC/IEEE 29119 e ISO/IEC 25010) para asegurar su despliegue confiable y aceptación formal por parte del cliente.
+
+### Objetivos Medibles (SMART)
+1. **Alcance.** Desarrollar e implantar el piloto web de recorridos 360° con panoramas reales, navegación por escenas y hotspots, autenticación con tres roles y CMS mínimo para administrar el catálogo inicial.
+2. **Tiempo.** Cumplir la fase piloto entre el 26/08/2026 y el 30/11/2026, con hitos de planificación, construcción iterativa, pruebas y puesta en marcha.
+3. **Costo.** Ejecutar la fase piloto con un presupuesto de $61.000.000 COP, correspondiente a la capacidad del equipo de cinco personas durante cuatro meses. La estimación COCOMO II del producto completo, de 59,40 persona-mes, orienta la continuidad del proyecto y la priorización del backlog hacia las siguientes entregas.
+4. **Calidad.** Mantener una tasa de errores inferior al 2 % en el recorrido crítico del piloto, operación por teclado en lo esencial, contraste usable y evidencia de revisión automatizada de accesibilidad sobre las páginas publicadas.
+5. **Impacto.** Disponer de un canal digital de orientación medible por tours publicados, recorridos completados en pruebas controladas y tiempo de carga de escena en red universitaria.
+
+---
+
+## 3. Acuerdo Formal de Evaluación — Tercer Corte (30% del Proyecto)
 En atención a las directrices de la docente Ing. Nataly Duque Páez, el 30% del proyecto se divide formalmente en:
 1. **Primer 15% (Avance al 11 de Noviembre de 2026 — Entrega Actual):**
    - Software funcional con locución humana universitaria real (grabada por Saraic Noemí León) integrada canónicamente en `scenes/` y `hotspots/`.
@@ -33,14 +53,14 @@ En atención a las directrices de la docente Ing. Nataly Duque Páez, el 30% del
 
 ---
 
-## 3. Desglose del Alcance (100% Total)
+## 4. Desglose del Alcance (100% Total)
 * **70% Inicial (Segundo Corte — Aprobado):** Motor Marzipano WebGL, autenticación por roles en Convex, recorrido piloto de Sede 2 (Bloques B, C y D), WBS de 123 tareas (257 antecesores) y 54 tickets Jira.
 * **15% Avance (Tercer Corte — 11 de Noviembre -> 85% Acumulado):** Locución humana real de Saraic Noemí, Estudio de Audio Salomé en Control Web, auth multi-rol Convex sin mocks, precarga espacial, Sede 4 (Bloque G) en borrador, rediseño UI/UX Soft Clay y 50%+ de pruebas ISO 29119 / ISO 25010.
 * **15% Final (Compromiso Previo — 24 de Noviembre):** Ejecución total de pruebas, carga fotográfica multi-sede, despliegue 100% y acta UAT.
 
 ---
 
-## 4. Trazabilidad a las Correcciones del Primer Corte
+## 5. Trazabilidad a las Correcciones del Primer Corte
 1. **Duración COCOMO II vs. Semestre:** 11.8 meses nominales secuenciales cubiertos en 5 meses con 5 ingenieros concurrentes (59.40 Persona-Mes).
 2. **Presupuesto unificado:** consolidado en **$63.000.000 COP**.
 3. **Puntos de Función (IFPUG):** matriz de 54 RF/RNF y 14 GSC = **400.84 PFA** (`21.24 KLOC`).
@@ -50,7 +70,7 @@ En atención a las directrices de la docente Ing. Nataly Duque Páez, el 30% del
 
 ---
 
-## 5. Mockups y Arquitectura Visual de la Aplicación
+## 6. Mockups y Arquitectura Visual de la Aplicación
 ```text
 +-----------------------------------------------------------------------------------------+
 |  ORBE360  [Logo USB]            [Recorrido 360]   [Características]   [Sedes]   [ES/EN] [[CLARO]/[OSCURO]] |
