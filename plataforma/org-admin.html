@@ -751,14 +751,15 @@
       document.getElementById("publishTourLabel").textContent =
         `${tour.title} · ${tour.archived ? "Archivado" : tour.published ? "Publicado" : "Borrador"}`;
       renderToursList();
+      const tasks = [];
       if (isOrgAdminRole()) {
         statusEl.classList.remove("error");
-        await loadBranding();
-        await evaluateChecklist({ quiet: true });
+        tasks.push(loadBranding(), evaluateChecklist({ quiet: true }));
       }
       if (!document.getElementById("panel-metrics")?.hidden) {
-        await loadMetricsAndAudit();
+        tasks.push(loadMetricsAndAudit());
       }
+      await Promise.all(tasks);
     }
 
     function setActiveTour(tourId) {
@@ -815,6 +816,9 @@
     activeOrgSlug = preferredOrg.slug;
     refreshWhoami();
     renderOrgs();
+    if (!document.getElementById("panel-metrics")?.hidden) {
+      void loadMetricsAndAudit();
+    }
     await loadTours();
     updateNewTourPreview();
 
@@ -1162,10 +1166,12 @@
       return `"${s.replaceAll('"', '""')}"`;
     }
 
+    let metricsLoadSeq = 0;
     async function loadMetricsAndAudit() {
       const org = getActiveOrg();
       const tour = getActiveTour();
       if (!org) return;
+      const reqSeq = ++metricsLoadSeq;
       const scopeEl = document.getElementById("metricsScopeLabel");
       if (scopeEl) {
         scopeEl.textContent = tour
@@ -1179,6 +1185,7 @@
           ...(tour ? { tourId: tour.id } : {}),
           now: Date.now(),
         });
+        if (reqSeq !== metricsLoadSeq) return;
         lastMetricsPayload = metrics;
         document.getElementById("metricViews").textContent = String(metrics.views ?? 0);
         document.getElementById("metricScenes").textContent = String(metrics.sceneChanges ?? 0);

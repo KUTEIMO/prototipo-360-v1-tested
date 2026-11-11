@@ -124,18 +124,23 @@ function buildFirebaseConfig() {
   };
 }
 
-const CLOUDFLARE_REDIRECTS = [
-  "/plataforma / 301",
-  "/plataforma/ / 301",
-  "/plataforma/index.html / 301",
-  "/:org/org-admin.html /plataforma/org-admin.html 200",
-  "/:org/:tour/org-admin.html /:org/org-admin.html 302",
-  "/:org/:tour/control-web /:org/:tour/control-web/ 301",
-  "/:org/:tour/control-web/ /control-web/index.html 200",
-  "/:org/:tour/ /viewer.html 200",
-  "/:org/:tour /viewer.html 200",
-  "",
-].join("\n");
+const CLOUDFLARE_ROUTES = {
+  version: 1,
+  include: ["/*"],
+  exclude: [
+    "/media/*",
+    "/css/*",
+    "/src/*",
+    "/vendors/*",
+    "/plataforma/assets/*",
+    "/plataforma/data/*",
+    "/control-web/*.css",
+    "/control-web/*.js",
+    "/plataforma/*.css",
+    "/plataforma/*.js",
+    "/orbe-config.js",
+  ],
+};
 
 const CLOUDFLARE_HEADERS = [
   "/*",
@@ -182,15 +187,24 @@ if (!dryRun) {
     "utf8"
   );
 
-  fs.writeFileSync(path.join(DIST, "_redirects"), CLOUDFLARE_REDIRECTS, "utf8");
+  fs.writeFileSync(
+    path.join(DIST, "_routes.json"),
+    `${JSON.stringify(CLOUDFLARE_ROUTES, null, 2)}\n`,
+    "utf8"
+  );
   fs.writeFileSync(path.join(DIST, "_headers"), CLOUDFLARE_HEADERS, "utf8");
+  fs.writeFileSync(
+    path.join(DIST, "404.html"),
+    "<!DOCTYPE html><html lang=\"es\"><head><meta charset=\"UTF-8\"><title>No encontrado — Orbe360</title></head><body><h1>404 · Recurso no encontrado</h1><p><a href=\"/\">Volver al inicio</a></p></body></html>\n",
+    "utf8"
+  );
   fs.writeFileSync(
     path.join(DIST, "firebase.json"),
     `${JSON.stringify(buildFirebaseConfig(), null, 2)}\n`,
     "utf8"
   );
 }
-totalFiles += 7;
+totalFiles += 8;
 
 console.log(
   `[build:prod] ${dryRun ? "Dry-run OK" : "Built"} dist/ (${totalFiles} files${convexUrl ? `, Convex=${convexUrl}` : ", no Convex URL baked in"}).`

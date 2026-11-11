@@ -9,12 +9,15 @@ Este directorio documenta la arquitectura recomendada para publicar Orbe360 en I
    - Configura variables de entorno de producción en Convex Cloud:
      - `ALLOW_OPEN_SEED=0` (por defecto desactivado; no expongas seed abierto).
      - Opcional para bootstrap inicial: `SEED_SANDBOX_PASSWORD` fuerte.
-2. **Frontend estático + Media (`/media/*`):** **Cloudflare Pages** (recomendado) o **Firebase Hosting**
+2. **Frontend estático + Media (`/media/*`):** **Cloudflare Pages** (recomendado y en vivo) o **Firebase Hosting**
    - El paquete estático generado por `npm run build:prod` coloca:
      - `dist/index.html` ← portal Orbe360 (`plataforma/index.html`)
      - `dist/viewer.html` ← visor 360° (`index.html`)
-     - `dist/_redirects` y `dist/_headers` para Cloudflare Pages
+     - `dist/_routes.json`, `dist/_headers`, `dist/404.html` + `functions/[[path]].js` para Cloudflare Pages (excluyendo `/media/*` de Pages Functions para servir panoramas y audios a tráfico ilimitado)
      - `dist/firebase.json` para Firebase Hosting (rewrites `/:org/:tour/`, `/:org/org-admin.html`, `/:org/:tour/control-web/`)
+   - Instancia pública activa (`$0` Free):
+     - Web Cloudflare Pages: `https://orbe360-unisimon.pages.dev`
+     - Backend Convex Cloud: `https://careful-gnu-592.convex.cloud`
    - Nota de ancho de banda: la carpeta `media/` actual supera los `275 MB` en panoramas; Cloudflare Pages ofrece ancho de banda ilimitado y hasta `25 MiB` por archivo, evitando agotar cuotas mensuales de transferencia en planes gratuitos como Spark (10 GB/mes).
 
 ## Pasos para generar e impulsar un despliegue real

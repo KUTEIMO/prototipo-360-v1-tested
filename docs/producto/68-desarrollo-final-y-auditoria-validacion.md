@@ -35,11 +35,18 @@
 
 ---
 
-## 3. Empaquetado estático productivo (`npm run build:prod`)
+## 3. Empaquetado estático productivo y despliegue gratuito (`$0`)
 
 - El script `scripts/build-static-dist.mjs` genera `./dist` excluyendo fuentes de Convex, `.env*`, pruebas, documentación interna y scripts de desarrollo.
-- Genera `dist/index.html` (portal Orbe360), `dist/viewer.html` (visor 360°), `dist/orbe-config.js` (opcionalmente con `ORBE_CONVEX_URL` HTTPS), `dist/_redirects`, `dist/_headers` y `dist/firebase.json`.
-- Ver `deploy/README.md` y `docs/producto/67-plan-despliegue-seguro-produccion.md` para la secuencia de despliegue hacia **Convex Cloud** (`npx convex deploy`) + **Cloudflare Pages** / **Firebase Hosting**.
+- Incluye `dist/index.html` (portal Orbe360), `dist/viewer.html` (visor 360°), `dist/orbe-config.js` / `dist/plataforma/config.js` (con `ORBE_CONVEX_URL` HTTPS), `dist/_routes.json`, `dist/_headers`, `dist/404.html` y `dist/firebase.json`.
+- El router multi-tenant `functions/[[path]].js` en Cloudflare Pages sirve `/{org}/{tour}/`, `/{org}/org-admin.html`, `/{org}/{tour}/control-web/` y bloquea rutas internas (`/.env*`, `/convex/*`, `/docs/*`, `/panoramas/*`) mientras excluye `/media/*`, `/css/*`, `/src/*` y `/vendors/*` en `_routes.json` para tráfico estático gratuito ilimitado.
+- **Instancias desplegadas en producción (0 USD):**
+  - Frontend HTTPS (Cloudflare Pages Free): `https://orbe360-unisimon.pages.dev`
+  - Backend Convex Cloud Free (`orbe360-unisimon`): `https://careful-gnu-592.convex.cloud` (sin `ALLOW_OPEN_SEED` ni `SEED_BOOTSTRAP_SECRET` residual).
+- **Integración de los 29 panoramas nuevos (`Fotitos`, 10 nov):**
+  - 26 escenas incorporadas en `unisimoncucuta/experienciavirtual` (Bloque D + acceso esquina Sede 2, alcanzando 88 escenas y 127 conexiones sin perder el grafo curado previo).
+  - 3 portadas iniciales en estado borrador (`published: false`, `a11yReady: true`) para `sede-1` (Bloque A), `sede-3` (Bloques E y F) y `sede-4` (Bloque G), con 40 paquetes de audio Voz Salomé (`.mp3`, `.vtt`, `.txt`, `.json`).
+- Ver `deploy/README.md` y `docs/producto/67-plan-despliegue-seguro-produccion.md` para la operación y actualización continua.
 
 ---
 
