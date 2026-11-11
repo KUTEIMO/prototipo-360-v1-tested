@@ -64,7 +64,7 @@ function securityHeaders(extra = {}) {
     "X-Frame-Options": "SAMEORIGIN",
     "Referrer-Policy": "strict-origin-when-cross-origin",
     "Permissions-Policy": "camera=(), geolocation=(), microphone=(self)",
-    "Cache-Control": "no-cache",
+    "Cache-Control": "no-store, max-age=0",
     ...extra,
   };
 }
