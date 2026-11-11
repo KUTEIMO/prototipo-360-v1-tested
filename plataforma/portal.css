@@ -1,10 +1,10 @@
-@import url("/plataforma/tokens.css");
+@import url("/plataforma/tokens.css?v=20261111g");
 
 /**
- * Orbe360 — marketing landing dinámica v1.
+ * Orbe360 — portal público dinámico.
  * Soft Clay + sky #0284c7 · Orbe ≠ Unisimón (doc 39).
  * Scroll storytelling + tema claro/oscuro + i18n (doc 62).
- * Cache-bust: ?v=20260929e en index.html
+ * Cache-bust: ?v=20261111g en plataforma/index.html
  */
 
 
@@ -488,18 +488,22 @@ body.marketing > .skip {
   justify-content: center;
 }
 
-/* —— Reveal (JS toggles .is-in) —— */
+/* —— Reveal (fail-open por defecto; oculta solo cuando JS activa html.orbe-motion) —— */
 [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+html.orbe-motion [data-reveal] {
   opacity: 0;
   transform: translateY(1.25rem);
   transition:
     opacity var(--orbe-dur-slower, 520ms) var(--orbe-ease-out, ease),
     transform var(--orbe-dur-slower, 520ms) var(--orbe-ease-out, ease);
 }
-[data-reveal="brand"] {
+html.orbe-motion [data-reveal="brand"] {
   transform: translateY(0.6rem) scale(0.96);
 }
-[data-reveal].is-in {
+html.orbe-motion [data-reveal].is-in {
   opacity: 1;
   transform: none;
 }
@@ -1317,11 +1321,11 @@ body.marketing > .skip {
 }
 .privacy-teaser__links a:hover { text-decoration: underline; }
 
-/* —— Cookie consent banner —— */
-body.marketing.has-cookie-banner {
+/* —— Storage notice banner —— */
+body.marketing.has-storage-notice {
   padding-bottom: 6.5rem;
 }
-.cookie-banner {
+.storage-notice {
   position: fixed;
   inset: auto 0 0 0;
   z-index: 200;
@@ -1330,7 +1334,7 @@ body.marketing.has-cookie-banner {
   border-top: 1px solid var(--orbe-line);
   box-shadow: 0 -8px 32px rgba(16, 24, 40, 0.12);
 }
-.cookie-banner__inner {
+.storage-notice__inner {
   max-width: var(--orbe-container);
   margin: 0 auto;
   display: flex;
@@ -1338,34 +1342,34 @@ body.marketing.has-cookie-banner {
   align-items: center;
   gap: 1rem 1.5rem;
 }
-.cookie-banner__title {
+.storage-notice__title {
   font-family: var(--mk-display);
   font-weight: 700;
   font-size: 0.95rem;
   margin: 0;
   flex: 1 1 12rem;
 }
-.cookie-banner__body {
+.storage-notice__body {
   margin: 0;
   font-size: 0.88rem;
   color: var(--orbe-muted);
   flex: 2 1 16rem;
   line-height: 1.45;
 }
-.cookie-banner__actions {
+.storage-notice__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 0.75rem;
   align-items: center;
 }
-.cookie-banner__link {
+.storage-notice__link {
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--orbe-accent-deep);
   text-decoration: none;
 }
-.cookie-banner__link:hover { text-decoration: underline; }
-[data-theme="dark"] .cookie-banner {
+.storage-notice__link:hover { text-decoration: underline; }
+[data-theme="dark"] .storage-notice {
   background: var(--orbe-night);
   border-color: rgba(255, 255, 255, 0.1);
 }
@@ -1428,6 +1432,7 @@ body.marketing.has-cookie-banner {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  html.orbe-motion [data-reveal],
   [data-reveal] {
     opacity: 1;
     transform: none;

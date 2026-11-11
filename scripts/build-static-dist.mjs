@@ -166,6 +166,87 @@ const CLOUDFLARE_HEADERS = [
   "",
 ].join("\n");
 
+const ASSET_VERSION = "20261111h";
+
+const VIEWER_CSS_ORDER = [
+  "css/design-tokens.css",
+  "css/base.css",
+  "css/utilities.css",
+  "css/header.css",
+  "css/navigation.css",
+  "css/menu/scene-menu.css",
+  "css/menu/menu-groups.css",
+  "css/menu/accessibility-menu.css",
+  "css/components/loading.css",
+  "css/components/error-notification.css",
+  "css/components/hotspots.css",
+  "css/components/nav-hotspot.css",
+  "css/components/speaking-indicator.css",
+  "css/components/accessibility-controls.css",
+  "css/components/hotspot-panel.css",
+  "css/components/direction-cue.css",
+  "css/components/skip-links.css",
+  "css/components/fallback.css",
+  "css/responsive.css",
+];
+
+const PORTAL_CSS_ORDER = [
+  "css/design-tokens.css",
+  "plataforma/tokens.css",
+  "plataforma/portal.css",
+];
+
+function joinCssBundle(relPaths) {
+  return relPaths
+    .map((rel) =>
+      fs
+        .readFileSync(path.join(ROOT, rel), "utf8")
+        .replace(/^\s*@import\s+url\([^)]+\)\s*;\s*$/gm, "")
+    )
+    .join("\n");
+}
+
+async function bundleCssAndJs(esbuild) {
+  let viewerCss = joinCssBundle(VIEWER_CSS_ORDER);
+  let portalCss = joinCssBundle(PORTAL_CSS_ORDER);
+  if (esbuild) {
+    viewerCss = (await esbuild.transform(viewerCss, { loader: "css", minify: true })).code;
+    portalCss = (await esbuild.transform(portalCss, { loader: "css", minify: true })).code;
+  }
+  fs.writeFileSync(path.join(DIST, "css", "viewer.bundle.css"), viewerCss, "utf8");
+  fs.writeFileSync(path.join(DIST, "plataforma", "portal.bundle.css"), portalCss, "utf8");
+
+  let bundledJs = false;
+  if (esbuild) {
+    await esbuild.build({
+      entryPoints: [path.join(ROOT, "src", "main.js")],
+      bundle: true,
+      format: "esm",
+      minify: true,
+      outfile: path.join(DIST, "src", "viewer.bundle.js"),
+    });
+    const portalNoticeExternalPlugin = {
+      name: "external-portal-notice",
+      setup(build) {
+        build.onResolve({ filter: /portal-notice\.js/ }, () => ({
+          path: `/plataforma/portal-notice.js?v=${ASSET_VERSION}`,
+          external: true,
+        }));
+      },
+    };
+    await esbuild.build({
+      entryPoints: [path.join(ROOT, "plataforma", "portal-ui.js")],
+      bundle: true,
+      format: "esm",
+      minify: true,
+      plugins: [portalNoticeExternalPlugin],
+      outfile: path.join(DIST, "plataforma", "portal-ui.bundle.js"),
+    });
+    bundledJs = true;
+  }
+  return bundledJs;
+}
+
 if (!dryRun) {
   fs.rmSync(DIST, { recursive: true, force: true });
   fs.mkdirSync(DIST, { recursive: true });
@@ -178,8 +259,45 @@ for (const dir of ["css", "src", "vendors", "plataforma", "control-web", "media"
 
 // Root landing is plataforma/index.html; root viewer sits at /viewer.html so / matches cleanly.
 if (!dryRun) {
-  fs.copyFileSync(path.join(ROOT, "plataforma", "index.html"), path.join(DIST, "index.html"));
-  fs.copyFileSync(path.join(ROOT, "index.html"), path.join(DIST, "viewer.html"));
+  const esbuild = await import("esbuild").catch(() => null);
+  const bundledJs = await bundleCssAndJs(esbuild);
+  totalFiles += bundledJs ? 4 : 2;
+
+  let landingHtml = fs.readFileSync(path.join(ROOT, "plataforma", "index.html"), "utf8");
+  const landingCssBlockRe =
+    /\s*<link rel="stylesheet" href="\/css\/design-tokens\.css(?:\?[^"]*)?">[\s\S]*?<link rel="stylesheet" href="\/plataforma\/portal\.css(?:\?[^"]*)?">/;
+  if (!landingCssBlockRe.test(landingHtml)) {
+    throw new Error("[build:prod] Unable to locate landing stylesheet block for bundling");
+  }
+  landingHtml = landingHtml.replace(
+    landingCssBlockRe,
+    `\n  <link rel="stylesheet" href="/plataforma/portal.bundle.css?v=${ASSET_VERSION}">`
+  );
+  if (bundledJs) {
+    landingHtml = landingHtml.replace(
+      /<script src="\/plataforma\/portal-ui\.js(?:\?[^"]*)?" type="module"><\/script>/,
+      `<script src="/plataforma/portal-ui.bundle.js?v=${ASSET_VERSION}" type="module"></script>`
+    );
+  }
+  fs.writeFileSync(path.join(DIST, "index.html"), landingHtml, "utf8");
+
+  let viewerHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+  const viewerCssBlockRe =
+    /\s*<link rel="stylesheet" href="\/css\/base\.css(?:\?[^"]*)?">[\s\S]*?<link rel="stylesheet" href="\/css\/responsive\.css(?:\?[^"]*)?">/;
+  if (!viewerCssBlockRe.test(viewerHtml)) {
+    throw new Error("[build:prod] Unable to locate viewer stylesheet block for bundling");
+  }
+  viewerHtml = viewerHtml.replace(
+    viewerCssBlockRe,
+    `\n    <link rel="stylesheet" href="/css/viewer.bundle.css?v=${ASSET_VERSION}">`
+  );
+  if (bundledJs) {
+    viewerHtml = viewerHtml.replace(
+      /<script type="module" src="\/src\/main\.js(?:\?[^"]*)?"><\/script>/,
+      `<script type="module" src="/src/viewer.bundle.js?v=${ASSET_VERSION}"></script>`
+    );
+  }
+  fs.writeFileSync(path.join(DIST, "viewer.html"), viewerHtml, "utf8");
 
   const orbeCfgRaw = fs.readFileSync(path.join(ROOT, "orbe-config.js"), "utf8");
   const platCfgRaw = fs.readFileSync(path.join(ROOT, "plataforma", "config.js"), "utf8");

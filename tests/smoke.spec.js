@@ -26,14 +26,22 @@ test.describe('Orbe360 smoke — routing P0', () => {
     ).toBeVisible();
   });
 
-  test('raíz / carga CSS de marketing (200)', async ({ page, request }) => {
+  test('raíz / carga CSS de portal (200) y tolera bloqueo de aviso', async ({ page, request }) => {
     await page.goto('/');
-    const cssHref = await page.locator('link[rel="stylesheet"][href*="marketing.css"]').getAttribute('href');
-    expect(cssHref).toMatch(/^\/plataforma\/marketing\.css(?:\?.*)?$/);
-    const res = await request.get('/plataforma/marketing.css');
+    const cssHref = await page.locator('link[rel="stylesheet"][href*="portal.css"]').getAttribute('href');
+    expect(cssHref).toMatch(/^\/plataforma\/portal\.css(?:\?.*)?$/);
+    const res = await request.get('/plataforma/portal.css');
     expect(res.status()).toBe(200);
     const tokens = await request.get('/plataforma/tokens.css');
     expect(tokens.status()).toBe(200);
+
+    await page.route('**/*portal-notice*', (route) => route.abort('blockedbyclient'));
+    await page.reload();
+    await expect(
+      page.getByRole('heading', { level: 1, name: /experiencias 360/i })
+    ).toBeVisible();
+    await expect(page.locator('#navAuthLink')).toHaveText(/Acceder/);
+    await page.unroute('**/*portal-notice*');
   });
 
   test('marketing anidado bajo tenant redirige a /', async ({ page, baseURL }) => {

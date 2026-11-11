@@ -85,46 +85,48 @@ export function initCookieConsent() {
 
   const lang = getLang();
   const banner = document.createElement("aside");
-  banner.className = "cookie-banner";
+  banner.className = "storage-notice";
   banner.setAttribute("role", "dialog");
   banner.setAttribute("aria-modal", "false");
-  banner.setAttribute("aria-labelledby", "cookieBannerTitle");
+  banner.setAttribute("aria-labelledby", "storageNoticeTitle");
   banner.innerHTML = `
-    <div class="cookie-banner__inner">
-      <p class="cookie-banner__title" id="cookieBannerTitle">${t("title", lang)}</p>
-      <p class="cookie-banner__body">${t("body", lang)}</p>
-      <div class="cookie-banner__actions">
-        <button type="button" class="btn btn--primary cookie-banner__accept">${t("accept", lang)}</button>
-        <button type="button" class="btn btn--ghost cookie-banner__reject">${t("reject", lang)}</button>
-        <a class="cookie-banner__link" href="/plataforma/cookies.html">${t("policy", lang)}</a>
+    <div class="storage-notice__inner">
+      <p class="storage-notice__title" id="storageNoticeTitle">${t("title", lang)}</p>
+      <p class="storage-notice__body">${t("body", lang)}</p>
+      <div class="storage-notice__actions">
+        <button type="button" class="btn btn--primary storage-notice__accept">${t("accept", lang)}</button>
+        <button type="button" class="btn btn--ghost storage-notice__reject">${t("reject", lang)}</button>
+        <a class="storage-notice__link" href="/plataforma/cookies.html">${t("policy", lang)}</a>
       </div>
     </div>`;
 
   document.body.appendChild(banner);
-  document.body.classList.add("has-cookie-banner");
+  document.body.classList.add("has-storage-notice");
 
   const dismiss = (choice) => {
     setCookieConsent({ choice });
     banner.remove();
-    document.body.classList.remove("has-cookie-banner");
+    document.body.classList.remove("has-storage-notice");
     untrap?.();
   };
 
   let untrap = trapFocus(banner, () => dismiss("dismiss"));
 
-  banner.querySelector(".cookie-banner__accept")?.addEventListener("click", () =>
+  banner.querySelector(".storage-notice__accept")?.addEventListener("click", () =>
     dismiss("accepted")
   );
-  banner.querySelector(".cookie-banner__reject")?.addEventListener("click", () =>
+  banner.querySelector(".storage-notice__reject")?.addEventListener("click", () =>
     dismiss("essential_only")
   );
 
   window.addEventListener("orbe:lang", (e) => {
     const l = e.detail === "en" ? "en" : "es";
-    banner.querySelector("#cookieBannerTitle").textContent = t("title", l);
-    banner.querySelector(".cookie-banner__body").textContent = t("body", l);
-    banner.querySelector(".cookie-banner__accept").textContent = t("accept", l);
-    banner.querySelector(".cookie-banner__reject").textContent = t("reject", l);
-    banner.querySelector(".cookie-banner__link").textContent = t("policy", l);
+    banner.querySelector("#storageNoticeTitle").textContent = t("title", l);
+    banner.querySelector(".storage-notice__body").textContent = t("body", l);
+    banner.querySelector(".storage-notice__accept").textContent = t("accept", l);
+    banner.querySelector(".storage-notice__reject").textContent = t("reject", l);
+    banner.querySelector(".storage-notice__link").textContent = t("policy", l);
   });
 }
+
+export const initStorageNotice = initCookieConsent;

@@ -1,9 +1,8 @@
 /**
- * Orbe360 marketing motion v1 — scroll storytelling, theme, dynamic bg.
- * CSS reveals + rAF; no anime.js on critical path (doc 62).
+ * Orbe360 portal UI — scroll storytelling, theme, dynamic bg.
+ * CSS reveals (fail-open) + rAF; no external motion libs on critical path.
  */
-import { applyI18n, getLang, setLang } from "./marketing-i18n.js";
-import { initCookieConsent } from "./cookie-consent.js";
+import { applyI18n, getLang, setLang } from "./portal-i18n.js?v=20261111g";
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const THEME_KEY = "orbe_theme";
@@ -103,14 +102,22 @@ function updateProgress() {
 window.addEventListener("scroll", updateProgress, { passive: true });
 updateProgress();
 
-/* —— Reveals —— */
-const heroReveals = document.querySelectorAll(".hero [data-reveal]");
-if (reduceMotion) {
-  document.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("is-in"));
-} else {
-  requestAnimationFrame(() => {
-    heroReveals.forEach((el) => el.classList.add("is-in"));
+/* —— Reveals (fail-open: visible si JS/IO no aplica; animable con html.orbe-motion) —— */
+const allReveals = document.querySelectorAll("[data-reveal]");
+const markInView = () => {
+  const thresholdY = Math.max(window.innerHeight || 0, 720) * 0.98;
+  allReveals.forEach((el) => {
+    if (el.closest(".hero") || el.getBoundingClientRect().top < thresholdY) {
+      el.classList.add("is-in");
+    }
   });
+};
+
+if (reduceMotion || typeof IntersectionObserver !== "function") {
+  allReveals.forEach((el) => el.classList.add("is-in"));
+} else {
+  markInView();
+  document.documentElement.classList.add("orbe-motion");
 
   const io = new IntersectionObserver(
     (entries) => {
@@ -125,7 +132,7 @@ if (reduceMotion) {
     { rootMargin: "0px 0px -6% 0px", threshold: 0.1 }
   );
 
-  document.querySelectorAll("[data-reveal]").forEach((el) => {
+  allReveals.forEach((el) => {
     if (!el.closest(".hero")) io.observe(el);
   });
 }
@@ -256,7 +263,9 @@ updateActiveNav();
 
 initTheme();
 initI18n();
-initCookieConsent();
+import("./portal-notice.js?v=20261111g")
+  .then((m) => m.initStorageNotice())
+  .catch(() => {});
 
 
 /* == Dynamic Interactive Sedes Accordion == */

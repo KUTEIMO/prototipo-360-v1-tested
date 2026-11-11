@@ -1084,16 +1084,16 @@ async function main() {
       fail("Raíz / no es marketing Orbe360", `status=${rootStatus}`);
     }
 
-    if (/href=["']\/plataforma\/marketing\.css(?:\?[^"']*)?["']/i.test(rootHtml)) {
-      const { status: cssStatus } = await httpGet("/plataforma/marketing.css");
+    if (/href=["']\/plataforma\/portal\.css(?:\?[^"']*)?["']/i.test(rootHtml)) {
+      const { status: cssStatus } = await httpGet("/plataforma/portal.css");
       const { status: tokensStatus } = await httpGet("/plataforma/tokens.css");
       if (cssStatus === 200 && tokensStatus === 200) {
-        ok("Landing CSS root-absolute (/plataforma/marketing.css + tokens) 200");
+        ok("Landing CSS root-absolute (/plataforma/portal.css + tokens) 200");
       } else {
-        fail("Landing CSS assets", `marketing=${cssStatus} tokens=${tokensStatus}`);
+        fail("Landing CSS assets", `portal=${cssStatus} tokens=${tokensStatus}`);
       }
     } else {
-      fail("Landing sin stylesheet root-absolute /plataforma/marketing.css");
+      fail("Landing sin stylesheet root-absolute /plataforma/portal.css");
     }
 
     const legacyMkt = await httpGet("/plataforma/index.html", { redirect: "manual" });

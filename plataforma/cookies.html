@@ -7,8 +7,9 @@
   <meta name="description" content="Cookies y almacenamiento local usados por Orbe360. Sin analítica de terceros en el código actual.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/plataforma/legal.css?v=20260929e">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/plataforma/legal.css?v=20261111g">
   <script>
     (function () {
       var t = localStorage.getItem("orbe_theme");
@@ -122,10 +123,11 @@
     <p>ORBE360 · Plataforma de recorridos virtuales accesibles</p>
   </footer>
 
-  <script src="/plataforma/legal-shell.js?v=20260929e" type="module"></script>
+  <script src="/plataforma/legal-shell.js?v=20261111g" type="module"></script>
   <script type="module">
-    import { initCookieConsent } from "/plataforma/cookie-consent.js?v=20260929e";
-    initCookieConsent();
+    import("/plataforma/portal-notice.js?v=20261111g")
+      .then((m) => m.initStorageNotice())
+      .catch(() => {});
   </script>
 </body>
 </html>
