@@ -47,6 +47,7 @@ const BLOCKED_PREFIXES = [
   ".convex",
   ".cursor",
   "node_modules",
+  "dist",
   "convex",
   "backups",
   "docs",
@@ -140,6 +141,8 @@ const RESERVED_ROOT = new Set([
   "playwright-report",
   "test-results",
   "backups",
+  "dist",
+  "deploy",
 ]);
 
 const MIME = {
@@ -407,6 +410,15 @@ const server = http.createServer((req, res) => {
         });
         let out = "";
         let errOut = "";
+        let timedOut = false;
+        const killTimer = setTimeout(() => {
+          timedOut = true;
+          try {
+            py.kill();
+          } catch {
+            /* ignore */
+          }
+        }, 30_000);
         py.stdout.on("data", (d) => {
           out += d.toString("utf8");
         });
@@ -414,19 +426,35 @@ const server = http.createServer((req, res) => {
           errOut += d.toString("utf8");
         });
         py.on("error", (err) => {
+          clearTimeout(killTimer);
           if (res.writableEnded) return;
           res.writeHead(500, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ ok: false, error: `Python no disponible: ${err.message}` }));
         });
         py.on("close", (code) => {
+          clearTimeout(killTimer);
           if (res.writableEnded) return;
+          if (timedOut) {
+            res.writeHead(504, { "Content-Type": "application/json; charset=utf-8" });
+            res.end(
+              JSON.stringify({
+                ok: false,
+                error: "La generación de audio excedió el tiempo límite (30s).",
+              })
+            );
+            return;
+          }
           try {
-            const payload = JSON.parse(out || "{}");
-            res.writeHead(payload.ok ? 200 : 400, {
-              "Content-Type": "application/json; charset=utf-8",
-              "Cache-Control": "no-store",
-            });
-            res.end(JSON.stringify(payload));
+            const payload = out.trim() ? JSON.parse(out) : null;
+            if (payload && typeof payload === "object" && "ok" in payload) {
+              res.writeHead(payload.ok ? 200 : 400, {
+                "Content-Type": "application/json; charset=utf-8",
+                "Cache-Control": "no-store",
+              });
+              res.end(JSON.stringify(payload));
+              return;
+            }
+            throw new Error("empty_stdout");
           } catch {
             res.writeHead(code === 0 ? 500 : 502, { "Content-Type": "application/json" });
             res.end(
@@ -520,8 +548,13 @@ const server = http.createServer((req, res) => {
     }
 
     if (route.kind === "tour") {
-      // Legacy tour-scoped org-admin → org-level
+      // Enforce trailing slash on root tour path & control-web dir so relative links stay scoped.
       const restNorm = (route.rest || "").replace(/^\/+/, "").replace(/\/+$/, "");
+      if ((restNorm === "" || restNorm === "control-web") && !pathname.endsWith("/")) {
+        redirect(res, `${pathname}/${url.search}`);
+        return;
+      }
+      // Legacy tour-scoped org-admin → org-level
       if (restNorm === "org-admin.html") {
         redirect(res, `/${route.org}/org-admin.html`);
         return;

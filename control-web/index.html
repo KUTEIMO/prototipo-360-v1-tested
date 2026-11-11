@@ -7,10 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="admin.css">
-  <link rel="stylesheet" href="admin-pro.css">
-  <script src="../orbe-config.js"></script>
-  <script defer src="../vendors/marzipano.min.js"
+  <link rel="stylesheet" href="/control-web/admin.css">
+  <link rel="stylesheet" href="/control-web/admin-pro.css">
+  <script src="/orbe-config.js"></script>
+  <script defer src="/vendors/marzipano.min.js"
     onerror="(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/marzipano/dist/marzipano.js';document.head.appendChild(s);})();"></script>
 </head>
 <body class="cw-locked">
@@ -184,7 +184,7 @@
   <dialog id="sceneDialog" class="modal">
     <form method="dialog" id="sceneForm">
       <h3 id="sceneDialogTitle">Escena</h3>
-      <p id="sceneDialogHint" class="hint">Registra una escena ya presente en panoramas/ o edita sus datos.</p>
+      <p id="sceneDialogHint" class="hint">Registra una escena o actualiza sus datos y multimedia.</p>
       <label>Título corto (etiqueta) <input name="shortTitle" required placeholder="Ej. Hall Principal"></label>
       <label>Título completo <input name="title" required placeholder="Ej. 1. Hall de Ingreso — Sede 4"></label>
       <label id="sceneFileLabel">Archivo panorama
@@ -199,6 +199,12 @@
       </label>
       <label>O nueva zona personalizada (opcional)
         <input name="customZone" id="sceneCustomZone" placeholder="Ej. Simulación Clínica (sobrescribe la selección)">
+      </label>
+      <label>Sede / edificio (opcional)
+        <input name="sede" id="sceneSede" placeholder="Ej. Sede 2 - Bloque C">
+      </label>
+      <label>Locutor / voz (opcional)
+        <input name="speaker" id="sceneSpeaker" placeholder="Ej. Voz institucional">
       </label>
       <label>Descripción accesible / notas (opcional)
         <textarea name="longDescription" id="sceneLongDesc" rows="2" placeholder="Describe qué se observa en esta escena 360°"></textarea>
@@ -367,6 +373,6 @@
   </dialog>
 
   <input type="file" id="importFile" accept="application/json,.json" hidden>
-  <script type="module" src="admin.js"></script>
+  <script type="module" src="/control-web/admin.js"></script>
 </body>
 </html>

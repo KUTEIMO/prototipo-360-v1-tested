@@ -19,7 +19,10 @@
 
     <div class="warn-box" id="loginConnWarn" role="alert" hidden>
       <p style="margin:0 0 0.5rem" id="loginConnWarnText"></p>
-      <button type="button" class="btn btn--tiny" id="loginRetryBtn">Reintentar conexión</button>
+      <div class="cta-row" style="margin-top:0.5rem">
+        <button type="button" class="btn btn--tiny" id="loginRetryBtn">Reintentar conexión</button>
+        <button type="button" class="btn btn--tiny btn--ghost" id="loginResetConnBtn">Usar otra cuenta</button>
+      </div>
     </div>
 
     <section class="card" id="activeSessionCard" hidden aria-live="polite">
@@ -67,20 +70,47 @@
     const params = new URLSearchParams(location.search);
     const isSwitch = params.get("switch") === "1";
     const rawReturn = params.get("return");
-    const returnUrl =
-      rawReturn &&
-      rawReturn.startsWith("/") &&
-      !rawReturn.startsWith("//") &&
-      !rawReturn.includes("://") &&
-      !rawReturn.includes("/plataforma/login")
-        ? rawReturn
-        : null;
+    const returnUrl = (() => {
+      if (
+        !rawReturn ||
+        !rawReturn.startsWith("/") ||
+        rawReturn.startsWith("//") ||
+        rawReturn.includes("\\") ||
+        rawReturn.includes("://") ||
+        rawReturn.includes("/plataforma/login")
+      ) {
+        return null;
+      }
+      try {
+        const parsed = new URL(rawReturn, location.origin);
+        return parsed.origin === location.origin
+          ? `${parsed.pathname}${parsed.search}${parsed.hash}`
+          : null;
+      } catch {
+        return null;
+      }
+    })();
 
     function isReturnAllowedForUser(url, me) {
       if (!url || !me) return false;
       if (me.isSuperadmin && url.includes("control-web")) return false;
       if (me.isSuperadmin && url.includes("org-admin")) return false;
       if (!me.isSuperadmin && url.includes("superadmin")) return false;
+      if (!me.isSuperadmin) {
+        const cleanPath = url.split("?")[0].split("#")[0];
+        const parts = cleanPath.split("/").filter(Boolean);
+        const targetOrg = parts[0]?.toLowerCase() || "";
+        const isTenantRoute =
+          (parts.length >= 2 && parts[1] === "org-admin.html") ||
+          (parts.length >= 3 && parts[2] === "control-web");
+        if (isTenantRoute) {
+          const memberships = Array.isArray(me.memberships) ? me.memberships : [];
+          const hasOrg = memberships.some(
+            (m) => String(m.orgSlug || "").toLowerCase() === targetOrg
+          );
+          if (!hasOrg) return false;
+        }
+      }
       return true;
     }
 
@@ -95,6 +125,15 @@
       }
 
       const memberships = Array.isArray(me.memberships) ? me.memberships : [];
+      if (memberships.length === 0) {
+        return {
+          roleLabel: "Sin organización asignada",
+          homeHref: "/",
+          homeLabel: "Volver al inicio",
+          extraLinks: [],
+        };
+      }
+
       const orgs = await apiQuery("organizations:listOrganizations", {
         token,
         now: Date.now(),
@@ -114,8 +153,8 @@
       const primaryTour =
         tours.find((t) => t.slug === DEFAULT_TOUR_SLUG) || tours[0] || null;
 
-      if (adminM || !memberships.length) {
-        const homeHref = primaryOrgSlug ? orgAdminHref(primaryOrgSlug) : "/plataforma/login.html";
+      if (adminM) {
+        const homeHref = primaryOrgSlug ? orgAdminHref(primaryOrgSlug) : "/";
         const cw =
           primaryOrgSlug && primaryTour
             ? controlWebHref({ orgSlug: primaryOrgSlug, tourSlug: primaryTour.slug })
@@ -123,7 +162,7 @@
         return {
           roleLabel: "Admin Org",
           homeHref,
-          homeLabel: primaryOrgSlug ? `Ir al panel (${orgTitle})` : "Ir al panel",
+          homeLabel: primaryOrgSlug ? `Ir al panel (${orgTitle})` : "Ir al inicio",
           extraLinks: cw ? [{ href: cw, label: "Abrir Control Web" }] : [],
         };
       }
@@ -237,7 +276,8 @@
         }
         renderActiveSession(me, existing, dest);
       } catch (err) {
-        formEl.hidden = false;
+        activeCard.hidden = true;
+        formEl.hidden = true;
         connWarn.hidden = false;
         connWarnText.textContent = err?.message || "No se pudo conectar con el servidor para verificar tu sesión.";
       }
@@ -245,6 +285,13 @@
 
     document.getElementById("loginRetryBtn")?.addEventListener("click", () => {
       void checkExistingSession();
+    });
+    document.getElementById("loginResetConnBtn")?.addEventListener("click", () => {
+      clearToken();
+      connWarn.hidden = true;
+      activeCard.hidden = true;
+      formEl.hidden = false;
+      emailEl.focus();
     });
 
     await checkExistingSession();
