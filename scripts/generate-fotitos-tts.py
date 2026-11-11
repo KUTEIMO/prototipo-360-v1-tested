@@ -154,20 +154,24 @@ async def main() -> None:
     else:
         raw = sys.stdin.read().lstrip("\ufeff")
     payload = json.loads(raw)
-    src_dir = Path(payload["srcDir"])
+    src_raw = (payload.get("srcDir") or "").strip()
+    src_dir = Path(src_raw) if src_raw else None
     copies = payload["copies"]
     jobs = payload["jobs"]
 
     copied = 0
     for c in copies:
-        src = src_dir / c["fileKey"]
         dst = ROOT / c["dstRel"]
         dst.parent.mkdir(parents=True, exist_ok=True)
-        if not src.exists():
-            raise FileNotFoundError(f"Falta imagen fuente: {src}")
-        if not dst.exists() or dst.stat().st_size != src.stat().st_size:
-            shutil.copy2(src, dst)
-            copied += 1
+        src = (src_dir / c["fileKey"]) if src_dir else None
+        if src and src.exists():
+            if not dst.exists() or dst.stat().st_size != src.stat().st_size:
+                shutil.copy2(src, dst)
+                copied += 1
+        elif not dst.exists():
+            raise FileNotFoundError(
+                f"Falta imagen fuente para {c['dstRel']}. Define ORBE_FOTITOS_SRC si necesitas reimportarla."
+            )
 
     sem = asyncio.Semaphore(4)
     results = await asyncio.wait_for(

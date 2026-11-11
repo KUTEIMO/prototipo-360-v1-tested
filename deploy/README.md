@@ -38,7 +38,7 @@ Este directorio documenta la arquitectura recomendada para publicar Orbe360 en I
 3. Publicar `./dist`:
    - **Con Cloudflare Pages (Wrangler):**
      ```powershell
-     npx wrangler pages deploy dist --project-name=orbe360
+     npx wrangler pages deploy dist --project-name=orbe360-unisimon --branch=main
      ```
    - **Con Firebase Hosting:**
      ```powershell

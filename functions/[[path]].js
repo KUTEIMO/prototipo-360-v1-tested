@@ -40,6 +40,7 @@ const BLOCKED_ROOT_FILES = new Set([
   "convex.json",
   "playwright.config.js",
   "eslint.config.mjs",
+  "skills-lock.json",
   "agents.md",
   "claude.md",
   "changelog.md",
@@ -48,6 +49,13 @@ const BLOCKED_ROOT_FILES = new Set([
   "readme.md",
   "backlog.md",
   "ubicacion_y_archivo.md",
+  "audit-runner.js",
+  "instrumento_auditoria_v1.json",
+  "demo.html",
+  "demo-report.html",
+  "styles(old_together).css",
+  "config.local.js",
+  "orbe-config.local.js",
 ]);
 
 function securityHeaders(extra = {}) {
@@ -84,17 +92,23 @@ export async function onRequest(context) {
   const parts = clean ? clean.split("/") : [];
   const firstLower = (parts[0] || "").toLowerCase();
 
-  // 1. Block internal repo files, env leaks, and retired legacy /panoramas /assets paths.
+  // 1. Block internal repo files, env leaks, dotfiles, course archives, and retired legacy /panoramas /assets paths.
   if (
     BLOCKED_ROOT_FILES.has(clean.toLowerCase()) ||
     clean.toLowerCase().startsWith(".env") ||
+    firstLower.startsWith(".") ||
     firstLower === "convex" ||
     firstLower === "docs" ||
     firstLower === "dist" ||
     firstLower === "scripts" ||
     firstLower === "tests" ||
     firstLower === "backups" ||
-    firstLower === "deploy"
+    firstLower === "deploy" ||
+    firstLower === "functions" ||
+    firstLower === "reports" ||
+    firstLower === "node_modules" ||
+    firstLower.startsWith("entregables-") ||
+    firstLower === "_restos_exras_bloqueados"
   ) {
     return new Response("Not Found", { status: 404, headers: securityHeaders({ "Content-Type": "text/plain; charset=utf-8" }) });
   }

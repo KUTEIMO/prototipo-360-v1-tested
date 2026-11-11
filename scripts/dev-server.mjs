@@ -57,6 +57,10 @@ const BLOCKED_PREFIXES = [
   "test-results",
   "playwright-report",
   "coverage",
+  "functions",
+  "deploy",
+  "entregables-corte-2",
+  "entregables-corte-3",
   "_restos_exras_bloqueados",
 ];
 
@@ -72,11 +76,17 @@ const BLOCKED_FILES = new Set([
   "package-lock.json",
   "convex.json",
   "playwright.config.js",
+  "eslint.config.mjs",
+  "skills-lock.json",
   "audit-runner.js",
   "instrumento_auditoria_v1.json",
   "config.local.js",
   "orbe-config.local.js",
+  "demo.html",
+  "demo-report.html",
+  "styles(old_together).css",
   "agents.md",
+  "claude.md",
   "changelog.md",
   "license",
   "leeme.md",
@@ -143,6 +153,9 @@ const RESERVED_ROOT = new Set([
   "backups",
   "dist",
   "deploy",
+  "functions",
+  "entregables-corte-2",
+  "entregables-corte-3",
 ]);
 
 const MIME = {

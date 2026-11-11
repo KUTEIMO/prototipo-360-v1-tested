@@ -3,8 +3,11 @@
  * para Sede 2 · Bloque D (`experienciavirtual`) y fachadas iniciales de Sede 1, 3 y 4.
  */
 
-export const DRIVE_FOTITOS_SRC =
-  "C:/Users/SOTO/.gemini/antigravity/brain/74c32d5b-d2f2-417c-8d18-1e8bfa8a32d1/scratch/drive-fotitos";
+/**
+ * Ruta opcional hacia descargas externas de cámara (solo si necesitas reimportar JPGs originales).
+ * Los panoramas finales ya viven versionados dentro de `media/unisimoncucuta/`.
+ */
+export const DRIVE_FOTITOS_SRC = process.env.ORBE_FOTITOS_SRC || "";
 
 export const SPEAKER_SALOME = "Salomé (es-CO)";
 const ZONE_BLOQUE_D = "Bloque D — Laboratorios y Cultura";

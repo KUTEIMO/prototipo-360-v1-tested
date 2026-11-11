@@ -78,7 +78,17 @@ test.describe('Control Web Editor E2E & HTTP Hardening', () => {
     expect(res.headers().location).toMatch(/\/orbe\/sandbox\/control-web\/$/);
   });
 
-  for (const blocked of ['/.env', '/.env.local', '/convex/auth.ts', '/docs/README.md', '/dist/index.html']) {
+  for (const blocked of [
+    '/.env',
+    '/.env.local',
+    '/convex/auth.ts',
+    '/docs/README.md',
+    '/dist/index.html',
+    '/functions/[[path]].js',
+    '/deploy/README.md',
+    '/skills-lock.json',
+    '/entregables-corte-2/CUENTAS_Y_CREDENCIALES_PROYECTO.txt',
+  ]) {
     test(`dev-server bloquea archivo interno ${blocked} (403/404)`, async ({ request }) => {
       const res = await request.get(blocked);
       expect([403, 404]).toContain(res.status());

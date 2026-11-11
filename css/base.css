@@ -2,7 +2,6 @@
  * Colores institucionales del cliente llegan vía TourBranding → CSS variables.
  * No hardcodear identidad Unisimón/PEVCI aquí. */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap');
 /* Escalas compartidas (espacio, radios, elevación, movimiento). Sin color de marca. */
 @import url('./design-tokens.css');
 

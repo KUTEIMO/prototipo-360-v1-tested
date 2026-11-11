@@ -6,7 +6,8 @@ Mapa de la documentación del repo `PROTOTIPO-360-CURSOR-V1`.
 
 | Doc | Uso |
 |-----|-----|
-| [../README.md](../README.md) | Qué es Orbe360, cómo correr, mapa URL |
+| [../README.md](../README.md) | Qué es Orbe360, URLs en producción, Convex Cloud, despliegue local y mapa técnico |
+| [../deploy/README.md](../deploy/README.md) | Guía de compilación (`build:prod`), Cloudflare Pages y Convex Cloud |
 | [producto/05-como-levantar.md](producto/05-como-levantar.md) | Levantar Convex + web local (canónico) |
 | [producto/56-handoff-conversacion-y-ubicacion.md](producto/56-handoff-conversacion-y-ubicacion.md) | **Handoff:** curso vs Aplicativos, inventario 46–55, cómo seguir tras el move |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Convenciones, scripts npm, ramas, checklist de release |

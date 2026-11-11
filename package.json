@@ -11,6 +11,7 @@
     "seed": "npx convex run seed:seedPlatform",
     "seed:allow-local": "npx convex env set ALLOW_OPEN_SEED 1",
     "seed:orbe-sandbox": "node scripts/seed-orbe-sandbox.mjs",
+    "sync:fotitos": "node scripts/sync-unisimon-to-convex.mjs",
     "backup:unisimon-graph": "node scripts/backup-unisimon-graph.mjs",
     "sync:unisimon-graph": "node scripts/sync-tenant-tour-graph-from-convex.mjs",
     "migrate:unisimon-media": "node scripts/migrate-unisimon-media-to-tenant.mjs",
